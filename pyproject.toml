@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdbbind-residue-contacts"
+version = "0.1.0"
+description = "Mine a local PDBBind dataset for pharmacophores of non-protein molecules contacting a given residue type."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Jenke Scheen" }]
+keywords = ["pdbbind", "pharmacophore", "cheminformatics", "structural-biology", "protein-ligand"]
+dependencies = [
+    "rdkit>=2023.09",
+    "gemmi>=0.6",
+    "pandas>=2.0",
+    "matplotlib>=3.7",
+    "numpy>=1.24",
+    "tqdm>=4.6",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+pdbbind-residue-contacts = "pdbbind_residue_contacts.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/jenkescheen/query_rcsb_residue_contacts"
+
+[tool.setuptools.packages.find]
+where = ["src"]

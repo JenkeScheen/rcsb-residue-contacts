@@ -1,0 +1,47 @@
+# PDBBind dataset (huge; download it yourself — see README). Never commit.
+data/
+**/refined-set/
+**/v2020-other-PL/
+
+# Bulky structure / molecule files anywhere
+*.pdb
+*.ent
+*.cif
+*.cif.gz
+*.mol2
+*.sdf
+*.mmtf
+*.bcif
+
+# Keep small test fixtures under tests/ tracked
+!tests/**/*.pdb
+!tests/**/*.sdf
+!tests/**/*.mol2
+!tests/**/*.cif
+
+# Pipeline outputs
+results/
+examples/
+plots/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environments
+.venv/
+venv/
+env/
+.conda/
+
+# Editor / OS
+.idea/
+.vscode/
+.DS_Store

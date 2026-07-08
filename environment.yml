@@ -1,0 +1,15 @@
+name: pdbbind-residue-contacts
+channels:
+  - conda-forge
+dependencies:
+  - python >=3.10
+  - rdkit >=2023.09
+  - gemmi >=0.6
+  - pandas >=2.0
+  - matplotlib >=3.7
+  - numpy >=1.24
+  - tqdm >=4.6
+  - pytest >=7.0
+  - pip
+  - pip:
+      - -e .
