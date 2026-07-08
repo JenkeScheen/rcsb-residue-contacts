@@ -27,7 +27,7 @@ dev = ["pytest>=7.0"]
 pdbbind-residue-contacts = "pdbbind_residue_contacts.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/jenkescheen/query_rcsb_residue_contacts"
+Homepage = "https://github.com/JenkeScheen/pdbbind-residue-contacts"
 
 [tool.setuptools.packages.find]
 where = ["src"]
