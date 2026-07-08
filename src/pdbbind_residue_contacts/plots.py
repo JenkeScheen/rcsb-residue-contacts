@@ -19,6 +19,24 @@ log = logging.getLogger(__name__)
 _DRUG_COLOR = "#2b6cb0"
 _SOLVENT_COLOR = "#c05621"
 
+# Stable colours per ProLIF interaction type so bars mean the same thing across runs/residues.
+_INTERACTION_COLORS = {
+    "Hydrophobic": "#dd8452",
+    "HBDonor": "#4c72b0",
+    "HBAcceptor": "#55a868",
+    "PiStacking": "#8172b3",
+    "PiCation": "#937860",
+    "CationPi": "#da8bc3",
+    "Anionic": "#c44e52",
+    "Cationic": "#4c9fb0",
+    "VdWContact": "#8c8c8c",
+    "XBAcceptor": "#ccb974",
+    "XBDonor": "#b5992a",
+    "MetalDonor": "#64b5cd",
+    "MetalAcceptor": "#5b8a72",
+}
+_INTERACTION_FALLBACK = "#7f7f7f"
+
 
 def _counts(df: pd.DataFrame, cls: str) -> pd.Series:
     subset = df[df["ligand_class"] == cls]
@@ -93,7 +111,34 @@ def _class_summary(df: pd.DataFrame, residue: str, path: Path) -> None:
     plt.close(fig)
 
 
-def make_all(df: pd.DataFrame, out_dir: Path, residue: str = "TRP") -> Path:
+def _interaction_types(int_df: pd.DataFrame | None, residue: str, path: Path) -> None:
+    """Barplot of ProLIF interaction-type counts between drug-like ligands and ``residue``."""
+    fig, ax = plt.subplots(figsize=(7, 4.5))
+    if int_df is None or int_df.empty or "interaction" not in int_df.columns:
+        msg = "no interactions" if int_df is not None else "ProLIF not installed"
+        ax.text(0.5, 0.5, msg, ha="center", va="center", transform=ax.transAxes)
+        ax.axis("off")
+    else:
+        counts = int_df["interaction"].value_counts().sort_values(ascending=False)
+        colors = [_INTERACTION_COLORS.get(i, _INTERACTION_FALLBACK) for i in counts.index]
+        ax.bar(range(len(counts)), counts.values, color=colors)
+        ax.set_xticks(range(len(counts)))
+        ax.set_xticklabels(counts.index, rotation=30, ha="right")
+        ax.set_ylabel("interaction count")
+        for i, v in enumerate(counts.values):
+            ax.text(i, v, str(v), ha="center", va="bottom", fontsize=8)
+    ax.set_title(f"Interaction types: drug-like ligands ↔ {residue}")
+    fig.tight_layout()
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
+
+
+def make_all(
+    df: pd.DataFrame,
+    out_dir: Path,
+    residue: str = "TRP",
+    interactions_df: pd.DataFrame | None = None,
+) -> Path:
     """Render all summary plots into ``out_dir`` and return the directory."""
     out_dir.mkdir(parents=True, exist_ok=True)
     _bar(
@@ -110,4 +155,5 @@ def make_all(df: pd.DataFrame, out_dir: Path, residue: str = "TRP") -> Path:
     )
     _combined_fraction(df, residue, out_dir / "combined_fraction.png")
     _class_summary(df, residue, out_dir / "ligand_class_summary.png")
+    _interaction_types(interactions_df, residue, out_dir / "interaction_types.png")
     return out_dir

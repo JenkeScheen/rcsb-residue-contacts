@@ -127,6 +127,35 @@ def solvent_het_groups(structure: gemmi.Structure) -> list[HetGroup]:
     return groups
 
 
+# One pocket atom, ready for PDB emission: (record, name, resname, chain, seqid, element, x, y, z).
+PocketAtom = tuple[str, str, str, str, str, str, float, float, float]
+
+
+def read_pocket_atoms(path: Path) -> list[PocketAtom]:
+    """Read every heavy atom from a PDBBind ``_pocket.pdb`` (binding-site residues).
+
+    Returned in the file's own coordinate frame (shared with the ligand/protein), so the atoms can
+    be written straight into an example structure. Returns ``[]`` if the pocket cannot be read.
+    """
+    structure = read_protein(path)
+    if structure is None or not len(structure):
+        return []
+    atoms: list[PocketAtom] = []
+    for chain in structure[0]:
+        for res in chain:
+            record = "HETATM" if res.het_flag == "H" else "ATOM"
+            for atom in res:
+                if atom.is_hydrogen():
+                    continue
+                atoms.append(
+                    (
+                        record, atom.name, res.name, chain.name, str(res.seqid),
+                        atom.element.name, atom.pos.x, atom.pos.y, atom.pos.z,
+                    )
+                )
+    return atoms
+
+
 def contacting_atoms(
     residue_coords: np.ndarray, molecule_coords: np.ndarray, cutoff: float
 ) -> tuple[set[int], float]:

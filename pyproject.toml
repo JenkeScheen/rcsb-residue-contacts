@@ -22,6 +22,8 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=7.0"]
+# Interaction-type classification (H-bond, hydrophobic, pi-stacking, ...) via ProLIF.
+interactions = ["prolif>=2.0"]
 
 [project.scripts]
 pdbbind-residue-contacts = "pdbbind_residue_contacts.cli:main"

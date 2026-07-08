@@ -1,9 +1,11 @@
 """Write exemplary PDB files illustrating each pharmacophore interaction.
 
 For every pharmacophore group we keep a handful of small example structures, each containing the
-target residue instance (ATOM records) plus the interacting molecule (HETATM records) in their
-shared coordinate frame. Examples are buffered in memory and only written at the end, once the
-top ``max_groups`` groups by total count are known.
+whole binding pocket (all residues from PDBBind's ``_pocket.pdb``, as ATOM records) plus the
+interacting molecule (HETATM records) in their shared coordinate frame -- so the queried residue
+is shown in its structural context, not in isolation. When the pocket file is unavailable we fall
+back to just the queried residue instance. Examples are buffered in memory and only written at the
+end, once the top ``max_groups`` groups by total count are known.
 """
 
 from __future__ import annotations
@@ -48,25 +50,36 @@ def _atom_line(
     )
 
 
-def render_pair_pdb(
+def render_example_pdb(
     residue: ResidueInstance,
     molecule_resname: str,
     molecule_atoms: list[tuple[str, str, float, float, float]],
+    pocket_atoms: list[tuple[str, str, str, str, str, str, float, float, float]] | None = None,
 ) -> str:
-    """Render a residue + molecule pair as PDB text.
+    """Render an example structure as PDB text: binding pocket + interacting molecule.
 
-    ``molecule_atoms`` is a list of ``(atom_name, element, x, y, z)`` tuples.
+    ``pocket_atoms`` is the full ``_pocket.pdb`` content as
+    ``(record, name, resname, chain, seqid, element, x, y, z)`` tuples; when omitted/empty we fall
+    back to just the queried ``residue`` instance. ``molecule_atoms`` is a list of
+    ``(atom_name, element, x, y, z)`` tuples, written as HETATM in the shared coordinate frame.
     """
     lines: list[str] = []
     serial = 1
-    for rec in residue.atoms:
-        lines.append(
-            _atom_line(
-                serial, "ATOM", rec.name, residue.name, residue.chain,
-                residue.seqid, rec.element, rec.x, rec.y, rec.z,
+    if pocket_atoms:
+        for record, name, resname, chain, seqid, element, x, y, z in pocket_atoms:
+            lines.append(
+                _atom_line(serial, record, name, resname, chain, seqid, element, x, y, z)
             )
-        )
-        serial += 1
+            serial += 1
+    else:
+        for rec in residue.atoms:
+            lines.append(
+                _atom_line(
+                    serial, "ATOM", rec.name, residue.name, residue.chain,
+                    residue.seqid, rec.element, rec.x, rec.y, rec.z,
+                )
+            )
+            serial += 1
     lines.append("TER")
     for name, element, x, y, z in molecule_atoms:
         lines.append(

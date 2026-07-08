@@ -12,4 +12,5 @@ dependencies:
   - pytest >=7.0
   - pip
   - pip:
+      - prolif >=2.0
       - -e .

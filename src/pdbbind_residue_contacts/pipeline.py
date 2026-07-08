@@ -11,7 +11,7 @@ import pandas as pd
 from rdkit import Chem
 from tqdm import tqdm
 
-from . import contacts, molecules, pharmacophores, plots
+from . import contacts, interactions, molecules, pharmacophores, plots
 from .classify import DRUG_LIKE, SOLVENT
 from .examples import ExampleCollector
 from .pdbbind import Entry, select_entries
@@ -31,6 +31,7 @@ class Config:
     examples_per_group: int = 3
     max_groups: int = 50
     seed: int = 0
+    classify_interactions: bool = True
 
 
 def _mol_atom_tuples(mol: Chem.Mol) -> list[tuple[str, str, float, float, float]]:
@@ -56,6 +57,7 @@ def _record_molecule(
     rows: list[dict],
     collector: ExampleCollector,
     connectivity: bool,
+    pocket_atoms: list | None = None,
 ) -> None:
     """Detect contacts to every residue instance and record pharmacophore hits + examples.
 
@@ -90,18 +92,54 @@ def _record_molecule(
             if collector.needs(group_key):
                 if mol_tuples is None:
                     mol_tuples = _mol_atom_tuples(mol)
-                pdb_text = _render(res, ccd, mol_tuples)
+                pdb_text = _render(res, ccd, mol_tuples, pocket_atoms)
                 collector.offer(group_key, entry_id, molecule_id, pdb_text)
 
 
-def _render(res, ccd, mol_tuples):
-    from .examples import render_pair_pdb
+def _render(res, ccd, mol_tuples, pocket_atoms=None):
+    from .examples import render_example_pdb
 
-    return render_pair_pdb(res, ccd, mol_tuples)
+    return render_example_pdb(res, ccd, mol_tuples, pocket_atoms)
+
+
+def _record_interactions(
+    cfg: Config, entry: Entry, fp, int_rows: list[dict]
+) -> None:
+    """Type the drug-like ligand<->residue interactions with ProLIF and append rows.
+
+    Restricted to the curated ligand: ProLIF needs a correct bond graph and hydrogens, which the
+    geometry-perceived solvent het groups lack.
+
+    Uses PDBBind's ``_pocket.pdb`` (binding-site residues only) rather than the full protein: any
+    residue close enough to interact is in the pocket, so results are identical, but building the
+    ProLIF molecule from a whole protein costs seconds/entry vs milliseconds for the pocket. Falls
+    back to the full protein only if the pocket file is missing.
+    """
+    protein_source = entry.pocket_pdb if entry.pocket_pdb.exists() else entry.protein_pdb
+    prot = interactions.protein_plf(protein_source)
+    if prot is None:
+        return
+    ligand = interactions.ligand_plf(entry.ligand_sdf, entry.ligand_mol2)
+    if ligand is None:
+        return
+    for row in interactions.residue_interactions(fp, ligand, prot, cfg.residue):
+        int_rows.append(
+            {
+                "entry_id": entry.pdb_id,
+                "ligand_class": DRUG_LIKE,
+                "molecule_id": entry.pdb_id,
+                **row,
+            }
+        )
 
 
 def _process_entry(
-    cfg: Config, entry: Entry, rows: list[dict], collector: ExampleCollector
+    cfg: Config,
+    entry: Entry,
+    rows: list[dict],
+    collector: ExampleCollector,
+    fp=None,
+    int_rows: list[dict] | None = None,
 ) -> None:
     structure = contacts.read_protein(entry.protein_pdb)
     if structure is None:
@@ -110,6 +148,11 @@ def _process_entry(
     if not residues:
         return
 
+    # Full binding pocket for example structures (empty if the file is missing -> per-residue fallback).
+    pocket_atoms = (
+        contacts.read_pocket_atoms(entry.pocket_pdb) if entry.pocket_pdb.exists() else []
+    )
+
     # Drug-like: the curated PDBBind ligand.
     ligand = molecules.load_ligand(entry.ligand_sdf, entry.ligand_mol2)
     if ligand is not None:
@@ -117,8 +160,10 @@ def _process_entry(
             cfg, ligand, molecules.coords_of(ligand), DRUG_LIKE,
             molecule_id=entry.pdb_id, ccd="LIG", residues=residues,
             entry_id=entry.pdb_id, rows=rows, collector=collector,
-            connectivity=False,
+            connectivity=False, pocket_atoms=pocket_atoms,
         )
+        if fp is not None and int_rows is not None:
+            _record_interactions(cfg, entry, fp, int_rows)
 
     # Solvent: non-water het groups from the protein PDB.
     for het in contacts.solvent_het_groups(structure):
@@ -130,7 +175,7 @@ def _process_entry(
             cfg, mol, molecules.coords_of(mol), SOLVENT,
             molecule_id=molecule_id, ccd=het.ccd, residues=residues,
             entry_id=entry.pdb_id, rows=rows, collector=collector,
-            connectivity=True,
+            connectivity=True, pocket_atoms=pocket_atoms,
         )
 
 
@@ -149,16 +194,34 @@ def run(cfg: Config) -> pd.DataFrame:
         max_groups=cfg.max_groups,
     )
 
+    fp = None
+    int_rows: list[dict] = []
+    if cfg.classify_interactions:
+        if interactions.HAS_PROLIF:
+            fp = interactions.make_fingerprint()
+        else:
+            tqdm.write(
+                "[warn] ProLIF not installed; skipping interaction-type classification. "
+                "Install with `pip install prolif` (or `pip install '.[interactions]'`)."
+            )
+
     rows: list[dict] = []
     for entry in tqdm(entries, desc=f"Scanning {cfg.residue} contacts", unit="entry"):
         try:
-            _process_entry(cfg, entry, rows, collector)
+            _process_entry(cfg, entry, rows, collector, fp=fp, int_rows=int_rows)
         except Exception as exc:  # pragma: no cover - resilience
             tqdm.write(f"[warn] {entry.pdb_id}: {exc}")
 
     df = pd.DataFrame(rows)
     results_csv = cfg.out_dir / "results.csv"
     df.to_csv(results_csv, index=False)
+
+    int_df = pd.DataFrame(
+        int_rows,
+        columns=["entry_id", "ligand_class", "molecule_id", "residue_chain",
+                 "residue_seqid", "interaction"],
+    )
+    int_df.to_csv(cfg.out_dir / "interactions.csv", index=False)
 
     # Group counts for examples (per class/pharmacophore) and plots.
     group_counts: Counter = Counter()
@@ -167,9 +230,10 @@ def run(cfg: Config) -> pd.DataFrame:
             group_counts[f"{cls}/{label}"] += 1
     collector.finalize(dict(group_counts))
 
-    plots.make_all(df, cfg.out_dir / "plots", residue=cfg.residue)
+    plots.make_all(df, cfg.out_dir / "plots", residue=cfg.residue, interactions_df=int_df)
 
     tqdm.write(
-        f"Done: {len(entries)} entries, {len(df)} contact records -> {cfg.out_dir}"
+        f"Done: {len(entries)} entries, {len(df)} contact records, "
+        f"{len(int_df)} interactions -> {cfg.out_dir}"
     )
     return df

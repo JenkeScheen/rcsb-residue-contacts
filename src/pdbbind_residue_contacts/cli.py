@@ -80,6 +80,10 @@ def build_parser() -> argparse.ArgumentParser:
         "--max-groups", type=int, default=50,
         help="Only write example folders for the N largest pharmacophore groups.",
     )
+    p.add_argument(
+        "--no-interactions", dest="classify_interactions", action="store_false",
+        help="Skip ProLIF interaction-type classification (H-bond, hydrophobic, pi-stacking, ...).",
+    )
     p.add_argument("--seed", type=int, default=0, help="Random seed for entry sampling.")
     p.add_argument("-v", "--verbose", action="store_true", help="Verbose logging.")
     p.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
@@ -105,6 +109,7 @@ def main(argv: list[str] | None = None) -> int:
         examples_per_group=args.examples_per_group,
         max_groups=args.max_groups,
         seed=args.seed,
+        classify_interactions=args.classify_interactions,
     )
 
     try:
