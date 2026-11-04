@@ -1,44 +1,75 @@
-"""Example-structure rendering: full pocket + interacting molecule, with per-residue fallback."""
+"""Example structures: ring-system ranking, pick order, PDB output with REMARKs."""
 
-import numpy as np
+import pandas as pd
 
-from pdbbind_residue_contacts.contacts import ResidueInstance
-from pdbbind_residue_contacts.examples import render_example_pdb
-from pdbbind_residue_contacts.molecules import AtomRecord
+from conftest import fixture_text
+from rcsb_residue_contacts.examples import (
+    group_dir_name, ring_system_examples, slug, to_pdb, write_examples,
+)
 
-
-def _residue() -> ResidueInstance:
-    atoms = [AtomRecord(name="CA", element="C", x=1.0, y=1.0, z=1.0)]
-    return ResidueInstance(
-        chain="A", seqid="38", name="TRP", atoms=atoms,
-        coords=np.array([[1.0, 1.0, 1.0]]),
-    )
+BENZ, PYR = "c1ccccc1", "c1ccncc1"
 
 
-_MOL_ATOMS = [("C1", "C", 5.0, 5.0, 5.0), ("O1", "O", 6.0, 5.0, 5.0)]
+def _row(entry, smiles, distance, asym="B", kind="face-to-face", polar=False, comp="LIG"):
+    return {
+        "entry_id": entry, "asym_id": asym, "comp_id": comp, "ring_system_smiles": smiles,
+        "stack_type": kind, "distance": distance, "angle": 5.0, "offset": 0.5,
+        "polar_contact": polar, "metal_coordination": False,
+        "residue_name": "HIS", "residue_chain": "A", "residue_seqid": "57",
+    }
 
 
-def test_render_includes_full_pocket_and_molecule():
-    pocket = [
-        ("ATOM", "N", "HIS", "A", "27", "N", 0.0, 0.0, 0.0),
-        ("ATOM", "CA", "HIS", "A", "27", "C", 0.5, 0.0, 0.0),
-        ("ATOM", "CA", "TRP", "A", "38", "C", 1.0, 1.0, 1.0),
+STACKS = pd.DataFrame(
+    [
+        _row("1AAA", BENZ, 3.9),
+        _row("1AAA", BENZ, 3.7, asym="C"),  # same entry/ligand: one pair, closer copy wins
+        _row("2BBB", BENZ, 3.4, polar=True),  # closest, but has a polar contact -> ranked last
+        _row("3CCC", BENZ, 3.8),
+        _row("4DDD", PYR, 4.0),
+        _row("5EEE", "c1ccsc1", 3.5, kind="edge-to-face"),  # not face-to-face: ignored
     ]
-    text = render_example_pdb(_residue(), "LIG", _MOL_ATOMS, pocket_atoms=pocket)
-    atom_lines = [l for l in text.splitlines() if l.startswith("ATOM")]
-    het_lines = [l for l in text.splitlines() if l.startswith("HETATM")]
-    # Whole pocket is present (both residues), not just the queried TRP.
-    assert len(atom_lines) == 3
-    assert any("HIS" in l for l in atom_lines) and any("TRP" in l for l in atom_lines)
-    assert len(het_lines) == len(_MOL_ATOMS)
-    # Continuous serial numbering across pocket + molecule.
-    serials = [int(l[6:11]) for l in atom_lines + het_lines]
-    assert serials == list(range(1, len(serials) + 1))
+)
 
 
-def test_render_falls_back_to_residue_when_no_pocket():
-    for pocket in (None, []):
-        text = render_example_pdb(_residue(), "LIG", _MOL_ATOMS, pocket_atoms=pocket)
-        atom_lines = [l for l in text.splitlines() if l.startswith("ATOM")]
-        assert len(atom_lines) == 1 and "TRP" in atom_lines[0]
-        assert sum(l.startswith("HETATM") for l in text.splitlines()) == len(_MOL_ATOMS)
+def test_slug_and_group_names():
+    assert slug("c1ncc2nc[nH]c2n1") == "c1ncc2nc_nH_c2n1"
+    assert slug("***") == "group"
+    assert group_dir_name(3, BENZ) == "03_c1ccccc1"
+
+
+def test_ranking_and_pick_order():
+    picks = ring_system_examples(STACKS, per_group=3)
+    assert picks.groupby("rank")["ring_system_smiles"].first().to_dict() == {1: BENZ, 2: PYR}
+    assert picks.groupby("rank")["n_pairs"].first().to_dict() == {1: 3, 2: 1}
+    benz = picks[picks["rank"] == 1]
+    # Pure stacks first (closest first), the polar-contact stack last; one pick per entry.
+    assert benz["entry_id"].tolist() == ["1AAA", "3CCC", "2BBB"]
+    assert benz["asym_id"].tolist() == ["C", "B", "B"]
+    assert benz["pure_stacking"].tolist() == [True, True, False]
+    assert ring_system_examples(STACKS, per_group=2, max_groups=1)["entry_id"].tolist() == [
+        "1AAA", "3CCC"
+    ]
+
+
+def test_to_pdb_adds_remarks_and_atoms():
+    pdb = to_pdb(fixture_text("6PML_HIS.cif"), ["REMARK 999 hello"])
+    lines = pdb.splitlines()
+    assert lines[0] == "REMARK 999 hello"
+    assert any(l.startswith("ATOM") and " HIS " in l for l in lines)
+    assert to_pdb("not a cif", []) is None
+
+
+def test_write_examples(tmp_path, fake_client):
+    index = write_examples(fake_client, STACKS, tmp_path, per_group=3, max_groups=2)
+    assert index["entry_id"].tolist() == ["1AAA", "3CCC", "2BBB", "4DDD"]
+    assert index["file"].iloc[0] == "01_c1ccccc1/1AAA_LIG_C__HISA57.pdb"
+    text = (tmp_path / index["file"].iloc[0]).read_text()
+    assert text.startswith("REMARK 999 face-to-face pi-stack")
+    assert "stacks on HISA57: centroid 3.70 A" in text
+    assert (tmp_path / "index.csv").exists()
+    assert [c[0] for c in fake_client.calls] == ["pocket"] * 4
+
+
+def test_write_examples_with_nothing_to_write(tmp_path, fake_client):
+    index = write_examples(fake_client, STACKS.iloc[5:], tmp_path)
+    assert index.empty and (tmp_path / "index.csv").exists()

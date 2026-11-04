@@ -1,0 +1,418 @@
+data_13RD
+#
+_model_server_result.job_id            0jAXD-6iAFjXBT83WihHVA 
+_model_server_result.datetime_utc      '2026-11-04 15:58:53' 
+_model_server_result.server_version    0.9.13 
+_model_server_result.query_name        residueSurroundings 
+_model_server_result.source_id         pdb-bcif 
+_model_server_result.entry_id          13rd 
+#
+loop_
+_model_server_params.name
+_model_server_params.value
+atom_site '{"label_asym_id":"D"}' 
+radius 6 
+#
+_entry.id    13RD 
+#
+_exptl.entry_id    13RD 
+_exptl.method      'X-RAY DIFFRACTION' 
+#
+loop_
+_entity.details
+_entity.formula_weight
+_entity.id
+_entity.src_method
+_entity.type
+_entity.pdbx_description
+_entity.pdbx_number_of_molecules
+_entity.pdbx_parent_entity_id
+_entity.pdbx_mutation
+_entity.pdbx_fragment
+_entity.pdbx_ec
+? 39803.066 1 man polymer 'Papain-like protease nsp3' 1 . C111S ? 3.4.19.12,3.4.22.- 
+? 174.199 4 syn non-polymer 4-(4-methoxyphenyl)-1H-imidazole 1 . ? ? ? 
+? 18.015 5 nat water water 279 . ? ? ? 
+#
+_cell.angle_alpha         90 
+_cell.angle_beta          90 
+_cell.angle_gamma         120 
+_cell.entry_id            13RD 
+_cell.length_a            81.37 
+_cell.length_b            81.37 
+_cell.length_c            135.13 
+_cell.Z_PDB               6 
+_cell.pdbx_unique_axis    ? 
+#
+_symmetry.entry_id                 13RD 
+_symmetry.cell_setting             ? 
+_symmetry.Int_Tables_number        154 
+_symmetry.space_group_name_Hall    'P 32 2"' 
+_symmetry.space_group_name_H-M     'P 32 2 1' 
+#
+_struct_conf.conf_type_id             helx_p 
+_struct_conf.id                       helx_p1 
+_struct_conf.beg_label_comp_id        PHE 
+_struct_conf.beg_label_seq_id         106 
+_struct_conf.pdbx_beg_PDB_ins_code    . 
+_struct_conf.beg_label_asym_id        A 
+_struct_conf.beg_label_entity_id      1 
+_struct_conf.beg_auth_comp_id         PHE 
+_struct_conf.beg_auth_seq_id          69 
+_struct_conf.beg_auth_asym_id         A 
+_struct_conf.end_label_comp_id        HIS 
+_struct_conf.end_label_seq_id         110 
+_struct_conf.pdbx_end_PDB_ins_code    . 
+_struct_conf.end_label_asym_id        A 
+_struct_conf.end_label_entity_id      1 
+_struct_conf.end_auth_comp_id         HIS 
+_struct_conf.end_auth_seq_id          73 
+_struct_conf.end_auth_asym_id         A 
+_struct_conf.pdbx_PDB_helix_class     1 
+_struct_conf.details                  ? 
+_struct_conf.pdbx_PDB_helix_length    5 
+#
+loop_
+_struct_asym.details
+_struct_asym.entity_id
+_struct_asym.id
+_struct_asym.pdbx_modified
+_struct_asym.pdbx_blank_PDB_chainid_flag
+? 1 A N N 
+? 4 D N N 
+? 5 E N N 
+#
+_entity_poly.entity_id                       1 
+_entity_poly.nstd_linkage                    no 
+_entity_poly.nstd_monomer                    no 
+_entity_poly.type                            polypeptide(L) 
+_entity_poly.pdbx_strand_id                  A 
+_entity_poly.pdbx_seq_one_letter_code        
+;MGSSHHHHHHSSGLVPRGSHMASMTGGQQMGRGSSLREVRTIKVFTTVDNINLHTQVVDMSMTYGQQFGPTYLDGADVTK
+IKPHNSHEGKTFYVLPNDDTLRVEAFEYYHTTDPSFLGRYMSALNHTKKWKYPQVNGLTSIKWADNNSYLATALLTLQQI
+ELKFNPPALQDAYYRARAGEAANFCALILAYCNKTVGELGDVRETMSYLFQHANLDSCKRVLNVVCKTCGQQQTTLKGVE
+AVMYMGTLSYEQFKKGVQIPCTCGKQATKYLVQQESPFVMMSAPPAQYELKHGTFTCASEYTGNYQCGHYKHITSKETLY
+CIDGALLTKSSEYKGPITDVFYKENSYTTTIKHV
+;
+_entity_poly.pdbx_seq_one_letter_code_can    
+;MGSSHHHHHHSSGLVPRGSHMASMTGGQQMGRGSSLREVRTIKVFTTVDNINLHTQVVDMSMTYGQQFGPTYLDGADVTK
+IKPHNSHEGKTFYVLPNDDTLRVEAFEYYHTTDPSFLGRYMSALNHTKKWKYPQVNGLTSIKWADNNSYLATALLTLQQI
+ELKFNPPALQDAYYRARAGEAANFCALILAYCNKTVGELGDVRETMSYLFQHANLDSCKRVLNVVCKTCGQQQTTLKGVE
+AVMYMGTLSYEQFKKGVQIPCTCGKQATKYLVQQESPFVMMSAPPAQYELKHGTFTCASEYTGNYQCGHYKHITSKETLY
+CIDGALLTKSSEYKGPITDVFYKENSYTTTIKHV
+;
+_entity_poly.pdbx_target_identifier          ? 
+#
+loop_
+_struct_conn.conn_type_id
+_struct_conn.details
+_struct_conn.id
+_struct_conn.ptnr1_label_asym_id
+_struct_conn.ptnr1_label_atom_id
+_struct_conn.ptnr1_label_comp_id
+_struct_conn.ptnr1_label_seq_id
+_struct_conn.ptnr1_auth_asym_id
+_struct_conn.ptnr1_auth_comp_id
+_struct_conn.ptnr1_auth_seq_id
+_struct_conn.ptnr1_symmetry
+_struct_conn.ptnr2_label_asym_id
+_struct_conn.ptnr2_label_atom_id
+_struct_conn.ptnr2_label_comp_id
+_struct_conn.ptnr2_label_seq_id
+_struct_conn.ptnr2_auth_asym_id
+_struct_conn.ptnr2_auth_comp_id
+_struct_conn.ptnr2_auth_seq_id
+_struct_conn.ptnr2_symmetry
+_struct_conn.pdbx_ptnr1_PDB_ins_code
+_struct_conn.pdbx_ptnr1_label_alt_id
+_struct_conn.pdbx_ptnr1_standard_comp_id
+_struct_conn.pdbx_ptnr2_PDB_ins_code
+_struct_conn.pdbx_ptnr2_label_alt_id
+_struct_conn.pdbx_ptnr3_PDB_ins_code
+_struct_conn.pdbx_ptnr3_label_alt_id
+_struct_conn.pdbx_ptnr3_label_asym_id
+_struct_conn.pdbx_ptnr3_label_atom_id
+_struct_conn.pdbx_ptnr3_label_comp_id
+_struct_conn.pdbx_ptnr3_label_seq_id
+_struct_conn.pdbx_PDB_id
+_struct_conn.pdbx_dist_value
+_struct_conn.pdbx_value_order
+metalc ? metalc1 A SG CYS 226 A CYS 189 1_555 B ZN ZN . A ZN 401 1_555 ? ? ? ? ? ? ? ? ? ? ? ? 2.326 ? 
+metalc ? metalc2 A SG CYS 229 A CYS 192 1_555 B ZN ZN . A ZN 401 1_555 ? ? ? ? ? ? ? ? ? ? ? ? 2.357 ? 
+metalc ? metalc3 A SG CYS 261 A CYS 224 1_555 B ZN ZN . A ZN 401 1_555 ? ? ? ? ? ? ? ? ? ? ? ? 2.369 ? 
+metalc ? metalc4 A SG CYS 263 A CYS 226 1_555 B ZN ZN . A ZN 401 1_555 ? ? ? ? ? ? ? ? ? ? ? ? 2.361 ? 
+metalc ? metalc5 B ZN ZN . A ZN 401 1_555 E O HOH . A HOH 504 1_555 ? ? ? ? ? ? ? ? ? ? ? ? 2.152 ? 
+#
+loop_
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.comp_id
+_chem_comp_bond.value_order
+_chem_comp_bond.pdbx_ordinal
+_chem_comp_bond.pdbx_stereo_config
+_chem_comp_bond.pdbx_aromatic_flag
+C1 O1 A1CXB sing 1 n n 
+O1 C2 A1CXB sing 2 n n 
+C2 C3 A1CXB doub 3 n y 
+C3 C4 A1CXB sing 4 n y 
+C4 C5 A1CXB doub 5 n y 
+C5 C6 A1CXB sing 6 n y 
+C6 C7 A1CXB doub 7 n y 
+C2 C7 A1CXB sing 8 n y 
+C5 C8 A1CXB sing 9 n n 
+C8 C9 A1CXB doub 10 n y 
+C9 N1 A1CXB sing 11 n y 
+N1 C10 A1CXB sing 12 n y 
+C10 N2 A1CXB doub 13 n y 
+C8 N2 A1CXB sing 14 n y 
+C10 H10 A1CXB sing 15 n n 
+C1 H1 A1CXB sing 16 n n 
+C1 H2 A1CXB sing 17 n n 
+C1 H3 A1CXB sing 18 n n 
+C3 H4 A1CXB sing 19 n n 
+C4 H5 A1CXB sing 20 n n 
+C6 H6 A1CXB sing 21 n n 
+C7 H7 A1CXB sing 22 n n 
+C9 H8 A1CXB sing 23 n n 
+N1 H9 A1CXB sing 24 n n 
+N CA ASN sing 63 n n 
+N H ASN sing 64 n n 
+N H2 ASN sing 65 n n 
+CA C ASN sing 66 n n 
+CA CB ASN sing 67 n n 
+CA HA ASN sing 68 n n 
+C O ASN doub 69 n n 
+C OXT ASN sing 70 n n 
+CB CG ASN sing 71 n n 
+CB HB2 ASN sing 72 n n 
+CB HB3 ASN sing 73 n n 
+CG OD1 ASN doub 74 n n 
+CG ND2 ASN sing 75 n n 
+ND2 HD21 ASN sing 76 n n 
+ND2 HD22 ASN sing 77 n n 
+OXT HXT ASN sing 78 n n 
+N CA GLN sing 107 n n 
+N H GLN sing 108 n n 
+N H2 GLN sing 109 n n 
+CA C GLN sing 110 n n 
+CA CB GLN sing 111 n n 
+CA HA GLN sing 112 n n 
+C O GLN doub 113 n n 
+C OXT GLN sing 114 n n 
+CB CG GLN sing 115 n n 
+CB HB2 GLN sing 116 n n 
+CB HB3 GLN sing 117 n n 
+CG CD GLN sing 118 n n 
+CG HG2 GLN sing 119 n n 
+CG HG3 GLN sing 120 n n 
+CD OE1 GLN doub 121 n n 
+CD NE2 GLN sing 122 n n 
+NE2 HE21 GLN sing 123 n n 
+NE2 HE22 GLN sing 124 n n 
+OXT HXT GLN sing 125 n n 
+N CA GLU sing 126 n n 
+N H GLU sing 127 n n 
+N H2 GLU sing 128 n n 
+CA C GLU sing 129 n n 
+CA CB GLU sing 130 n n 
+CA HA GLU sing 131 n n 
+C O GLU doub 132 n n 
+C OXT GLU sing 133 n n 
+CB CG GLU sing 134 n n 
+CB HB2 GLU sing 135 n n 
+CB HB3 GLU sing 136 n n 
+CG CD GLU sing 137 n n 
+CG HG2 GLU sing 138 n n 
+CG HG3 GLU sing 139 n n 
+CD OE1 GLU doub 140 n n 
+CD OE2 GLU sing 141 n n 
+OE2 HE2 GLU sing 142 n n 
+OXT HXT GLU sing 143 n n 
+N CA HIS sing 153 n n 
+N H HIS sing 154 n n 
+N H2 HIS sing 155 n n 
+CA C HIS sing 156 n n 
+CA CB HIS sing 157 n n 
+CA HA HIS sing 158 n n 
+C O HIS doub 159 n n 
+C OXT HIS sing 160 n n 
+CB CG HIS sing 161 n n 
+CB HB2 HIS sing 162 n n 
+CB HB3 HIS sing 163 n n 
+CG ND1 HIS sing 164 n y 
+CG CD2 HIS doub 165 n y 
+ND1 CE1 HIS doub 166 n y 
+ND1 HD1 HIS sing 167 n n 
+CD2 NE2 HIS sing 168 n y 
+CD2 HD2 HIS sing 169 n n 
+CE1 NE2 HIS sing 170 n y 
+CE1 HE1 HIS sing 171 n n 
+NE2 HE2 HIS sing 172 n n 
+OXT HXT HIS sing 173 n n 
+O H1 HOH sing 174 n n 
+O H2 HOH sing 175 n n 
+N CA PHE sing 269 n n 
+N H PHE sing 270 n n 
+N H2 PHE sing 271 n n 
+CA C PHE sing 272 n n 
+CA CB PHE sing 273 n n 
+CA HA PHE sing 274 n n 
+C O PHE doub 275 n n 
+C OXT PHE sing 276 n n 
+CB CG PHE sing 277 n n 
+CB HB2 PHE sing 278 n n 
+CB HB3 PHE sing 279 n n 
+CG CD1 PHE doub 280 n y 
+CG CD2 PHE sing 281 n y 
+CD1 CE1 PHE sing 282 n y 
+CD1 HD1 PHE sing 283 n n 
+CD2 CE2 PHE doub 284 n y 
+CD2 HD2 PHE sing 285 n n 
+CE1 CZ PHE doub 286 n y 
+CE1 HE1 PHE sing 287 n n 
+CE2 CZ PHE sing 288 n y 
+CE2 HE2 PHE sing 289 n n 
+CZ HZ PHE sing 290 n n 
+OXT HXT PHE sing 291 n n 
+N CA THR sing 322 n n 
+N H THR sing 323 n n 
+N H2 THR sing 324 n n 
+CA C THR sing 325 n n 
+CA CB THR sing 326 n n 
+CA HA THR sing 327 n n 
+C O THR doub 328 n n 
+C OXT THR sing 329 n n 
+CB OG1 THR sing 330 n n 
+CB CG2 THR sing 331 n n 
+CB HB THR sing 332 n n 
+OG1 HG1 THR sing 333 n n 
+CG2 HG21 THR sing 334 n n 
+CG2 HG22 THR sing 335 n n 
+CG2 HG23 THR sing 336 n n 
+OXT HXT THR sing 337 n n 
+#
+_atom_sites.entry_id                     13RD 
+_atom_sites.fract_transf_matrix[1][1]    0.01229 
+_atom_sites.fract_transf_matrix[1][2]    0.007095 
+_atom_sites.fract_transf_matrix[1][3]    0 
+_atom_sites.fract_transf_matrix[2][1]    0 
+_atom_sites.fract_transf_matrix[2][2]    0.014191 
+_atom_sites.fract_transf_matrix[2][3]    0 
+_atom_sites.fract_transf_matrix[3][1]    0 
+_atom_sites.fract_transf_matrix[3][2]    0 
+_atom_sites.fract_transf_matrix[3][3]    0.0074 
+_atom_sites.fract_transf_vector[1]       0 
+_atom_sites.fract_transf_vector[2]       0 
+_atom_sites.fract_transf_vector[3]       0 
+#
+loop_
+_atom_site.group_PDB
+_atom_site.id
+_atom_site.type_symbol
+_atom_site.label_atom_id
+_atom_site.label_comp_id
+_atom_site.label_seq_id
+_atom_site.label_alt_id
+_atom_site.pdbx_PDB_ins_code
+_atom_site.label_asym_id
+_atom_site.label_entity_id
+_atom_site.Cartn_x
+_atom_site.Cartn_y
+_atom_site.Cartn_z
+_atom_site.occupancy
+_atom_site.B_iso_or_equiv
+_atom_site.pdbx_formal_charge
+_atom_site.auth_atom_id
+_atom_site.auth_comp_id
+_atom_site.auth_seq_id
+_atom_site.auth_asym_id
+_atom_site.pdbx_PDB_model_num
+ATOM 1 N N PHE 106 . . A 1 9.405 36.063 12.66 1 28.04 ? N PHE 69 A 1 
+ATOM 2 C CA PHE 106 . . A 1 9.6 34.721 12.119 1 27.89 ? CA PHE 69 A 1 
+ATOM 3 C C PHE 106 . . A 1 8.282 34.13 11.627 1 31.03 ? C PHE 69 A 1 
+ATOM 4 O O PHE 106 . . A 1 8.227 33.53 10.545 1 30.1 ? O PHE 69 A 1 
+ATOM 5 C CB PHE 106 . . A 1 10.23 33.795 13.154 1 33.9 ? CB PHE 69 A 1 
+ATOM 6 C CG PHE 106 . . A 1 10.472 32.415 12.617 1 35.13 ? CG PHE 69 A 1 
+ATOM 7 C CD1 PHE 106 . . A 1 11.438 32.207 11.634 1 31.06 ? CD1 PHE 69 A 1 
+ATOM 8 C CD2 PHE 106 . . A 1 9.686 31.35 13.022 1 40.39 ? CD2 PHE 69 A 1 
+ATOM 9 C CE1 PHE 106 . . A 1 11.646 30.946 11.103 1 32.89 ? CE1 PHE 69 A 1 
+ATOM 10 C CE2 PHE 106 . . A 1 9.887 30.085 12.491 1 43.16 ? CE2 PHE 69 A 1 
+ATOM 11 C CZ PHE 106 . . A 1 10.872 29.882 11.541 1 38.48 ? CZ PHE 69 A 1 
+ATOM 12 N N GLU 107 . . A 1 7.211 34.287 12.41 1 32.41 ? N GLU 70 A 1 
+ATOM 13 C CA GLU 107 . . A 1 5.906 33.781 11.99 1 29.37 ? CA GLU 70 A 1 
+ATOM 14 C C GLU 107 . . A 1 5.432 34.452 10.703 1 30.73 ? C GLU 70 A 1 
+ATOM 15 O O GLU 107 . . A 1 4.828 33.798 9.845 1 31.54 ? O GLU 70 A 1 
+ATOM 16 C CB GLU 107 . . A 1 4.881 33.981 13.111 1 35.09 ? CB GLU 70 A 1 
+ATOM 17 C CG GLU 107 . . A 1 5.007 32.971 14.258 1 44.31 ? CG GLU 70 A 1 
+ATOM 18 C CD GLU 107 . . A 1 5.231 31.542 13.768 1 76.45 ? CD GLU 70 A 1 
+ATOM 19 O OE1 GLU 107 . . A 1 4.329 30.989 13.097 1 73.5 ? OE1 GLU 70 A 1 
+ATOM 20 O OE2 GLU 107 . . A 1 6.29 30.956 14.099 1 65.25 ? OE2 GLU 70 A 1 
+ATOM 21 N N HIS 110 . . A 1 9.033 34.075 7.956 1 26.45 ? N HIS 73 A 1 
+ATOM 22 C CA HIS 110 . . A 1 9.734 32.79 7.888 1 32.48 ? CA HIS 73 A 1 
+ATOM 23 C C HIS 110 . . A 1 11.241 32.983 7.718 1 36.98 ? C HIS 73 A 1 
+ATOM 24 O O HIS 110 . . A 1 11.907 32.227 7.006 1 34.91 ? O HIS 73 A 1 
+ATOM 25 C CB HIS 110 . . A 1 9.172 31.903 6.774 1 34.34 ? CB HIS 73 A 1 
+ATOM 26 C CG HIS 110 . . A 1 7.811 31.349 7.073 1 37.4 ? CG HIS 73 A 1 
+ATOM 27 N ND1 HIS 110 . . A 1 7.247 30.332 6.332 1 35.36 ? ND1 HIS 73 A 1 
+ATOM 28 C CD2 HIS 110 . . A 1 6.9 31.675 8.025 1 35.03 ? CD2 HIS 73 A 1 
+ATOM 29 C CE1 HIS 110 . . A 1 6.051 30.049 6.82 1 35.35 ? CE1 HIS 73 A 1 
+ATOM 30 N NE2 HIS 110 . . A 1 5.814 30.853 7.841 1 33.52 ? NE2 HIS 73 A 1 
+ATOM 31 N N THR 111 . . A 1 11.789 33.995 8.389 1 30.07 ? N THR 74 A 1 
+ATOM 32 C CA THR 111 . . A 1 13.226 34.23 8.356 1 34.45 ? CA THR 74 A 1 
+ATOM 33 C C THR 111 . . A 1 13.654 34.809 9.696 1 33.84 ? C THR 74 A 1 
+ATOM 34 O O THR 111 . . A 1 12.86 35.447 10.391 1 37.18 ? O THR 74 A 1 
+ATOM 35 C CB THR 111 . . A 1 13.629 35.179 7.208 1 43.46 ? CB THR 74 A 1 
+ATOM 36 O OG1 THR 111 . . A 1 15.043 35.411 7.234 1 39.26 ? OG1 THR 74 A 1 
+ATOM 37 C CG2 THR 111 . . A 1 12.929 36.5 7.349 1 47.23 ? CG2 THR 74 A 1 
+ATOM 38 N N ASN 165 . . A 1 4.149 30.138 1.35 1 32.15 ? N ASN 128 A 1 
+ATOM 39 C CA ASN 165 . . A 1 4.123 29.659 2.73 1 33.78 ? CA ASN 128 A 1 
+ATOM 40 C C ASN 165 . . A 1 4.14 30.829 3.716 1 33.47 ? C ASN 128 A 1 
+ATOM 41 O O ASN 165 . . A 1 3.274 30.887 4.603 1 35.84 ? O ASN 128 A 1 
+ATOM 42 C CB ASN 165 . . A 1 5.305 28.722 2.989 1 38.94 ? CB ASN 128 A 1 
+ATOM 43 C CG ASN 165 . . A 1 5.05 27.309 2.497 1 60.29 ? CG ASN 128 A 1 
+ATOM 44 O OD1 ASN 165 . . A 1 3.905 26.904 2.286 1 51.39 ? OD1 ASN 128 A 1 
+ATOM 45 N ND2 ASN 165 . . A 1 6.127 26.557 2.286 1 66.11 ? ND2 ASN 128 A 1 
+ATOM 46 N N GLN 211 . . A 1 11.159 28.139 -3.141 1 35.25 ? N GLN 174 A 1 
+ATOM 47 C CA GLN 211 . . A 1 11.583 27.625 -1.843 1 36.98 ? CA GLN 174 A 1 
+ATOM 48 C C GLN 211 . . A 1 10.623 28.049 -0.743 1 39.19 ? C GLN 174 A 1 
+ATOM 49 O O GLN 211 . . A 1 10.51 27.368 0.284 1 35.21 ? O GLN 174 A 1 
+ATOM 50 C CB GLN 211 . . A 1 12.987 28.118 -1.496 1 38.52 ? CB GLN 174 A 1 
+ATOM 51 C CG GLN 211 . . A 1 14.089 27.484 -2.33 1 52.26 ? CG GLN 174 A 1 
+ATOM 52 C CD GLN 211 . . A 1 14.473 26.112 -1.838 1 80.55 ? CD GLN 174 A 1 
+ATOM 53 O OE1 GLN 211 . . A 1 15.356 25.461 -2.397 1 78.28 ? OE1 GLN 174 A 1 
+ATOM 54 N NE2 GLN 211 . . A 1 13.708 25.608 -0.879 1 82.38 ? NE2 GLN 174 A 1 
+ATOM 55 N N HIS 212 . . A 1 9.936 29.175 -0.933 1 34.78 ? N HIS 175 A 1 
+ATOM 56 C CA HIS 212 . . A 1 8.95 29.685 0.007 1 34.46 ? CA HIS 175 A 1 
+ATOM 57 C C HIS 212 . . A 1 7.521 29.373 -0.42 1 34.54 ? C HIS 175 A 1 
+ATOM 58 O O HIS 212 . . A 1 6.593 30.074 0 1 33.93 ? O HIS 175 A 1 
+ATOM 59 C CB HIS 212 . . A 1 9.129 31.195 0.17 1 33.22 ? CB HIS 175 A 1 
+ATOM 60 C CG HIS 212 . . A 1 10.413 31.575 0.838 1 46.81 ? CG HIS 175 A 1 
+ATOM 61 N ND1 HIS 212 . . A 1 10.592 31.494 2.204 1 50.99 ? ND1 HIS 175 A 1 
+ATOM 62 C CD2 HIS 212 . . A 1 11.593 32 0.327 1 43.97 ? CD2 HIS 175 A 1 
+ATOM 63 C CE1 HIS 212 . . A 1 11.819 31.879 2.507 1 44.01 ? CE1 HIS 175 A 1 
+ATOM 64 N NE2 HIS 212 . . A 1 12.447 32.188 1.388 1 52.83 ? NE2 HIS 175 A 1 
+HETATM 65 C C10 A1CXB . . . D 4 12.319 28.417 5.288 1 69.95 ? C10 A1CXB 403 A 1 
+HETATM 66 C C1 A1CXB . . . D 4 6.404 29.287 11.08 1 47.09 ? C1 A1CXB 403 A 1 
+HETATM 67 C C2 A1CXB . . . D 4 7.471 28.071 9.312 1 46.17 ? C2 A1CXB 403 A 1 
+HETATM 68 C C3 A1CXB . . . D 4 7.396 27.139 8.29 0.52 47.1 ? C3 A1CXB 403 A 1 
+HETATM 69 C C4 A1CXB . . . D 4 8.394 27.08 7.334 0.86 53.04 ? C4 A1CXB 403 A 1 
+HETATM 70 C C5 A1CXB . . . D 4 9.483 27.943 7.375 0.7 53.14 ? C5 A1CXB 403 A 1 
+HETATM 71 C C6 A1CXB . . . D 4 9.543 28.872 8.41 0.88 46.33 ? C6 A1CXB 403 A 1 
+HETATM 72 C C7 A1CXB . . . D 4 8.547 28.942 9.368 0.53 40.66 ? C7 A1CXB 403 A 1 
+HETATM 73 C C8 A1CXB . . . D 4 10.538 27.88 6.354 0.7 56.02 ? C8 A1CXB 403 A 1 
+HETATM 74 C C9 A1CXB . . . D 4 10.665 27.004 5.311 1 75.57 ? C9 A1CXB 403 A 1 
+HETATM 75 N N1 A1CXB . . . D 4 11.802 27.358 4.644 1 79.31 ? N1 A1CXB 403 A 1 
+HETATM 76 N N2 A1CXB . . . D 4 11.591 28.774 6.327 0.49 58.79 ? N2 A1CXB 403 A 1 
+HETATM 77 O O1 A1CXB . . . D 4 6.479 28.124 10.256 0.76 48.7 ? O1 A1CXB 403 A 1 
+HETATM 78 O O HOH . . . E 5 3.68 31.349 9.636 1 41.3 ? O HOH 560 A 1 
+HETATM 79 O O HOH . . . E 5 14.458 33.289 3.155 1 56.52 ? O HOH 655 A 1 
+HETATM 80 O O HOH . . . E 5 8.613 29.401 3.886 1 34.37 ? O HOH 670 A 1 
+HETATM 81 O O HOH . . . E 5 1.412 30.374 8.851 1 59.77 ? O HOH 764 A 1 
+#
+_model_server_stats.io_time_ms              28 
+_model_server_stats.parse_time_ms           7 
+_model_server_stats.create_model_time_ms    4 
+_model_server_stats.query_time_ms           290 
+_model_server_stats.encode_time_ms          2 
+_model_server_stats.element_count           81 
+#

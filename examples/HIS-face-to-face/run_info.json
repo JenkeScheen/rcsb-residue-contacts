@@ -1,0 +1,85 @@
+{
+  "mode": "search",
+  "search_query": {
+    "type": "group",
+    "logical_operator": "and",
+    "nodes": [
+      {
+        "type": "terminal",
+        "service": "text",
+        "parameters": {
+          "attribute": "rcsb_target_neighbors.target_comp_id",
+          "operator": "exact_match",
+          "value": "HIS"
+        }
+      },
+      {
+        "type": "terminal",
+        "service": "text",
+        "parameters": {
+          "attribute": "rcsb_chem_comp_info.bond_count_aromatic",
+          "operator": "greater_or_equal",
+          "value": 5
+        }
+      },
+      {
+        "type": "terminal",
+        "service": "text",
+        "parameters": {
+          "attribute": "rcsb_nonpolymer_instance_validation_score.is_subject_of_investigation",
+          "operator": "exact_match",
+          "value": "Y"
+        }
+      },
+      {
+        "type": "terminal",
+        "service": "text",
+        "parameters": {
+          "attribute": "rcsb_entry_info.resolution_combined",
+          "operator": "less_or_equal",
+          "value": 3.0
+        }
+      }
+    ]
+  },
+  "matching_entries": 39746,
+  "matching_ligand_entities": 42957,
+  "entries_scanned": 2000,
+  "tool_version": "0.2.0",
+  "run_utc": "2026-11-04T16:17:42+00:00",
+  "entries_without_metadata": 0,
+  "entries_failed": 0,
+  "ligand_instances": 5799,
+  "ligand_instances_ok": 5799,
+  "face_to_face_hits": 344,
+  "face_to_face_entries": 177,
+  "config": {
+    "residue": "HIS",
+    "max_entries": 2000,
+    "seed": 0,
+    "entry_ids": null,
+    "released_after": null,
+    "released_before": null,
+    "max_resolution": 3.0,
+    "loi_only": true,
+    "min_aromatic_bonds": 5,
+    "exclude_comps": [],
+    "criteria": {
+      "max_distance": 5.5,
+      "max_parallel_angle": 30.0,
+      "min_perpendicular_angle": 60.0,
+      "max_offset": 2.0,
+      "window": 7.0
+    },
+    "contact_cutoff": 4.0,
+    "atom_scope": "sidechain",
+    "polar_cutoff": 3.5,
+    "metal_cutoff": 2.8,
+    "out_dir": "examples/HIS-face-to-face",
+    "cache_dir": ".rcsb_cache",
+    "workers": 8,
+    "examples_per_group": 3,
+    "max_groups": 30,
+    "pocket_radius": 6.0
+  }
+}

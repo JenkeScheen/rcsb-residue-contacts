@@ -1,7 +1,6 @@
-# PDBBind dataset (huge; download it yourself — see README). Never commit.
+# Local data and the RCSB download cache. Never commit.
 data/
-**/refined-set/
-**/v2020-other-PL/
+.rcsb_cache/
 
 # Bulky structure / molecule files anywhere
 *.pdb
@@ -19,10 +18,13 @@ data/
 !tests/**/*.mol2
 !tests/**/*.cif
 
-# Pipeline outputs
+# Pipeline outputs. The curated example run in examples/HIS-face-to-face/ is tracked in full:
+# tables, plots (incl. the README figure) and its ~1 MB of example pocket structures.
 results/
-examples/
-plots/
+/examples/*
+!/examples/HIS-face-to-face/
+!/examples/HIS-face-to-face/examples/**/*.pdb
+!/examples/HIS-face-to-face/examples/**/*.cif
 
 # Python
 __pycache__/

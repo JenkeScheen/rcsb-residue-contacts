@@ -1,4 +1,4 @@
-"""Command-line interface for the PDBBind pharmacophore-contact scanner."""
+"""Command-line interface: ligand <-> aromatic-residue stacking across the PDB via RCSB APIs."""
 
 from __future__ import annotations
 
@@ -9,17 +9,11 @@ from pathlib import Path
 
 from tqdm import tqdm
 
-from . import __version__
+from . import __version__, discovery
 from .pipeline import Config, run
-
-PDBBIND_URL = "https://www.pdbbind-plus.org.cn/download?login=true"
-
-_DATA_HELP = (
-    "PDBBind is not bundled with this tool. Create a free account and download it from\n"
-    f"    {PDBBIND_URL}\n"
-    "then extract the subsets so that '<data-dir>/refined-set/<id>/<id>_protein.pdb' and/or\n"
-    "'<data-dir>/v2020-other-PL/<id>/...' exist (default <data-dir> is ./data)."
-)
+from .rcsb import RcsbClient, RcsbError
+from .stacking import StackCriteria
+from .structures import SUPPORTED_RESIDUES
 
 
 class _TqdmLoggingHandler(logging.Handler):
@@ -43,79 +37,115 @@ def _configure_logging(verbose: bool) -> None:
 
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
-        prog="pdbbind-residue-contacts",
+        prog="rcsb-residue-contacts",
         description=(
-            "Scan a local PDBBind dataset for the pharmacophores of non-protein molecules "
-            "contacting a given residue type, split by drug-like vs solvent molecules."
+            "Find PDB entries whose ligands pi-stack (face-to-face / edge-to-face) on an aromatic "
+            "residue type, using only the RCSB PDB Search, Data and ModelServer APIs."
         ),
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
-    p.add_argument("--residue", default="TRP", help="Three-letter residue code to query.")
-    p.add_argument(
-        "--data-dir", type=Path, default=Path("data"),
-        help="Directory containing the PDBBind subsets (refined-set / v2020-other-PL).",
-    )
-    p.add_argument(
-        "--subset", choices=["refined", "general", "all"], default="refined",
-        help="Which PDBBind subset(s) to scan.",
-    )
-    p.add_argument(
-        "--cutoff", type=float, default=4.0,
-        help="Contact distance cutoff in angstroms (heavy-atom to heavy-atom).",
-    )
-    p.add_argument(
-        "--atom-scope", choices=["sidechain", "all"], default="sidechain",
-        help="Residue atoms considered: sidechain only, or the whole residue.",
-    )
-    p.add_argument(
-        "--max-structures", type=int, default=300,
-        help="Cap on number of entries scanned (a reproducible random sample). Use -1 for all.",
-    )
-    p.add_argument("--out-dir", type=Path, default=Path("results"), help="Output directory.")
-    p.add_argument(
-        "--examples-per-group", type=int, default=3,
-        help="Exemplary PDB files written per pharmacophore group.",
-    )
-    p.add_argument(
-        "--max-groups", type=int, default=50,
-        help="Only write example folders for the N largest pharmacophore groups.",
-    )
-    p.add_argument(
-        "--no-interactions", dest="classify_interactions", action="store_false",
-        help="Skip ProLIF interaction-type classification (H-bond, hydrophobic, pi-stacking, ...).",
-    )
-    p.add_argument("--seed", type=int, default=0, help="Random seed for entry sampling.")
+    sel = p.add_argument_group("entry selection")
+    sel.add_argument("--residue", default="HIS", type=str.upper, choices=SUPPORTED_RESIDUES,
+                     help="Aromatic residue type to analyse.")
+    sel.add_argument("--max-entries", type=int, default=300,
+                     help="Reproducible random sample of matching entries to scan (-1 for all).")
+    sel.add_argument("--seed", type=int, default=0, help="Random seed for entry sampling.")
+    sel.add_argument("--entries", nargs="+", metavar="PDB_ID",
+                     help="Scan these entries instead of searching the archive.")
+    sel.add_argument("--released-after", metavar="YYYY-MM-DD",
+                     help="Only entries first released on/after this date.")
+    sel.add_argument("--released-before", metavar="YYYY-MM-DD",
+                     help="Only entries first released before this date.")
+    sel.add_argument("--max-resolution", type=float, default=3.0,
+                     help="Resolution cutoff in Å (0 disables; NMR entries have no resolution).")
+    sel.add_argument("--all-ligands", dest="loi_only", action="store_false",
+                     help="Include ligands not flagged by RCSB as the ligand of interest "
+                          "(cofactors, additives).")
+    sel.add_argument("--min-aromatic-bonds", type=int, default=5,
+                     help="Minimum aromatic bonds in the ligand's chemical component.")
+    sel.add_argument("--exclude-comps", default="",
+                     help="Comma-separated CCD codes to skip, e.g. HEM,FAD,NAD.")
+    sel.add_argument("--count-only", action="store_true",
+                     help="Only report how many entries/ligands match the search, then exit.")
+
+    geo = p.add_argument_group("stacking geometry (PLIP defaults)")
+    geo.add_argument("--stack-max-distance", type=float, default=5.5,
+                     help="Max ring centroid distance (Å).")
+    geo.add_argument("--stack-max-angle", type=float, default=30.0,
+                     help="Max inter-plane angle for face-to-face (deg).")
+    geo.add_argument("--stack-min-t-angle", type=float, default=60.0,
+                     help="Min inter-plane angle for edge-to-face (deg).")
+    geo.add_argument("--stack-max-offset", type=float, default=2.0,
+                     help="Max lateral centroid offset (Å).")
+    geo.add_argument("--contact-cutoff", type=float, default=4.0,
+                     help="Heavy-atom distance for pharmacophore contacts (Å).")
+    geo.add_argument("--atom-scope", choices=["sidechain", "all"], default="sidechain",
+                     help="Residue atoms used for pharmacophore contacts.")
+
+    out = p.add_argument_group("output")
+    out.add_argument("--out-dir", type=Path, default=Path("results"), help="Output directory.")
+    out.add_argument("--cache-dir", type=Path, default=Path(".rcsb_cache"),
+                     help="Download cache (reruns are offline-fast).")
+    out.add_argument("--no-cache", action="store_true", help="Disable the download cache.")
+    out.add_argument("--workers", type=int, default=8, help="Concurrent RCSB requests.")
+    out.add_argument("--examples-per-group", type=int, default=3,
+                     help="Example pocket structures per ring pattern.")
+    out.add_argument("--max-groups", type=int, default=30,
+                     help="Write examples for the N most frequent ring patterns.")
     p.add_argument("-v", "--verbose", action="store_true", help="Verbose logging.")
     p.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
     return p
 
 
-def main(argv: list[str] | None = None) -> int:
-    parser = build_parser()
-    args = parser.parse_args(argv)
-    _configure_logging(args.verbose)
-
-    if not args.data_dir.is_dir():
-        parser.error(f"Data directory '{args.data_dir}' does not exist.\n\n{_DATA_HELP}")
-
-    cfg = Config(
-        data_dir=args.data_dir,
-        residue=args.residue.upper(),
-        subset=args.subset,
-        cutoff=args.cutoff,
+def config_from_args(args: argparse.Namespace) -> Config:
+    return Config(
+        residue=args.residue,
+        max_entries=None if args.max_entries < 0 else args.max_entries,
+        seed=args.seed,
+        entry_ids=args.entries,
+        released_after=args.released_after,
+        released_before=args.released_before,
+        max_resolution=args.max_resolution or None,
+        loi_only=args.loi_only,
+        min_aromatic_bonds=args.min_aromatic_bonds,
+        exclude_comps=frozenset(c.strip().upper() for c in args.exclude_comps.split(",") if c.strip()),
+        criteria=StackCriteria(
+            max_distance=args.stack_max_distance,
+            max_parallel_angle=args.stack_max_angle,
+            min_perpendicular_angle=args.stack_min_t_angle,
+            max_offset=args.stack_max_offset,
+        ),
+        contact_cutoff=args.contact_cutoff,
         atom_scope=args.atom_scope,
-        max_structures=None if args.max_structures < 0 else args.max_structures,
         out_dir=args.out_dir,
+        cache_dir=None if args.no_cache else args.cache_dir,
+        workers=args.workers,
         examples_per_group=args.examples_per_group,
         max_groups=args.max_groups,
-        seed=args.seed,
-        classify_interactions=args.classify_interactions,
     )
 
+
+def _count_only(cfg: Config) -> None:
+    query = discovery.build_search_query(
+        cfg.residue, cfg.min_aromatic_bonds, cfg.loi_only, cfg.max_resolution,
+        cfg.released_after, cfg.released_before,
+    )
+    entries, n_entities = discovery.search_entries(RcsbClient(cache_dir=None), query)
+    print(f"{len(entries):,} entries / {n_entities:,} ligand entities match "
+          f"(aromatic ligand within 5 Å of {cfg.residue}).")
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = build_parser().parse_args(argv)
+    _configure_logging(args.verbose)
+    cfg = config_from_args(args)
     try:
-        run(cfg)
-    except FileNotFoundError as exc:
-        print(f"error: {exc}\n\n{_DATA_HELP}", file=sys.stderr)
+        if args.count_only:
+            _count_only(cfg)
+        else:
+            run(cfg)
+    except RcsbError as exc:
+        print(f"error: RCSB request failed: {exc}", file=sys.stderr)
         return 2
     except RuntimeError as exc:
         print(f"error: {exc}", file=sys.stderr)

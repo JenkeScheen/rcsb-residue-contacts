@@ -1,4 +1,4 @@
-name: pdbbind-residue-contacts
+name: rcsb-residue-contacts
 channels:
   - conda-forge
 dependencies:
@@ -12,5 +12,4 @@ dependencies:
   - pytest >=7.0
   - pip
   - pip:
-      - prolif >=2.0
       - -e .

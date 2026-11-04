@@ -1,0 +1,875 @@
+data_6PML
+#
+_model_server_result.job_id            b0VSPP012L9r4Vol2x22CQ 
+_model_server_result.datetime_utc      '2026-11-04 15:39:13' 
+_model_server_result.server_version    0.9.13 
+_model_server_result.query_name        atoms 
+_model_server_result.source_id         pdb-bcif 
+_model_server_result.entry_id          6pml 
+#
+_model_server_params.name     atom_site 
+_model_server_params.value    '{"label_comp_id":"HIS"}' 
+#
+_entry.id    6PML 
+#
+_exptl.entry_id    6PML 
+_exptl.method      'X-RAY DIFFRACTION' 
+#
+_entity.details                     ? 
+_entity.formula_weight              21155.025 
+_entity.id                          1 
+_entity.src_method                  man 
+_entity.type                        polymer 
+_entity.pdbx_description            'Thiol:disulfide interchange protein DsbA' 
+_entity.pdbx_number_of_molecules    2 
+_entity.pdbx_parent_entity_id       . 
+_entity.pdbx_mutation               ? 
+_entity.pdbx_fragment               ? 
+_entity.pdbx_ec                     ? 
+#
+_cell.angle_alpha         90 
+_cell.angle_beta          140.85 
+_cell.angle_gamma         90 
+_cell.entry_id            6PML 
+_cell.length_a            117.54 
+_cell.length_b            63.74 
+_cell.length_c            96.19 
+_cell.Z_PDB               8 
+_cell.pdbx_unique_axis    ? 
+#
+_symmetry.entry_id                 6PML 
+_symmetry.cell_setting             ? 
+_symmetry.Int_Tables_number        5 
+_symmetry.space_group_name_Hall    'C 2y' 
+_symmetry.space_group_name_H-M     'C 1 2 1' 
+#
+loop_
+_pdbx_struct_assembly.method_details
+_pdbx_struct_assembly.oligomeric_details
+_pdbx_struct_assembly.oligomeric_count
+_pdbx_struct_assembly.details
+_pdbx_struct_assembly.id
+PISA monomeric 1 author_and_software_defined_assembly 1 
+PISA monomeric 1 author_and_software_defined_assembly 2 
+#
+loop_
+_pdbx_struct_assembly_gen.asym_id_list
+_pdbx_struct_assembly_gen.assembly_id
+_pdbx_struct_assembly_gen.oper_expression
+A,C,D,F 1 1 
+B,E,G 2 1 
+#
+_pdbx_struct_oper_list.id                    1 
+_pdbx_struct_oper_list.type                  'identity operation' 
+_pdbx_struct_oper_list.name                  1_555 
+_pdbx_struct_oper_list.symmetry_operation    x,y,z 
+_pdbx_struct_oper_list.matrix[1][1]          1 
+_pdbx_struct_oper_list.matrix[1][2]          0 
+_pdbx_struct_oper_list.matrix[1][3]          0 
+_pdbx_struct_oper_list.matrix[2][1]          0 
+_pdbx_struct_oper_list.matrix[2][2]          1 
+_pdbx_struct_oper_list.matrix[2][3]          0 
+_pdbx_struct_oper_list.matrix[3][1]          0 
+_pdbx_struct_oper_list.matrix[3][2]          0 
+_pdbx_struct_oper_list.matrix[3][3]          1 
+_pdbx_struct_oper_list.vector[1]             0 
+_pdbx_struct_oper_list.vector[2]             0 
+_pdbx_struct_oper_list.vector[3]             0 
+#
+loop_
+_struct_conf.conf_type_id
+_struct_conf.id
+_struct_conf.beg_label_comp_id
+_struct_conf.beg_label_seq_id
+_struct_conf.pdbx_beg_PDB_ins_code
+_struct_conf.beg_label_asym_id
+_struct_conf.beg_label_entity_id
+_struct_conf.beg_auth_comp_id
+_struct_conf.beg_auth_seq_id
+_struct_conf.beg_auth_asym_id
+_struct_conf.end_label_comp_id
+_struct_conf.end_label_seq_id
+_struct_conf.pdbx_end_PDB_ins_code
+_struct_conf.end_label_asym_id
+_struct_conf.end_label_entity_id
+_struct_conf.end_auth_comp_id
+_struct_conf.end_auth_seq_id
+_struct_conf.end_auth_asym_id
+_struct_conf.pdbx_PDB_helix_class
+_struct_conf.details
+_struct_conf.pdbx_PDB_helix_length
+helx_p helx_p1 HIS 32 . A 1 HIS 32 A HIS 32 . A 1 HIS 32 A 1 ? 1 
+helx_p helx_p2 HIS 41 . A 1 HIS 41 A HIS 41 . A 1 HIS 41 A 1 ? 1 
+helx_p helx_p3 HIS 32 . B 1 HIS 32 B HIS 32 . B 1 HIS 32 B 1 ? 1 
+helx_p helx_p4 HIS 41 . B 1 HIS 41 B HIS 41 . B 1 HIS 41 B 1 ? 1 
+#
+loop_
+_struct_asym.details
+_struct_asym.entity_id
+_struct_asym.id
+_struct_asym.pdbx_modified
+_struct_asym.pdbx_blank_PDB_chainid_flag
+? 1 A N N 
+? 1 B N N 
+#
+_entity_poly.entity_id                       1 
+_entity_poly.nstd_linkage                    no 
+_entity_poly.nstd_monomer                    no 
+_entity_poly.type                            polypeptide(L) 
+_entity_poly.pdbx_strand_id                  A,B 
+_entity_poly.pdbx_seq_one_letter_code        
+;AQYEDGKQYTTLEKPVAGAPQVLEFFSFFCPHCYQFEEVLHISDNVKKKLPEGVKMTKYHVNFMGGDLGKDLTQAWAVAM
+ALGVEDKVTVPLFEGVQKTQTIRSASDIRDVFINAGIKGEEYDAAWNSFVVKSLVAQQEKAAADVQLRGVPAMFVNGKYQ
+LNPQGMDTSNMDVFVQQYADTVKYLSEKK
+;
+_entity_poly.pdbx_seq_one_letter_code_can    
+;AQYEDGKQYTTLEKPVAGAPQVLEFFSFFCPHCYQFEEVLHISDNVKKKLPEGVKMTKYHVNFMGGDLGKDLTQAWAVAM
+ALGVEDKVTVPLFEGVQKTQTIRSASDIRDVFINAGIKGEEYDAAWNSFVVKSLVAQQEKAAADVQLRGVPAMFVNGKYQ
+LNPQGMDTSNMDVFVQQYADTVKYLSEKK
+;
+_entity_poly.pdbx_target_identifier          ? 
+#
+loop_
+_entity_poly_seq.entity_id
+_entity_poly_seq.hetero
+_entity_poly_seq.mon_id
+_entity_poly_seq.num
+1 n ALA 1 
+1 n GLN 2 
+1 n TYR 3 
+1 n GLU 4 
+1 n ASP 5 
+1 n GLY 6 
+1 n LYS 7 
+1 n GLN 8 
+1 n TYR 9 
+1 n THR 10 
+1 n THR 11 
+1 n LEU 12 
+1 n GLU 13 
+1 n LYS 14 
+1 n PRO 15 
+1 n VAL 16 
+1 n ALA 17 
+1 n GLY 18 
+1 n ALA 19 
+1 n PRO 20 
+1 n GLN 21 
+1 n VAL 22 
+1 n LEU 23 
+1 n GLU 24 
+1 n PHE 25 
+1 n PHE 26 
+1 n SER 27 
+1 n PHE 28 
+1 n PHE 29 
+1 n CYS 30 
+1 n PRO 31 
+1 n HIS 32 
+1 n CYS 33 
+1 n TYR 34 
+1 n GLN 35 
+1 n PHE 36 
+1 n GLU 37 
+1 n GLU 38 
+1 n VAL 39 
+1 n LEU 40 
+1 n HIS 41 
+1 n ILE 42 
+1 n SER 43 
+1 n ASP 44 
+1 n ASN 45 
+1 n VAL 46 
+1 n LYS 47 
+1 n LYS 48 
+1 n LYS 49 
+1 n LEU 50 
+1 n PRO 51 
+1 n GLU 52 
+1 n GLY 53 
+1 n VAL 54 
+1 n LYS 55 
+1 n MET 56 
+1 n THR 57 
+1 n LYS 58 
+1 n TYR 59 
+1 n HIS 60 
+1 n VAL 61 
+1 n ASN 62 
+1 n PHE 63 
+1 n MET 64 
+1 n GLY 65 
+1 n GLY 66 
+1 n ASP 67 
+1 n LEU 68 
+1 n GLY 69 
+1 n LYS 70 
+1 n ASP 71 
+1 n LEU 72 
+1 n THR 73 
+1 n GLN 74 
+1 n ALA 75 
+1 n TRP 76 
+1 n ALA 77 
+1 n VAL 78 
+1 n ALA 79 
+1 n MET 80 
+1 n ALA 81 
+1 n LEU 82 
+1 n GLY 83 
+1 n VAL 84 
+1 n GLU 85 
+1 n ASP 86 
+1 n LYS 87 
+1 n VAL 88 
+1 n THR 89 
+1 n VAL 90 
+1 n PRO 91 
+1 n LEU 92 
+1 n PHE 93 
+1 n GLU 94 
+1 n GLY 95 
+1 n VAL 96 
+1 n GLN 97 
+1 n LYS 98 
+1 n THR 99 
+1 n GLN 100 
+1 n THR 101 
+1 n ILE 102 
+1 n ARG 103 
+1 n SER 104 
+1 n ALA 105 
+1 n SER 106 
+1 n ASP 107 
+1 n ILE 108 
+1 n ARG 109 
+1 n ASP 110 
+1 n VAL 111 
+1 n PHE 112 
+1 n ILE 113 
+1 n ASN 114 
+1 n ALA 115 
+1 n GLY 116 
+1 n ILE 117 
+1 n LYS 118 
+1 n GLY 119 
+1 n GLU 120 
+1 n GLU 121 
+1 n TYR 122 
+1 n ASP 123 
+1 n ALA 124 
+1 n ALA 125 
+1 n TRP 126 
+1 n ASN 127 
+1 n SER 128 
+1 n PHE 129 
+1 n VAL 130 
+1 n VAL 131 
+1 n LYS 132 
+1 n SER 133 
+1 n LEU 134 
+1 n VAL 135 
+1 n ALA 136 
+1 n GLN 137 
+1 n GLN 138 
+1 n GLU 139 
+1 n LYS 140 
+1 n ALA 141 
+1 n ALA 142 
+1 n ALA 143 
+1 n ASP 144 
+1 n VAL 145 
+1 n GLN 146 
+1 n LEU 147 
+1 n ARG 148 
+1 n GLY 149 
+1 n VAL 150 
+1 n PRO 151 
+1 n ALA 152 
+1 n MET 153 
+1 n PHE 154 
+1 n VAL 155 
+1 n ASN 156 
+1 n GLY 157 
+1 n LYS 158 
+1 n TYR 159 
+1 n GLN 160 
+1 n LEU 161 
+1 n ASN 162 
+1 n PRO 163 
+1 n GLN 164 
+1 n GLY 165 
+1 n MET 166 
+1 n ASP 167 
+1 n THR 168 
+1 n SER 169 
+1 n ASN 170 
+1 n MET 171 
+1 n ASP 172 
+1 n VAL 173 
+1 n PHE 174 
+1 n VAL 175 
+1 n GLN 176 
+1 n GLN 177 
+1 n TYR 178 
+1 n ALA 179 
+1 n ASP 180 
+1 n THR 181 
+1 n VAL 182 
+1 n LYS 183 
+1 n TYR 184 
+1 n LEU 185 
+1 n SER 186 
+1 n GLU 187 
+1 n LYS 188 
+1 n LYS 189 
+#
+loop_
+_struct_conn.conn_type_id
+_struct_conn.details
+_struct_conn.id
+_struct_conn.ptnr1_label_asym_id
+_struct_conn.ptnr1_label_atom_id
+_struct_conn.ptnr1_label_comp_id
+_struct_conn.ptnr1_label_seq_id
+_struct_conn.ptnr1_auth_asym_id
+_struct_conn.ptnr1_auth_comp_id
+_struct_conn.ptnr1_auth_seq_id
+_struct_conn.ptnr1_symmetry
+_struct_conn.ptnr2_label_asym_id
+_struct_conn.ptnr2_label_atom_id
+_struct_conn.ptnr2_label_comp_id
+_struct_conn.ptnr2_label_seq_id
+_struct_conn.ptnr2_auth_asym_id
+_struct_conn.ptnr2_auth_comp_id
+_struct_conn.ptnr2_auth_seq_id
+_struct_conn.ptnr2_symmetry
+_struct_conn.pdbx_ptnr1_PDB_ins_code
+_struct_conn.pdbx_ptnr1_label_alt_id
+_struct_conn.pdbx_ptnr1_standard_comp_id
+_struct_conn.pdbx_ptnr2_PDB_ins_code
+_struct_conn.pdbx_ptnr2_label_alt_id
+_struct_conn.pdbx_ptnr3_PDB_ins_code
+_struct_conn.pdbx_ptnr3_label_alt_id
+_struct_conn.pdbx_ptnr3_label_asym_id
+_struct_conn.pdbx_ptnr3_label_atom_id
+_struct_conn.pdbx_ptnr3_label_comp_id
+_struct_conn.pdbx_ptnr3_label_seq_id
+_struct_conn.pdbx_PDB_id
+_struct_conn.pdbx_dist_value
+_struct_conn.pdbx_value_order
+disulf ? disulf1 A SG CYS 30 A CYS 30 1_555 A SG CYS 33 A CYS 33 1_555 ? ? ? ? ? ? ? ? ? ? ? ? 2.045 ? 
+disulf ? disulf2 B SG CYS 30 B CYS 30 1_555 B SG CYS 33 B CYS 33 1_555 ? ? ? ? ? ? ? ? ? ? ? ? 2.042 ? 
+metalc ? metalc1 B N ALA 1 B ALA 1 1_555 E CU CU . B CU 201 1_555 ? ? ? ? ? ? ? ? ? ? ? ? 2.396 ? 
+metalc ? metalc2 B O ALA 1 B ALA 1 1_555 E CU CU . B CU 201 1_555 ? ? ? ? ? ? ? ? ? ? ? ? 1.987 ? 
+metalc ? metalc3 B OE1 GLU 4 B GLU 4 1_555 E CU CU . B CU 201 1_555 ? ? ? ? ? ? ? ? ? ? ? ? 2.05 ? 
+metalc ? metalc4 B OD1 ASP 44 B ASP 44 1_555 E CU CU . B CU 201 4_656 ? ? ? ? ? ? ? ? ? ? ? ? 2.283 ? 
+metalc ? metalc5 B OD2 ASP 44 B ASP 44 1_555 E CU CU . B CU 201 4_656 ? ? ? ? ? ? ? ? ? ? ? ? 2.365 ? 
+#
+_chem_comp.formula           'C6 H10 N3 O2 1' 
+_chem_comp.formula_weight    156.162 
+_chem_comp.id                HIS 
+_chem_comp.mon_nstd_flag     y 
+_chem_comp.name              HISTIDINE 
+_chem_comp.type              'l-peptide linking' 
+_chem_comp.pdbx_synonyms     ? 
+#
+loop_
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.comp_id
+_chem_comp_bond.value_order
+_chem_comp_bond.pdbx_ordinal
+_chem_comp_bond.pdbx_stereo_config
+_chem_comp_bond.pdbx_aromatic_flag
+N CA HIS sing 129 n n 
+N H HIS sing 130 n n 
+N H2 HIS sing 131 n n 
+CA C HIS sing 132 n n 
+CA CB HIS sing 133 n n 
+CA HA HIS sing 134 n n 
+C O HIS doub 135 n n 
+C OXT HIS sing 136 n n 
+CB CG HIS sing 137 n n 
+CB HB2 HIS sing 138 n n 
+CB HB3 HIS sing 139 n n 
+CG ND1 HIS sing 140 n y 
+CG CD2 HIS doub 141 n y 
+ND1 CE1 HIS doub 142 n y 
+ND1 HD1 HIS sing 143 n n 
+CD2 NE2 HIS sing 144 n y 
+CD2 HD2 HIS sing 145 n n 
+CE1 NE2 HIS sing 146 n y 
+CE1 HE1 HIS sing 147 n n 
+NE2 HE2 HIS sing 148 n n 
+OXT HXT HIS sing 149 n n 
+#
+_atom_sites.entry_id                     6PML 
+_atom_sites.fract_transf_matrix[1][1]    0.008508 
+_atom_sites.fract_transf_matrix[1][2]    0 
+_atom_sites.fract_transf_matrix[1][3]    0.01045 
+_atom_sites.fract_transf_matrix[2][1]    0 
+_atom_sites.fract_transf_matrix[2][2]    0.015689 
+_atom_sites.fract_transf_matrix[2][3]    0 
+_atom_sites.fract_transf_matrix[3][1]    0 
+_atom_sites.fract_transf_matrix[3][2]    0 
+_atom_sites.fract_transf_matrix[3][3]    0.016466 
+_atom_sites.fract_transf_vector[1]       0 
+_atom_sites.fract_transf_vector[2]       0 
+_atom_sites.fract_transf_vector[3]       0 
+#
+loop_
+_pdbx_nonpoly_scheme.asym_id
+_pdbx_nonpoly_scheme.entity_id
+_pdbx_nonpoly_scheme.mon_id
+_pdbx_nonpoly_scheme.pdb_strand_id
+_pdbx_nonpoly_scheme.ndb_seq_num
+_pdbx_nonpoly_scheme.pdb_seq_num
+_pdbx_nonpoly_scheme.auth_seq_num
+_pdbx_nonpoly_scheme.pdb_mon_id
+_pdbx_nonpoly_scheme.auth_mon_id
+_pdbx_nonpoly_scheme.pdb_ins_code
+C 2 PEG A 1 201 201 PEG PGE ? 
+D 3 OR4 A 1 202 1 OR4 LD9 ? 
+E 4 CU B 1 201 1 CU CU ? 
+F 5 HOH A 1 301 313 HOH HOH ? 
+F 5 HOH A 2 302 71 HOH HOH ? 
+F 5 HOH A 3 303 70 HOH HOH ? 
+F 5 HOH A 4 304 159 HOH HOH ? 
+F 5 HOH A 5 305 333 HOH HOH ? 
+F 5 HOH A 6 306 32 HOH HOH ? 
+F 5 HOH A 7 307 9 HOH HOH ? 
+F 5 HOH A 8 308 91 HOH HOH ? 
+F 5 HOH A 9 309 167 HOH HOH ? 
+F 5 HOH A 10 310 14 HOH HOH ? 
+F 5 HOH A 11 311 40 HOH HOH ? 
+F 5 HOH A 12 312 10 HOH HOH ? 
+F 5 HOH A 13 313 86 HOH HOH ? 
+F 5 HOH A 14 314 95 HOH HOH ? 
+F 5 HOH A 15 315 24 HOH HOH ? 
+F 5 HOH A 16 316 246 HOH HOH ? 
+F 5 HOH A 17 317 31 HOH HOH ? 
+F 5 HOH A 18 318 218 HOH HOH ? 
+F 5 HOH A 19 319 250 HOH HOH ? 
+F 5 HOH A 20 320 19 HOH HOH ? 
+F 5 HOH A 21 321 110 HOH HOH ? 
+F 5 HOH A 22 322 398 HOH HOH ? 
+F 5 HOH A 23 323 30 HOH HOH ? 
+F 5 HOH A 24 324 387 HOH HOH ? 
+F 5 HOH A 25 325 377 HOH HOH ? 
+F 5 HOH A 26 326 399 HOH HOH ? 
+F 5 HOH A 27 327 50 HOH HOH ? 
+F 5 HOH A 28 328 29 HOH HOH ? 
+F 5 HOH A 29 329 1 HOH HOH ? 
+F 5 HOH A 30 330 139 HOH HOH ? 
+F 5 HOH A 31 331 165 HOH HOH ? 
+F 5 HOH A 32 332 108 HOH HOH ? 
+F 5 HOH A 33 333 57 HOH HOH ? 
+F 5 HOH A 34 334 88 HOH HOH ? 
+F 5 HOH A 35 335 312 HOH HOH ? 
+F 5 HOH A 36 336 334 HOH HOH ? 
+F 5 HOH A 37 337 44 HOH HOH ? 
+F 5 HOH A 38 338 51 HOH HOH ? 
+F 5 HOH A 39 339 18 HOH HOH ? 
+F 5 HOH A 40 340 273 HOH HOH ? 
+F 5 HOH A 41 341 46 HOH HOH ? 
+F 5 HOH A 42 342 43 HOH HOH ? 
+F 5 HOH A 43 343 6 HOH HOH ? 
+F 5 HOH A 44 344 102 HOH HOH ? 
+F 5 HOH A 45 345 327 HOH HOH ? 
+F 5 HOH A 46 346 13 HOH HOH ? 
+F 5 HOH A 47 347 96 HOH HOH ? 
+F 5 HOH A 48 348 275 HOH HOH ? 
+F 5 HOH A 49 349 42 HOH HOH ? 
+F 5 HOH A 50 350 225 HOH HOH ? 
+F 5 HOH A 51 351 122 HOH HOH ? 
+F 5 HOH A 52 352 267 HOH HOH ? 
+F 5 HOH A 53 353 189 HOH HOH ? 
+F 5 HOH A 54 354 186 HOH HOH ? 
+F 5 HOH A 55 355 101 HOH HOH ? 
+F 5 HOH A 56 356 135 HOH HOH ? 
+F 5 HOH A 57 357 153 HOH HOH ? 
+F 5 HOH A 58 358 107 HOH HOH ? 
+F 5 HOH A 59 359 115 HOH HOH ? 
+F 5 HOH A 60 360 15 HOH HOH ? 
+F 5 HOH A 61 361 69 HOH HOH ? 
+F 5 HOH A 62 362 289 HOH HOH ? 
+F 5 HOH A 63 363 207 HOH HOH ? 
+F 5 HOH A 64 364 85 HOH HOH ? 
+F 5 HOH A 65 365 156 HOH HOH ? 
+F 5 HOH A 66 366 320 HOH HOH ? 
+F 5 HOH A 67 367 92 HOH HOH ? 
+F 5 HOH A 68 368 391 HOH HOH ? 
+F 5 HOH A 69 369 130 HOH HOH ? 
+F 5 HOH A 70 370 212 HOH HOH ? 
+F 5 HOH A 71 371 132 HOH HOH ? 
+F 5 HOH A 72 372 205 HOH HOH ? 
+F 5 HOH A 73 373 124 HOH HOH ? 
+F 5 HOH A 74 374 80 HOH HOH ? 
+F 5 HOH A 75 375 161 HOH HOH ? 
+F 5 HOH A 76 376 390 HOH HOH ? 
+F 5 HOH A 77 377 48 HOH HOH ? 
+F 5 HOH A 78 378 178 HOH HOH ? 
+F 5 HOH A 79 379 401 HOH HOH ? 
+F 5 HOH A 80 380 97 HOH HOH ? 
+F 5 HOH A 81 381 104 HOH HOH ? 
+F 5 HOH A 82 382 395 HOH HOH ? 
+F 5 HOH A 83 383 269 HOH HOH ? 
+F 5 HOH A 84 384 325 HOH HOH ? 
+F 5 HOH A 85 385 185 HOH HOH ? 
+F 5 HOH A 86 386 12 HOH HOH ? 
+F 5 HOH A 87 387 336 HOH HOH ? 
+F 5 HOH A 88 388 73 HOH HOH ? 
+F 5 HOH A 89 389 363 HOH HOH ? 
+F 5 HOH A 90 390 11 HOH HOH ? 
+F 5 HOH A 91 391 20 HOH HOH ? 
+F 5 HOH A 92 392 25 HOH HOH ? 
+F 5 HOH A 93 393 175 HOH HOH ? 
+F 5 HOH A 94 394 77 HOH HOH ? 
+F 5 HOH A 95 395 23 HOH HOH ? 
+F 5 HOH A 96 396 253 HOH HOH ? 
+F 5 HOH A 97 397 56 HOH HOH ? 
+F 5 HOH A 98 398 37 HOH HOH ? 
+F 5 HOH A 99 399 176 HOH HOH ? 
+F 5 HOH A 100 400 174 HOH HOH ? 
+F 5 HOH A 101 401 300 HOH HOH ? 
+F 5 HOH A 102 402 112 HOH HOH ? 
+F 5 HOH A 103 403 5 HOH HOH ? 
+F 5 HOH A 104 404 411 HOH HOH ? 
+F 5 HOH A 105 405 131 HOH HOH ? 
+F 5 HOH A 106 406 103 HOH HOH ? 
+F 5 HOH A 107 407 83 HOH HOH ? 
+F 5 HOH A 108 408 211 HOH HOH ? 
+F 5 HOH A 109 409 362 HOH HOH ? 
+F 5 HOH A 110 410 36 HOH HOH ? 
+F 5 HOH A 111 411 183 HOH HOH ? 
+F 5 HOH A 112 412 271 HOH HOH ? 
+F 5 HOH A 113 413 17 HOH HOH ? 
+F 5 HOH A 114 414 67 HOH HOH ? 
+F 5 HOH A 115 415 133 HOH HOH ? 
+F 5 HOH A 116 416 424 HOH HOH ? 
+F 5 HOH A 117 417 323 HOH HOH ? 
+F 5 HOH A 118 418 3 HOH HOH ? 
+F 5 HOH A 119 419 397 HOH HOH ? 
+F 5 HOH A 120 420 26 HOH HOH ? 
+F 5 HOH A 121 421 111 HOH HOH ? 
+F 5 HOH A 122 422 258 HOH HOH ? 
+F 5 HOH A 123 423 160 HOH HOH ? 
+F 5 HOH A 124 424 319 HOH HOH ? 
+F 5 HOH A 125 425 129 HOH HOH ? 
+F 5 HOH A 126 426 368 HOH HOH ? 
+F 5 HOH A 127 427 220 HOH HOH ? 
+F 5 HOH A 128 428 75 HOH HOH ? 
+F 5 HOH A 129 429 306 HOH HOH ? 
+F 5 HOH A 130 430 81 HOH HOH ? 
+F 5 HOH A 131 431 214 HOH HOH ? 
+F 5 HOH A 132 432 146 HOH HOH ? 
+F 5 HOH A 133 433 263 HOH HOH ? 
+F 5 HOH A 134 434 109 HOH HOH ? 
+F 5 HOH A 135 435 256 HOH HOH ? 
+F 5 HOH A 136 436 58 HOH HOH ? 
+F 5 HOH A 137 437 254 HOH HOH ? 
+F 5 HOH A 138 438 277 HOH HOH ? 
+F 5 HOH A 139 439 380 HOH HOH ? 
+F 5 HOH A 140 440 316 HOH HOH ? 
+F 5 HOH A 141 441 252 HOH HOH ? 
+F 5 HOH A 142 442 143 HOH HOH ? 
+F 5 HOH A 143 443 242 HOH HOH ? 
+F 5 HOH A 144 444 274 HOH HOH ? 
+F 5 HOH A 145 445 216 HOH HOH ? 
+F 5 HOH A 146 446 285 HOH HOH ? 
+F 5 HOH A 147 447 378 HOH HOH ? 
+F 5 HOH A 148 448 203 HOH HOH ? 
+F 5 HOH A 149 449 290 HOH HOH ? 
+F 5 HOH A 150 450 375 HOH HOH ? 
+F 5 HOH A 151 451 406 HOH HOH ? 
+F 5 HOH A 152 452 422 HOH HOH ? 
+F 5 HOH A 153 453 414 HOH HOH ? 
+F 5 HOH A 154 454 138 HOH HOH ? 
+F 5 HOH A 155 455 326 HOH HOH ? 
+F 5 HOH A 156 456 331 HOH HOH ? 
+F 5 HOH A 157 457 151 HOH HOH ? 
+F 5 HOH A 158 458 21 HOH HOH ? 
+F 5 HOH A 159 459 292 HOH HOH ? 
+F 5 HOH A 160 460 409 HOH HOH ? 
+F 5 HOH A 161 461 229 HOH HOH ? 
+F 5 HOH A 162 462 255 HOH HOH ? 
+F 5 HOH A 163 463 244 HOH HOH ? 
+F 5 HOH A 164 464 305 HOH HOH ? 
+F 5 HOH A 165 465 127 HOH HOH ? 
+F 5 HOH A 166 466 322 HOH HOH ? 
+F 5 HOH A 167 467 318 HOH HOH ? 
+F 5 HOH A 168 468 284 HOH HOH ? 
+F 5 HOH A 169 469 237 HOH HOH ? 
+F 5 HOH A 170 470 93 HOH HOH ? 
+F 5 HOH A 171 471 60 HOH HOH ? 
+F 5 HOH A 172 472 208 HOH HOH ? 
+F 5 HOH A 173 473 280 HOH HOH ? 
+F 5 HOH A 174 474 172 HOH HOH ? 
+F 5 HOH A 175 475 298 HOH HOH ? 
+F 5 HOH A 176 476 330 HOH HOH ? 
+F 5 HOH A 177 477 243 HOH HOH ? 
+F 5 HOH A 178 478 180 HOH HOH ? 
+F 5 HOH A 179 479 423 HOH HOH ? 
+F 5 HOH A 180 480 116 HOH HOH ? 
+F 5 HOH A 181 481 232 HOH HOH ? 
+F 5 HOH A 182 482 177 HOH HOH ? 
+F 5 HOH A 183 483 181 HOH HOH ? 
+F 5 HOH A 184 484 264 HOH HOH ? 
+F 5 HOH A 185 485 335 HOH HOH ? 
+F 5 HOH A 186 486 154 HOH HOH ? 
+F 5 HOH A 187 487 38 HOH HOH ? 
+F 5 HOH A 188 488 148 HOH HOH ? 
+F 5 HOH A 189 489 261 HOH HOH ? 
+G 5 HOH B 1 301 28 HOH HOH ? 
+G 5 HOH B 2 302 350 HOH HOH ? 
+G 5 HOH B 3 303 417 HOH HOH ? 
+G 5 HOH B 4 304 2 HOH HOH ? 
+G 5 HOH B 5 305 152 HOH HOH ? 
+G 5 HOH B 6 306 4 HOH HOH ? 
+G 5 HOH B 7 307 278 HOH HOH ? 
+G 5 HOH B 8 308 22 HOH HOH ? 
+G 5 HOH B 9 309 82 HOH HOH ? 
+G 5 HOH B 10 310 215 HOH HOH ? 
+G 5 HOH B 11 311 105 HOH HOH ? 
+G 5 HOH B 12 312 346 HOH HOH ? 
+G 5 HOH B 13 313 194 HOH HOH ? 
+G 5 HOH B 14 314 84 HOH HOH ? 
+G 5 HOH B 15 315 419 HOH HOH ? 
+G 5 HOH B 16 316 388 HOH HOH ? 
+G 5 HOH B 17 317 62 HOH HOH ? 
+G 5 HOH B 18 318 134 HOH HOH ? 
+G 5 HOH B 19 319 100 HOH HOH ? 
+G 5 HOH B 20 320 117 HOH HOH ? 
+G 5 HOH B 21 321 384 HOH HOH ? 
+G 5 HOH B 22 322 121 HOH HOH ? 
+G 5 HOH B 23 323 187 HOH HOH ? 
+G 5 HOH B 24 324 118 HOH HOH ? 
+G 5 HOH B 25 325 114 HOH HOH ? 
+G 5 HOH B 26 326 63 HOH HOH ? 
+G 5 HOH B 27 327 72 HOH HOH ? 
+G 5 HOH B 28 328 8 HOH HOH ? 
+G 5 HOH B 29 329 137 HOH HOH ? 
+G 5 HOH B 30 330 68 HOH HOH ? 
+G 5 HOH B 31 331 33 HOH HOH ? 
+G 5 HOH B 32 332 210 HOH HOH ? 
+G 5 HOH B 33 333 383 HOH HOH ? 
+G 5 HOH B 34 334 99 HOH HOH ? 
+G 5 HOH B 35 335 16 HOH HOH ? 
+G 5 HOH B 36 336 41 HOH HOH ? 
+G 5 HOH B 37 337 356 HOH HOH ? 
+G 5 HOH B 38 338 52 HOH HOH ? 
+G 5 HOH B 39 339 49 HOH HOH ? 
+G 5 HOH B 40 340 328 HOH HOH ? 
+G 5 HOH B 41 341 106 HOH HOH ? 
+G 5 HOH B 42 342 389 HOH HOH ? 
+G 5 HOH B 43 343 53 HOH HOH ? 
+G 5 HOH B 44 344 140 HOH HOH ? 
+G 5 HOH B 45 345 7 HOH HOH ? 
+G 5 HOH B 46 346 47 HOH HOH ? 
+G 5 HOH B 47 347 236 HOH HOH ? 
+G 5 HOH B 48 348 302 HOH HOH ? 
+G 5 HOH B 49 349 192 HOH HOH ? 
+G 5 HOH B 50 350 349 HOH HOH ? 
+G 5 HOH B 51 351 149 HOH HOH ? 
+G 5 HOH B 52 352 90 HOH HOH ? 
+G 5 HOH B 53 353 381 HOH HOH ? 
+G 5 HOH B 54 354 365 HOH HOH ? 
+G 5 HOH B 55 355 59 HOH HOH ? 
+G 5 HOH B 56 356 188 HOH HOH ? 
+G 5 HOH B 57 357 150 HOH HOH ? 
+G 5 HOH B 58 358 39 HOH HOH ? 
+G 5 HOH B 59 359 65 HOH HOH ? 
+G 5 HOH B 60 360 136 HOH HOH ? 
+G 5 HOH B 61 361 78 HOH HOH ? 
+G 5 HOH B 62 362 226 HOH HOH ? 
+G 5 HOH B 63 363 276 HOH HOH ? 
+G 5 HOH B 64 364 197 HOH HOH ? 
+G 5 HOH B 65 365 221 HOH HOH ? 
+G 5 HOH B 66 366 162 HOH HOH ? 
+G 5 HOH B 67 367 145 HOH HOH ? 
+G 5 HOH B 68 368 147 HOH HOH ? 
+G 5 HOH B 69 369 164 HOH HOH ? 
+G 5 HOH B 70 370 35 HOH HOH ? 
+G 5 HOH B 71 371 386 HOH HOH ? 
+G 5 HOH B 72 372 354 HOH HOH ? 
+G 5 HOH B 73 373 266 HOH HOH ? 
+G 5 HOH B 74 374 113 HOH HOH ? 
+G 5 HOH B 75 375 142 HOH HOH ? 
+G 5 HOH B 76 376 217 HOH HOH ? 
+G 5 HOH B 77 377 240 HOH HOH ? 
+G 5 HOH B 78 378 64 HOH HOH ? 
+G 5 HOH B 79 379 209 HOH HOH ? 
+G 5 HOH B 80 380 260 HOH HOH ? 
+G 5 HOH B 81 381 168 HOH HOH ? 
+G 5 HOH B 82 382 79 HOH HOH ? 
+G 5 HOH B 83 383 299 HOH HOH ? 
+G 5 HOH B 84 384 416 HOH HOH ? 
+G 5 HOH B 85 385 379 HOH HOH ? 
+G 5 HOH B 86 386 119 HOH HOH ? 
+G 5 HOH B 87 387 418 HOH HOH ? 
+G 5 HOH B 88 388 163 HOH HOH ? 
+G 5 HOH B 89 389 279 HOH HOH ? 
+G 5 HOH B 90 390 339 HOH HOH ? 
+G 5 HOH B 91 391 55 HOH HOH ? 
+G 5 HOH B 92 392 179 HOH HOH ? 
+G 5 HOH B 93 393 413 HOH HOH ? 
+G 5 HOH B 94 394 233 HOH HOH ? 
+G 5 HOH B 95 395 219 HOH HOH ? 
+G 5 HOH B 96 396 301 HOH HOH ? 
+G 5 HOH B 97 397 155 HOH HOH ? 
+G 5 HOH B 98 398 169 HOH HOH ? 
+G 5 HOH B 99 399 141 HOH HOH ? 
+G 5 HOH B 100 400 295 HOH HOH ? 
+G 5 HOH B 101 401 235 HOH HOH ? 
+G 5 HOH B 102 402 74 HOH HOH ? 
+G 5 HOH B 103 403 54 HOH HOH ? 
+G 5 HOH B 104 404 125 HOH HOH ? 
+G 5 HOH B 105 405 27 HOH HOH ? 
+G 5 HOH B 106 406 385 HOH HOH ? 
+G 5 HOH B 107 407 314 HOH HOH ? 
+G 5 HOH B 108 408 228 HOH HOH ? 
+G 5 HOH B 109 409 195 HOH HOH ? 
+G 5 HOH B 110 410 341 HOH HOH ? 
+G 5 HOH B 111 411 265 HOH HOH ? 
+G 5 HOH B 112 412 196 HOH HOH ? 
+G 5 HOH B 113 413 157 HOH HOH ? 
+G 5 HOH B 114 414 371 HOH HOH ? 
+G 5 HOH B 115 415 382 HOH HOH ? 
+G 5 HOH B 116 416 402 HOH HOH ? 
+G 5 HOH B 117 417 128 HOH HOH ? 
+G 5 HOH B 118 418 405 HOH HOH ? 
+G 5 HOH B 119 419 415 HOH HOH ? 
+G 5 HOH B 120 420 360 HOH HOH ? 
+G 5 HOH B 121 421 403 HOH HOH ? 
+G 5 HOH B 122 422 173 HOH HOH ? 
+G 5 HOH B 123 423 222 HOH HOH ? 
+G 5 HOH B 124 424 304 HOH HOH ? 
+G 5 HOH B 125 425 259 HOH HOH ? 
+G 5 HOH B 126 426 144 HOH HOH ? 
+G 5 HOH B 127 427 361 HOH HOH ? 
+G 5 HOH B 128 428 420 HOH HOH ? 
+G 5 HOH B 129 429 120 HOH HOH ? 
+G 5 HOH B 130 430 342 HOH HOH ? 
+G 5 HOH B 131 431 345 HOH HOH ? 
+G 5 HOH B 132 432 123 HOH HOH ? 
+G 5 HOH B 133 433 412 HOH HOH ? 
+G 5 HOH B 134 434 66 HOH HOH ? 
+G 5 HOH B 135 435 199 HOH HOH ? 
+G 5 HOH B 136 436 392 HOH HOH ? 
+G 5 HOH B 137 437 376 HOH HOH ? 
+G 5 HOH B 138 438 291 HOH HOH ? 
+G 5 HOH B 139 439 247 HOH HOH ? 
+G 5 HOH B 140 440 373 HOH HOH ? 
+G 5 HOH B 141 441 248 HOH HOH ? 
+G 5 HOH B 142 442 410 HOH HOH ? 
+G 5 HOH B 143 443 370 HOH HOH ? 
+G 5 HOH B 144 444 303 HOH HOH ? 
+G 5 HOH B 145 445 367 HOH HOH ? 
+G 5 HOH B 146 446 311 HOH HOH ? 
+G 5 HOH B 147 447 193 HOH HOH ? 
+G 5 HOH B 148 448 206 HOH HOH ? 
+G 5 HOH B 149 449 293 HOH HOH ? 
+G 5 HOH B 150 450 286 HOH HOH ? 
+G 5 HOH B 151 451 249 HOH HOH ? 
+G 5 HOH B 152 452 421 HOH HOH ? 
+G 5 HOH B 153 453 234 HOH HOH ? 
+G 5 HOH B 154 454 270 HOH HOH ? 
+G 5 HOH B 155 455 310 HOH HOH ? 
+G 5 HOH B 156 456 182 HOH HOH ? 
+G 5 HOH B 157 457 353 HOH HOH ? 
+G 5 HOH B 158 458 297 HOH HOH ? 
+G 5 HOH B 159 459 307 HOH HOH ? 
+G 5 HOH B 160 460 166 HOH HOH ? 
+G 5 HOH B 161 461 337 HOH HOH ? 
+#
+loop_
+_atom_site.group_PDB
+_atom_site.id
+_atom_site.type_symbol
+_atom_site.label_atom_id
+_atom_site.label_comp_id
+_atom_site.label_seq_id
+_atom_site.label_alt_id
+_atom_site.pdbx_PDB_ins_code
+_atom_site.label_asym_id
+_atom_site.label_entity_id
+_atom_site.Cartn_x
+_atom_site.Cartn_y
+_atom_site.Cartn_z
+_atom_site.occupancy
+_atom_site.B_iso_or_equiv
+_atom_site.pdbx_formal_charge
+_atom_site.auth_atom_id
+_atom_site.auth_comp_id
+_atom_site.auth_seq_id
+_atom_site.auth_asym_id
+_atom_site.pdbx_PDB_model_num
+ATOM 1 N N HIS 32 . . A 1 36.874 6.002 8.245 1 21.22 ? N HIS 32 A 1 
+ATOM 2 C CA HIS 32 . . A 1 36.511 7.18 7.466 1 19.69 ? CA HIS 32 A 1 
+ATOM 3 C C HIS 32 . . A 1 35.079 7.615 7.753 1 24.81 ? C HIS 32 A 1 
+ATOM 4 O O HIS 32 . . A 1 34.777 8.812 7.712 1 22.04 ? O HIS 32 A 1 
+ATOM 5 C CB HIS 32 . . A 1 36.709 6.917 5.97 1 23.22 ? CB HIS 32 A 1 
+ATOM 6 C CG HIS 32 . . A 1 38.13 7.051 5.513 1 40.32 ? CG HIS 32 A 1 
+ATOM 7 N ND1 HIS 32 . . A 1 38.735 6.139 4.673 1 47.76 ? ND1 HIS 32 A 1 
+ATOM 8 C CD2 HIS 32 . . A 1 39.068 7.989 5.785 1 45.45 ? CD2 HIS 32 A 1 
+ATOM 9 C CE1 HIS 32 . . A 1 39.981 6.515 4.443 1 48.35 ? CE1 HIS 32 A 1 
+ATOM 10 N NE2 HIS 32 . . A 1 40.208 7.633 5.108 1 48.73 ? NE2 HIS 32 A 1 
+ATOM 11 N N HIS 41 . . A 1 31.454 16.16 8.86 1 18.22 ? N HIS 41 A 1 
+ATOM 12 C CA HIS 41 . . A 1 30.016 16.411 8.798 1 24.63 ? CA HIS 41 A 1 
+ATOM 13 C C HIS 41 . . A 1 29.534 16.421 7.349 1 25.18 ? C HIS 41 A 1 
+ATOM 14 O O HIS 41 . . A 1 28.906 17.372 6.877 1 17.95 ? O HIS 41 A 1 
+ATOM 15 C CB HIS 41 . . A 1 29.662 17.715 9.514 1 33.22 ? CB HIS 41 A 1 
+ATOM 16 C CG HIS 41 . . A 1 30.291 17.845 10.865 1 40.89 ? CG HIS 41 A 1 
+ATOM 17 N ND1 HIS 41 . . A 1 29.629 17.516 12.028 1 35.77 ? ND1 HIS 41 A 1 
+ATOM 18 C CD2 HIS 41 . . A 1 31.53 18.246 11.236 1 42.92 ? CD2 HIS 41 A 1 
+ATOM 19 C CE1 HIS 41 . . A 1 30.43 17.719 13.059 1 39.46 ? CE1 HIS 41 A 1 
+ATOM 20 N NE2 HIS 41 . . A 1 31.589 18.161 12.606 1 43.5 ? NE2 HIS 41 A 1 
+ATOM 21 N N HIS 60 . . A 1 23.082 1.571 7.706 1 19.63 ? N HIS 60 A 1 
+ATOM 22 C CA HIS 60 . . A 1 24.211 0.814 8.232 1 17.49 ? CA HIS 60 A 1 
+ATOM 23 C C HIS 60 . . A 1 24.41 -0.47 7.423 1 17.75 ? C HIS 60 A 1 
+ATOM 24 O O HIS 60 . . A 1 23.516 -0.916 6.7 1 22.07 ? O HIS 60 A 1 
+ATOM 25 C CB HIS 60 . . A 1 23.994 0.482 9.713 1 16.13 ? CB HIS 60 A 1 
+ATOM 26 C CG HIS 60 . . A 1 25.257 0.168 10.458 1 15.94 ? CG HIS 60 A 1 
+ATOM 27 N ND1 HIS 60 . . A 1 25.694 -1.122 10.675 1 19.18 ? ND1 HIS 60 A 1 
+ATOM 28 C CD2 HIS 60 . . A 1 26.175 0.978 11.038 1 17.4 ? CD2 HIS 60 A 1 
+ATOM 29 C CE1 HIS 60 . . A 1 26.828 -1.093 11.354 1 16.22 ? CE1 HIS 60 A 1 
+ATOM 30 N NE2 HIS 60 . . A 1 27.139 0.169 11.591 1 15.95 ? NE2 HIS 60 A 1 
+ATOM 31 N N HIS 32 . . B 1 41.225 6.123 18.849 1 16.43 ? N HIS 32 B 1 
+ATOM 32 C CA HIS 32 . . B 1 41.678 5.227 19.906 1 22.63 ? CA HIS 32 B 1 
+ATOM 33 C C HIS 32 . . B 1 43.089 5.562 20.369 1 20.84 ? C HIS 32 B 1 
+ATOM 34 O O HIS 32 . . B 1 43.446 5.245 21.51 1 17.48 ? O HIS 32 B 1 
+ATOM 35 C CB HIS 32 . . B 1 41.602 3.774 19.43 1 26.27 ? CB HIS 32 B 1 
+ATOM 36 C CG HIS 32 . . B 1 41.688 2.77 20.538 1 24.13 ? CG HIS 32 B 1 
+ATOM 37 N ND1 HIS 32 . . B 1 40.906 2.844 21.67 1 23.21 ? ND1 HIS 32 B 1 
+ATOM 38 C CD2 HIS 32 . . B 1 42.467 1.673 20.689 1 25.46 ? CD2 HIS 32 B 1 
+ATOM 39 C CE1 HIS 32 . . B 1 41.199 1.835 22.471 1 23.84 ? CE1 HIS 32 B 1 
+ATOM 40 N NE2 HIS 32 . . B 1 42.142 1.109 21.899 1 26.38 ? NE2 HIS 32 B 1 
+ATOM 41 N N HIS 41 . . B 1 46.281 7.019 29.455 1 23.6 ? N HIS 41 B 1 
+ATOM 42 C CA HIS 41 . . B 1 47.68 7.311 29.771 1 27.8 ? CA HIS 41 B 1 
+ATOM 43 C C HIS 41 . . B 1 48.542 6.057 29.637 1 29.54 ? C HIS 41 B 1 
+ATOM 44 O O HIS 41 . . B 1 49.334 5.718 30.521 1 25.95 ? O HIS 41 B 1 
+ATOM 45 C CB HIS 41 . . B 1 47.827 7.92 31.17 1 33.78 ? CB HIS 41 B 1 
+ATOM 46 C CG HIS 41 . . B 1 46.786 8.941 31.507 1 38.57 ? CG HIS 41 B 1 
+ATOM 47 N ND1 HIS 41 . . B 1 45.808 8.721 32.452 1 46.79 ? ND1 HIS 41 B 1 
+ATOM 48 C CD2 HIS 41 . . B 1 46.576 10.192 31.035 1 41.61 ? CD2 HIS 41 B 1 
+ATOM 49 C CE1 HIS 41 . . B 1 45.038 9.79 32.545 1 43.74 ? CE1 HIS 41 B 1 
+ATOM 50 N NE2 HIS 41 . . B 1 45.483 10.698 31.695 1 44.14 ? NE2 HIS 41 B 1 
+ATOM 51 N N HIS 60 . . B 1 54.718 8.831 14.224 1 25.49 ? N HIS 60 B 1 
+ATOM 52 C CA HIS 60 . . B 1 53.436 9.118 13.601 1 23.45 ? CA HIS 60 B 1 
+ATOM 53 C C HIS 60 . . B 1 53.338 8.366 12.278 1 25.23 ? C HIS 60 B 1 
+ATOM 54 O O HIS 60 . . B 1 54.352 8.058 11.647 1 21.7 ? O HIS 60 B 1 
+ATOM 55 C CB HIS 60 . . B 1 53.281 10.625 13.374 1 22.65 ? CB HIS 60 B 1 
+ATOM 56 C CG HIS 60 . . B 1 51.894 11.048 13.007 1 24.37 ? CG HIS 60 B 1 
+ATOM 57 N ND1 HIS 60 . . B 1 51.478 11.176 11.7 1 22.42 ? ND1 HIS 60 B 1 
+ATOM 58 C CD2 HIS 60 . . B 1 50.833 11.393 13.775 1 21.24 ? CD2 HIS 60 B 1 
+ATOM 59 C CE1 HIS 60 . . B 1 50.217 11.571 11.678 1 23.62 ? CE1 HIS 60 B 1 
+ATOM 60 N NE2 HIS 60 . . B 1 49.803 11.711 12.924 1 24.41 ? NE2 HIS 60 B 1 
+#
+_model_server_stats.io_time_ms              5 
+_model_server_stats.parse_time_ms           8 
+_model_server_stats.create_model_time_ms    2 
+_model_server_stats.query_time_ms           164 
+_model_server_stats.encode_time_ms          2 
+_model_server_stats.element_count           60 
+#

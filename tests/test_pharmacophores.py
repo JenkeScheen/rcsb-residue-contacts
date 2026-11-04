@@ -2,7 +2,7 @@
 
 from rdkit import Chem
 
-from pdbbind_residue_contacts import pharmacophores
+from rcsb_residue_contacts import pharmacophores
 
 
 def _labels(smiles: str) -> set[str]:

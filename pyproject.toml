@@ -3,14 +3,14 @@ requires = ["setuptools>=64", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "pdbbind-residue-contacts"
-version = "0.1.0"
-description = "Mine a local PDBBind dataset for pharmacophores of non-protein molecules contacting a given residue type."
+name = "rcsb-residue-contacts"
+version = "0.2.0"
+description = "Find PDB ligands that pi-stack (face-to-face / edge-to-face) on aromatic residues, using only the RCSB PDB APIs."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [{ name = "Jenke Scheen" }]
-keywords = ["pdbbind", "pharmacophore", "cheminformatics", "structural-biology", "protein-ligand"]
+keywords = ["rcsb", "pdb", "pi-stacking", "pharmacophore", "cheminformatics", "structural-biology", "protein-ligand"]
 dependencies = [
     "rdkit>=2023.09",
     "gemmi>=0.6",
@@ -22,14 +22,15 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=7.0"]
-# Interaction-type classification (H-bond, hydrophobic, pi-stacking, ...) via ProLIF.
-interactions = ["prolif>=2.0"]
 
 [project.scripts]
-pdbbind-residue-contacts = "pdbbind_residue_contacts.cli:main"
+rcsb-residue-contacts = "rcsb_residue_contacts.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/JenkeScheen/pdbbind-residue-contacts"
+Homepage = "https://github.com/JenkeScheen/rcsb-residue-contacts"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.pytest.ini_options]
+markers = ["network: hits the live RCSB APIs (run with RCSB_NETWORK_TESTS=1)"]

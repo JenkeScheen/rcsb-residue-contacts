@@ -1,0 +1,345 @@
+entry_id,comp_id,name,asym_id,residue,ring_patterns,ring_system_smiles,distance,angle,offset,pure_stacking,polar_contact,metal_coordination,release_date,resolution,url
+10DV,7YY,"6-[(6-chloranyl-2-methyl-indazol-5-yl)amino]-3-[(1-methyl-1,2,4-triazol-3-yl)methyl]-1-[[2,4,5-tris(fluoranyl)phenyl]methyl]-1,3,5-triazine-2,4-dione",C,HISA41,benzene,c1ccccc1,3.723,9.1,1.021,True,False,False,2026-05-06,2.05,https://www.rcsb.org/structure/10DV
+10DV,7YY,"6-[(6-chloranyl-2-methyl-indazol-5-yl)amino]-3-[(1-methyl-1,2,4-triazol-3-yl)methyl]-1-[[2,4,5-tris(fluoranyl)phenyl]methyl]-1,3,5-triazine-2,4-dione",D,HISB41,benzene,c1ccccc1,3.878,11.8,1.04,True,False,False,2026-05-06,2.05,https://www.rcsb.org/structure/10DV
+13CL,A1DFA,"6-[4-(4,5-dichloro-2-nitrophenyl)piperazine-1-carbonyl]pyrimidine-2,4(1H,3H)-dione",B,HISA41,benzene,c1ccccc1,3.918,11.8,0.634,True,False,False,2026-09-09,2.0,https://www.rcsb.org/structure/13CL
+13RD,A1CXB,4-(4-methoxyphenyl)-1H-imidazole,D,HISA73,benzene,c1ccccc1,3.504,6.3,0.993,True,False,False,2026-02-18,1.89,https://www.rcsb.org/structure/13RD
+1A4M,PRH,"6-HYDROXY-1,6-DIHYDRO PURINE NUCLEOSIDE",F,HISA17,imidazole,c1c[nH]cn1,3.651,16.2,1.651,False,True,False,1998-10-14,1.95,https://www.rcsb.org/structure/1A4M
+1A4M,PRH,"6-HYDROXY-1,6-DIHYDRO PURINE NUCLEOSIDE",H,HISB517,imidazole,c1c[nH]cn1,3.753,15.1,1.647,False,True,False,1998-10-14,1.95,https://www.rcsb.org/structure/1A4M
+1A4M,PRH,"6-HYDROXY-1,6-DIHYDRO PURINE NUCLEOSIDE",J,HISC1017,imidazole,c1c[nH]cn1,3.718,23.3,1.594,False,True,False,1998-10-14,1.95,https://www.rcsb.org/structure/1A4M
+1A4M,PRH,"6-HYDROXY-1,6-DIHYDRO PURINE NUCLEOSIDE",L,HISD1517,imidazole,c1c[nH]cn1,3.576,13.7,1.795,False,True,False,1998-10-14,1.95,https://www.rcsb.org/structure/1A4M
+1BG2,ADP,ADENOSINE-5'-DIPHOSPHATE,F,HISA93,imidazole (fused); pyrimidine (fused),c1ncc2[nH]cnc2n1,3.927,15.8,1.16,False,True,False,1998-10-14,1.8,https://www.rcsb.org/structure/1BG2
+1GGK,HEM,PROTOPORPHYRIN IX CONTAINING FE,E,HISA128,pyrrole,c1cc[nH]c1,3.556,13.2,0.923,True,False,False,2000-08-30,2.26,https://www.rcsb.org/structure/1GGK
+1GGK,HEM,PROTOPORPHYRIN IX CONTAINING FE,F,HISB128,pyrrole,c1cc[nH]c1,3.684,12.2,1.053,True,False,False,2000-08-30,2.26,https://www.rcsb.org/structure/1GGK
+1GGK,HEM,PROTOPORPHYRIN IX CONTAINING FE,G,HISC128,pyrrole,c1cc[nH]c1,3.691,7.3,1.135,True,False,False,2000-08-30,2.26,https://www.rcsb.org/structure/1GGK
+1GGK,HEM,PROTOPORPHYRIN IX CONTAINING FE,H,HISD128,pyrrole,c1cc[nH]c1,3.564,9.0,1.08,True,False,False,2000-08-30,2.26,https://www.rcsb.org/structure/1GGK
+1IPH,HEM,PROTOPORPHYRIN IX CONTAINING FE,E,HISA128,pyrrole,c1cc[nH]c1,3.685,10.0,1.01,True,False,False,1997-09-04,2.8,https://www.rcsb.org/structure/1IPH
+1IPH,HEM,PROTOPORPHYRIN IX CONTAINING FE,F,HISB128,pyrrole,c1cc[nH]c1,3.686,10.0,1.011,True,False,False,1997-09-04,2.8,https://www.rcsb.org/structure/1IPH
+1IPH,HEM,PROTOPORPHYRIN IX CONTAINING FE,G,HISC128,pyrrole,c1cc[nH]c1,3.686,10.0,1.01,True,False,False,1997-09-04,2.8,https://www.rcsb.org/structure/1IPH
+1IPH,HEM,PROTOPORPHYRIN IX CONTAINING FE,H,HISD128,pyrrole,c1cc[nH]c1,3.685,10.0,1.01,True,False,False,1997-09-04,2.8,https://www.rcsb.org/structure/1IPH
+1KO0,PLP,PYRIDOXAL-5'-PHOSPHATE,B,HISA191,pyridine,c1ccncc1,3.667,14.1,0.311,True,False,False,2003-11-11,2.2,https://www.rcsb.org/structure/1KO0
+1KR3,113,"7,8-DIHYDROXY-1-METHOXY-3-METHYL-10-OXO-4,10-DIHYDRO-1H,3H-PYRANO[4,3-B]CHROMENE-9-CARBOXYLIC ACID",J,HISB223,benzene (fused); other 6-ring heteroaromatic (fused),O=c1ccoc2ccccc12,4.095,28.7,0.64,True,False,False,2003-01-08,2.5,https://www.rcsb.org/structure/1KR3
+1LS3,PLP,PYRIDOXAL-5'-PHOSPHATE,E,HISA126,pyridine,c1ccncc1,3.615,15.9,0.761,True,False,False,2003-02-04,2.7,https://www.rcsb.org/structure/1LS3
+1LS3,PLP,PYRIDOXAL-5'-PHOSPHATE,G,HISB126,pyridine,c1ccncc1,3.662,12.1,1.13,True,False,False,2003-02-04,2.7,https://www.rcsb.org/structure/1LS3
+1LS3,PLP,PYRIDOXAL-5'-PHOSPHATE,L,HISC126,pyridine,c1ccncc1,3.664,18.1,0.747,True,False,False,2003-02-04,2.7,https://www.rcsb.org/structure/1LS3
+1LS3,PLP,PYRIDOXAL-5'-PHOSPHATE,N,HISD126,pyridine,c1ccncc1,3.82,17.4,0.994,True,False,False,2003-02-04,2.7,https://www.rcsb.org/structure/1LS3
+1ND5,2BF,ALPHA-BENZYL-AMINOBENZYL-PHOSPHONIC ACID,O,HISB1255,benzene,c1ccccc1,4.316,28.1,0.771,False,True,False,2002-12-20,2.9,https://www.rcsb.org/structure/1ND5
+1ND5,2BF,ALPHA-BENZYL-AMINOBENZYL-PHOSPHONIC ACID,V,HISD3256,benzene,c1ccccc1,4.327,28.0,0.877,False,True,False,2002-12-20,2.9,https://www.rcsb.org/structure/1ND5
+1O0H,ADP,ADENOSINE-5'-DIPHOSPHATE,C,HISA119,pyrimidine (fused),c1ncc2[nH]cnc2n1,3.852,9.8,1.511,False,True,False,2003-12-09,1.2,https://www.rcsb.org/structure/1O0H
+1O0H,ADP,ADENOSINE-5'-DIPHOSPHATE,D,HISB119,imidazole (fused); pyrimidine (fused),c1ncc2[nH]cnc2n1,3.608,13.2,0.75,False,True,False,2003-12-09,1.2,https://www.rcsb.org/structure/1O0H
+1OCO,HEA,HEME-A,EA,HISA290,pyrrole,c1cc[nH]c1,4.557,19.2,1.692,False,True,False,1999-07-22,2.8,https://www.rcsb.org/structure/1OCO
+1OCO,HEA,HEME-A,NA,HISN290,pyrrole,c1cc[nH]c1,4.606,17.9,1.75,False,True,False,1999-07-22,2.8,https://www.rcsb.org/structure/1OCO
+1PE5,BR3,"(6-METHYL-3,4-DIHYDRO-2H-CHROMEN-2-YL)METHYLPHOSPHINATE",G,HISA231,benzene,c1ccccc1,3.751,15.9,1.258,False,True,False,2004-06-08,1.7,https://www.rcsb.org/structure/1PE5
+1WBD,ADP,ADENOSINE-5'-DIPHOSPHATE,E,HISA760,imidazole (fused); pyrimidine (fused),c1ncc2[nH]cnc2n1,3.816,7.7,1.481,False,True,False,2006-01-18,2.4,https://www.rcsb.org/structure/1WBD
+1WXI,AMP,ADENOSINE MONOPHOSPHATE,D,HISA260,imidazole (fused); pyrimidine (fused),c1ncc2[nH]cnc2n1,3.615,13.7,0.589,False,True,False,2005-02-15,1.7,https://www.rcsb.org/structure/1WXI
+1WYV,PLP,PYRIDOXAL-5'-PHOSPHATE,I,HISB166,pyridine,c1ccncc1,3.535,3.4,0.865,True,False,False,2005-04-05,2.4,https://www.rcsb.org/structure/1WYV
+1WYV,PLP,PYRIDOXAL-5'-PHOSPHATE,K,HISD166,pyridine,c1ccncc1,3.805,8.6,1.086,True,False,False,2005-04-05,2.4,https://www.rcsb.org/structure/1WYV
+1WYV,PLP,PYRIDOXAL-5'-PHOSPHATE,M,HISF166,pyridine,c1ccncc1,3.731,5.6,0.999,True,False,False,2005-04-05,2.4,https://www.rcsb.org/structure/1WYV
+1WYV,PLP,PYRIDOXAL-5'-PHOSPHATE,O,HISH166,pyridine,c1ccncc1,3.681,5.5,1.056,True,False,False,2005-04-05,2.4,https://www.rcsb.org/structure/1WYV
+1XZQ,FON,"N-{[4-({[(6R)-2-amino-5-formyl-4-oxo-1,4,5,6,7,8-hexahydropteridin-6-yl]methyl}amino)phenyl]carbonyl}-L-glutamic acid",D,HISA47,benzene,c1ccccc1,4.063,17.6,0.944,True,False,False,2005-01-04,2.9,https://www.rcsb.org/structure/1XZQ
+28WU,HEM,PROTOPORPHYRIN IX CONTAINING FE,G,HISC128,pyrrole,c1cc[nH]c1,3.527,2.5,0.933,True,False,False,2026-05-06,2.5,https://www.rcsb.org/structure/28WU
+29OK,A1J3E,N-[(2-bromanyl-5-sulfamoyl-phenyl)methyl]-2-(iminomethyl)pyrimidine-4-carboxamide,M,HISA41,benzene,c1ccccc1,4.231,3.8,1.653,True,False,False,2026-06-24,1.93,https://www.rcsb.org/structure/29OK
+29OK,A1J3E,N-[(2-bromanyl-5-sulfamoyl-phenyl)methyl]-2-(iminomethyl)pyrimidine-4-carboxamide,S,HISB41,benzene,c1ccccc1,4.277,26.1,1.341,True,False,False,2026-06-24,1.93,https://www.rcsb.org/structure/29OK
+2BI8,FAD,FLAVIN-ADENINE DINUCLEOTIDE,B,HISA60,pyrazine (fused),O=c1[nH]c(=O)c2nc3ccccc3nc2[nH]1,3.602,11.3,0.803,False,True,False,2005-05-05,2.35,https://www.rcsb.org/structure/2BI8
+2C0U,FAD,FLAVIN-ADENINE DINUCLEOTIDE,E,HISB313,pyrimidine (fused),c1ncc2[nH]cnc2n1,3.646,13.8,1.077,True,False,False,2006-02-01,2.2,https://www.rcsb.org/structure/2C0U
+2C0U,FAD,FLAVIN-ADENINE DINUCLEOTIDE,G,HISA313,pyrimidine (fused),c1ncc2[nH]cnc2n1,3.687,5.9,1.424,True,False,False,2006-02-01,2.2,https://www.rcsb.org/structure/2C0U
+2C0U,FAD,FLAVIN-ADENINE DINUCLEOTIDE,I,HISD313,pyrimidine (fused),c1ncc2[nH]cnc2n1,3.69,3.6,1.301,True,False,False,2006-02-01,2.2,https://www.rcsb.org/structure/2C0U
+2C0U,FAD,FLAVIN-ADENINE DINUCLEOTIDE,K,HISC313,pyrimidine (fused),c1ncc2[nH]cnc2n1,3.639,7.4,1.305,True,False,False,2006-02-01,2.2,https://www.rcsb.org/structure/2C0U
+2C8Y,C3M,"N-[(2R,3S)-3-AMINO-2-HYDROXY-4-PHENYLBUTYL]NAPHTHALENE-2-SULFONAMIDE",H,HISB57,benzene,c1ccccc1,4.008,14.2,1.211,True,False,False,2006-07-04,2.2,https://www.rcsb.org/structure/2C8Y
+2FOY,B30,"{2,2'-[(2-{[4-(AMINOSULFONYL)BENZOYL]AMINO}ETHYL)IMINO]DIACETATO(2-)-KAPPAO}COPPER",F,HISA103,benzene,c1ccccc1,3.984,10.2,0.566,False,True,True,2006-04-04,1.55,https://www.rcsb.org/structure/2FOY
+2FOY,B30,"{2,2'-[(2-{[4-(AMINOSULFONYL)BENZOYL]AMINO}ETHYL)IMINO]DIACETATO(2-)-KAPPAO}COPPER",J,HISB103,benzene,c1ccccc1,4.156,25.1,0.275,False,True,True,2006-04-04,1.55,https://www.rcsb.org/structure/2FOY
+2G6P,HM2,5-CHLORO-6-METHYL-N-(2-PHENYLETHYL)-2-PYRIDIN-2-YLPYRIMIDIN-4-AMINE,F,HISA310,pyrimidine,c1cncnc1,3.397,14.8,0.534,False,True,False,2006-06-20,1.9,https://www.rcsb.org/structure/2G6P
+2GEV,COK,"[(2R,3S,4R,5R)-5-(6-AMINO-9H-PURIN-9-YL)-4-HYDROXY-3-(PHOSPHONOOXY)TETRAHYDROFURAN-2-YL]METHYL (3R)-3-HYDROXY-4-{[3-({2-[(2-HYDROXYETHYL)DITHIO]ETHYL}AMINO)-3-OXOPROPYL]AMINO}-2,2-DIMETHYL-4-OXOBUTYL DIHYDROGEN DIPHOSPHATE",B,HISA179,imidazole (fused),c1ncc2[nH]cnc2n1,4.156,25.3,1.431,False,True,False,2006-06-06,2.35,https://www.rcsb.org/structure/2GEV
+2O5M,MNR,PROTOPORPHYRIN IX CONTAINING MN,E,HISX97,pyrrole,c1cc[nH]c1,3.835,14.9,0.759,False,True,False,2007-10-16,1.65,https://www.rcsb.org/structure/2O5M
+2R2W,4PG,1-[4-(2-oxo-2-phenylethyl)phenyl]guanidine,C,HISU57,benzene,c1ccccc1,4.199,26.8,1.69,True,False,False,2007-10-23,2.01,https://www.rcsb.org/structure/2R2W
+2VQ3,NAP,NADP NICOTINAMIDE-ADENINE-DINUCLEOTIDE PHOSPHATE,C,HISA95,pyrimidine (fused),c1ncc2[nH]cnc2n1,3.442,16.7,1.088,False,True,False,2008-05-06,2.0,https://www.rcsb.org/structure/2VQ3
+2VQ3,NAP,NADP NICOTINAMIDE-ADENINE-DINUCLEOTIDE PHOSPHATE,E,HISB95,pyrimidine (fused),c1ncc2[nH]cnc2n1,3.402,18.5,0.694,False,True,False,2008-05-06,2.0,https://www.rcsb.org/structure/2VQ3
+2W7L,PLP,PYRIDOXAL-5'-PHOSPHATE,B,HISA122,pyridine,c1ccncc1,3.485,16.8,0.306,True,False,False,2010-08-18,2.41,https://www.rcsb.org/structure/2W7L
+2WEU,TRP,TRYPTOPHAN,E,HISA92,benzene (fused),c1ccc2[nH]ccc2c1,3.843,11.3,1.717,True,False,False,2009-04-14,1.7,https://www.rcsb.org/structure/2WEU
+2WEU,TRP,TRYPTOPHAN,F,HISB92,benzene (fused),c1ccc2[nH]ccc2c1,3.953,15.1,1.586,True,False,False,2009-04-14,1.7,https://www.rcsb.org/structure/2WEU
+2WEU,TRP,TRYPTOPHAN,G,HISC92,benzene (fused),c1ccc2[nH]ccc2c1,3.945,15.7,1.509,True,False,False,2009-04-14,1.7,https://www.rcsb.org/structure/2WEU
+2WEU,TRP,TRYPTOPHAN,H,HISD92,benzene (fused),c1ccc2[nH]ccc2c1,3.918,10.7,1.818,True,False,False,2009-04-14,1.7,https://www.rcsb.org/structure/2WEU
+2XHM,K26,N-ACETYL-L-ILE-L-TYR-(R)-1-AMINO-2-(4-HYDROXYPHENYL)ETHYLPHOSPHONIC ACID,C,HISA394,benzene,c1ccccc1,3.687,16.5,0.246,True,False,False,2010-07-14,1.96,https://www.rcsb.org/structure/2XHM
+2XTO,GDP,GUANOSINE-5'-DIPHOSPHATE,C,HISA147,pyrimidine (fused),O=c1[nH]cnc2[nH]cnc12,3.466,15.4,0.806,False,True,False,2010-10-20,2.8,https://www.rcsb.org/structure/2XTO
+2XTO,GDP,GUANOSINE-5'-DIPHOSPHATE,E,HISB147,pyrimidine (fused),O=c1[nH]cnc2[nH]cnc12,3.545,13.9,0.808,False,True,False,2010-10-20,2.8,https://www.rcsb.org/structure/2XTO
+2Y3P,SM8,SIMOCYCLINONE D8,E,HISA45,benzene (fused),O=c1ccc2ccccc2o1,3.534,17.3,0.83,False,True,False,2010-12-29,2.62,https://www.rcsb.org/structure/2Y3P
+2Y3P,SM8,SIMOCYCLINONE D8,H,HISB45,benzene (fused),O=c1ccc2ccccc2o1,3.876,23.7,1.227,True,False,False,2010-12-29,2.62,https://www.rcsb.org/structure/2Y3P
+2ZFN,ACO,ACETYL COENZYME *A,B,HISA211,imidazole (fused); pyrimidine (fused),c1ncc2[nH]cnc2n1,3.647,4.2,0.974,False,True,False,2008-09-23,1.9,https://www.rcsb.org/structure/2ZFN
+3CO8,PLP,PYRIDOXAL-5'-PHOSPHATE,C,HISA166,pyridine,c1ccncc1,3.99,22.0,1.371,False,True,False,2008-04-08,1.7,https://www.rcsb.org/structure/3CO8
+3CO8,PLP,PYRIDOXAL-5'-PHOSPHATE,D,HISB166,pyridine,c1ccncc1,4.066,26.3,1.511,False,True,False,2008-04-08,1.7,https://www.rcsb.org/structure/3CO8
+3DH8,B4N,bis(4-nitrophenyl) hydrogen phosphate,D,HISA71,benzene,c1ccccc1,4.387,28.3,1.494,True,False,False,2009-06-23,1.8,https://www.rcsb.org/structure/3DH8
+3EWD,MCF,"(8R)-3-(5-S-methyl-5-thio-beta-D-ribofuranosyl)-3,6,7,8-tetrahydroimidazo[4,5-d][1,3]diazepin-8-ol",C,HISA44,imidazole,c1c[nH]cn1,3.656,3.5,1.53,False,True,False,2009-09-22,1.9,https://www.rcsb.org/structure/3EWD
+3GWC,FAD,FLAVIN-ADENINE DINUCLEOTIDE,I,HISB98,imidazole (fused); pyrimidine (fused),c1ncc2[nH]cnc2n1,3.568,9.1,0.614,False,True,False,2009-04-28,1.9,https://www.rcsb.org/structure/3GWC
+3GWC,FAD,FLAVIN-ADENINE DINUCLEOTIDE,K,HISA98,imidazole (fused); pyrimidine (fused),c1ncc2[nH]cnc2n1,3.507,9.8,0.537,False,True,False,2009-04-28,1.9,https://www.rcsb.org/structure/3GWC
+3GWC,FAD,FLAVIN-ADENINE DINUCLEOTIDE,M,HISD98,imidazole (fused); pyrimidine (fused),c1ncc2[nH]cnc2n1,3.418,15.3,0.506,False,True,False,2009-04-28,1.9,https://www.rcsb.org/structure/3GWC
+3GWC,FAD,FLAVIN-ADENINE DINUCLEOTIDE,P,HISC98,imidazole (fused); pyrimidine (fused),c1ncc2[nH]cnc2n1,3.54,10.7,0.474,False,True,False,2009-04-28,1.9,https://www.rcsb.org/structure/3GWC
+3GWC,FAD,FLAVIN-ADENINE DINUCLEOTIDE,R,HISF98,imidazole (fused); pyrimidine (fused),c1ncc2[nH]cnc2n1,3.62,10.6,0.679,False,True,False,2009-04-28,1.9,https://www.rcsb.org/structure/3GWC
+3GWC,FAD,FLAVIN-ADENINE DINUCLEOTIDE,T,HISE98,imidazole (fused); pyrimidine (fused),c1ncc2[nH]cnc2n1,3.439,9.0,0.583,False,True,False,2009-04-28,1.9,https://www.rcsb.org/structure/3GWC
+3GWC,FAD,FLAVIN-ADENINE DINUCLEOTIDE,V,HISH98,imidazole (fused); pyrimidine (fused),c1ncc2[nH]cnc2n1,3.393,14.4,0.506,False,True,False,2009-04-28,1.9,https://www.rcsb.org/structure/3GWC
+3GWC,FAD,FLAVIN-ADENINE DINUCLEOTIDE,X,HISG98,imidazole (fused); pyrimidine (fused),c1ncc2[nH]cnc2n1,3.571,12.6,0.683,False,True,False,2009-04-28,1.9,https://www.rcsb.org/structure/3GWC
+3GZD,PLR,"(5-HYDROXY-4,6-DIMETHYLPYRIDIN-3-YL)METHYL DIHYDROGEN PHOSPHATE",E,HISA145,pyridine,c1ccncc1,3.627,14.2,0.298,True,False,False,2009-04-28,1.8,https://www.rcsb.org/structure/3GZD
+3GZD,PLR,"(5-HYDROXY-4,6-DIMETHYLPYRIDIN-3-YL)METHYL DIHYDROGEN PHOSPHATE",G,HISB145,pyridine,c1ccncc1,3.583,11.3,0.352,True,False,False,2009-04-28,1.8,https://www.rcsb.org/structure/3GZD
+3GZD,PLR,"(5-HYDROXY-4,6-DIMETHYLPYRIDIN-3-YL)METHYL DIHYDROGEN PHOSPHATE",I,HISC145,pyridine,c1ccncc1,3.612,15.7,0.287,True,False,False,2009-04-28,1.8,https://www.rcsb.org/structure/3GZD
+3GZD,PLR,"(5-HYDROXY-4,6-DIMETHYLPYRIDIN-3-YL)METHYL DIHYDROGEN PHOSPHATE",K,HISD145,pyridine,c1ccncc1,3.542,11.8,0.35,True,False,False,2009-04-28,1.8,https://www.rcsb.org/structure/3GZD
+3INR,FAD,FLAVIN-ADENINE DINUCLEOTIDE,C,HISA60,pyrazine (fused),O=c1[nH]c(=O)c2nc3ccccc3nc2[nH]1,3.889,15.9,0.352,False,True,False,2009-09-22,2.3,https://www.rcsb.org/structure/3INR
+3INR,FAD,FLAVIN-ADENINE DINUCLEOTIDE,E,HISB60,pyrazine (fused),O=c1[nH]c(=O)c2nc3ccccc3nc2[nH]1,3.876,15.1,0.443,False,True,False,2009-09-22,2.3,https://www.rcsb.org/structure/3INR
+3JQ6,NAP,NADP NICOTINAMIDE-ADENINE-DINUCLEOTIDE PHOSPHATE,E,HISA35,pyrimidine (fused),c1ncc2[nH]cnc2n1,4.288,23.8,1.751,True,False,False,2009-12-08,1.8,https://www.rcsb.org/structure/3JQ6
+3JQ6,NAP,NADP NICOTINAMIDE-ADENINE-DINUCLEOTIDE PHOSPHATE,H,HISB35,pyrimidine (fused),c1ncc2[nH]cnc2n1,4.318,22.9,1.767,True,False,False,2009-12-08,1.8,https://www.rcsb.org/structure/3JQ6
+3JQ6,NAP,NADP NICOTINAMIDE-ADENINE-DINUCLEOTIDE PHOSPHATE,K,HISC35,pyrimidine (fused),c1ncc2[nH]cnc2n1,4.359,22.8,1.92,True,False,False,2009-12-08,1.8,https://www.rcsb.org/structure/3JQ6
+3JQ6,NAP,NADP NICOTINAMIDE-ADENINE-DINUCLEOTIDE PHOSPHATE,P,HISD35,pyrimidine (fused),c1ncc2[nH]cnc2n1,4.302,20.9,1.826,True,False,False,2009-12-08,1.8,https://www.rcsb.org/structure/3JQ6
+3JQ8,NAP,NADP NICOTINAMIDE-ADENINE-DINUCLEOTIDE PHOSPHATE,E,HISA35,pyrimidine (fused),c1ncc2[nH]cnc2n1,4.346,19.4,1.571,True,False,False,2009-12-08,1.95,https://www.rcsb.org/structure/3JQ8
+3JQ8,NAP,NADP NICOTINAMIDE-ADENINE-DINUCLEOTIDE PHOSPHATE,G,HISB35,pyrimidine (fused),c1ncc2[nH]cnc2n1,4.372,17.3,1.6,True,False,False,2009-12-08,1.95,https://www.rcsb.org/structure/3JQ8
+3JQ8,NAP,NADP NICOTINAMIDE-ADENINE-DINUCLEOTIDE PHOSPHATE,I,HISC35,pyrimidine (fused),c1ncc2[nH]cnc2n1,4.327,16.5,1.639,True,False,False,2009-12-08,1.95,https://www.rcsb.org/structure/3JQ8
+3JQ8,NAP,NADP NICOTINAMIDE-ADENINE-DINUCLEOTIDE PHOSPHATE,L,HISD35,pyrimidine (fused),c1ncc2[nH]cnc2n1,4.324,16.0,1.685,True,False,False,2009-12-08,1.95,https://www.rcsb.org/structure/3JQ8
+3JTF,AMP,ADENOSINE MONOPHOSPHATE,C,HISA109,imidazole (fused); pyrimidine (fused),c1ncc2[nH]cnc2n1,3.61,11.6,0.833,False,True,False,2009-12-22,2.0,https://www.rcsb.org/structure/3JTF
+3JTF,AMP,ADENOSINE MONOPHOSPHATE,F,HISB109,imidazole (fused); pyrimidine (fused),c1ncc2[nH]cnc2n1,3.467,5.6,0.769,False,True,False,2009-12-22,2.0,https://www.rcsb.org/structure/3JTF
+3K9U,ACO,ACETYL COENZYME *A,I,HISA100,pyrimidine (fused),c1ncc2[nH]cnc2n1,4.014,27.8,0.849,False,True,False,2009-11-17,2.3,https://www.rcsb.org/structure/3K9U
+3LBY,SAH,S-ADENOSYL-L-HOMOCYSTEINE,C,HISA76,pyrimidine (fused),c1ncc2[nH]cnc2n1,3.74,14.1,1.435,False,True,False,2011-01-12,2.0,https://www.rcsb.org/structure/3LBY
+3LJZ,LA3,"(2R)-2-[4-(1,3-benzodioxol-5-yl)benzyl]-N~4~-hydroxy-N~1~-[(1S,2R)-2-hydroxy-2,3-dihydro-1H-inden-1-yl]butanediamide",AA,HISC222,benzene,c1ccccc1,3.72,12.9,0.888,False,True,False,2011-02-02,2.0,https://www.rcsb.org/structure/3LJZ
+3LJZ,LA3,"(2R)-2-[4-(1,3-benzodioxol-5-yl)benzyl]-N~4~-hydroxy-N~1~-[(1S,2R)-2-hydroxy-2,3-dihydro-1H-inden-1-yl]butanediamide",K,HISA222,benzene,c1ccccc1,3.653,9.1,0.805,False,True,False,2011-02-02,2.0,https://www.rcsb.org/structure/3LJZ
+3LJZ,LA3,"(2R)-2-[4-(1,3-benzodioxol-5-yl)benzyl]-N~4~-hydroxy-N~1~-[(1S,2R)-2-hydroxy-2,3-dihydro-1H-inden-1-yl]butanediamide",KA,HISD222,benzene,c1ccccc1,3.652,8.9,1.034,False,True,False,2011-02-02,2.0,https://www.rcsb.org/structure/3LJZ
+3LJZ,LA3,"(2R)-2-[4-(1,3-benzodioxol-5-yl)benzyl]-N~4~-hydroxy-N~1~-[(1S,2R)-2-hydroxy-2,3-dihydro-1H-inden-1-yl]butanediamide",S,HISB222,benzene,c1ccccc1,3.642,9.2,0.938,False,True,False,2011-02-02,2.0,https://www.rcsb.org/structure/3LJZ
+3MDD,FAD,FLAVIN-ADENINE DINUCLEOTIDE,C,HISB291,pyrimidine (fused),c1ncc2[nH]cnc2n1,4.335,11.1,1.896,True,False,False,1994-09-30,2.4,https://www.rcsb.org/structure/3MDD
+3OTQ,MZL,N-[4-(5-ethyl-3-pyridin-3-yl-1H-pyrazol-1-yl)phenyl]pyridine-3-carboxamide,B,HISA524,benzene,c1ccccc1,4.07,29.7,0.674,True,False,False,2010-10-27,3.0,https://www.rcsb.org/structure/3OTQ
+3RSQ,NAX,"BETA-6-HYDROXY-1,4,5,6-TETRHYDRONICOTINAMIDE ADENINE DINUCLEOTIDE",E,HISA366,imidazole (fused),c1ncc2[nH]cnc2n1,3.592,5.4,1.305,False,True,False,2011-06-22,2.054,https://www.rcsb.org/structure/3RSQ
+3U17,H90,"6-(4-benzoylphenyl)-1-(pyridin-4-ylmethyl)-1H-pyrazolo[3,4-b]pyridine-4-carboxylic acid",C,HISA241,benzene,c1ccccc1,4.064,15.2,1.991,True,False,False,2012-10-03,2.1,https://www.rcsb.org/structure/3U17
+3U17,H90,"6-(4-benzoylphenyl)-1-(pyridin-4-ylmethyl)-1H-pyrazolo[3,4-b]pyridine-4-carboxylic acid",I,HISB241,benzene,c1ccccc1,4.019,16.4,1.841,True,False,False,2012-10-03,2.1,https://www.rcsb.org/structure/3U17
+3UTG,FDA,DIHYDROFLAVINE-ADENINE DINUCLEOTIDE,E,HISA63,benzene,c1ccccc1,3.852,25.0,1.805,False,True,False,2012-02-08,2.25,https://www.rcsb.org/structure/3UTG
+3UTG,FDA,DIHYDROFLAVINE-ADENINE DINUCLEOTIDE,J,HISB63,benzene,c1ccccc1,3.844,25.7,1.725,False,True,False,2012-02-08,2.25,https://www.rcsb.org/structure/3UTG
+3UTG,FDA,DIHYDROFLAVINE-ADENINE DINUCLEOTIDE,O,HISC63,benzene,c1ccccc1,3.969,26.3,1.875,False,True,False,2012-02-08,2.25,https://www.rcsb.org/structure/3UTG
+3UTG,FDA,DIHYDROFLAVINE-ADENINE DINUCLEOTIDE,V,HISD63,benzene,c1ccccc1,3.998,25.6,1.8,False,True,False,2012-02-08,2.25,https://www.rcsb.org/structure/3UTG
+3WQD,PLP,PYRIDOXAL-5'-PHOSPHATE,C,HISA172,pyridine,c1ccncc1,3.775,8.5,1.39,True,False,False,2015-01-28,1.5,https://www.rcsb.org/structure/3WQD
+3WQD,PLP,PYRIDOXAL-5'-PHOSPHATE,G,HISB172,pyridine,c1ccncc1,3.79,9.5,1.489,True,False,False,2015-01-28,1.5,https://www.rcsb.org/structure/3WQD
+3WQG,PLP,PYRIDOXAL-5'-PHOSPHATE,C,HISA172,pyridine,c1ccncc1,3.732,19.8,0.635,False,True,False,2015-01-28,1.55,https://www.rcsb.org/structure/3WQG
+3WQG,PLP,PYRIDOXAL-5'-PHOSPHATE,E,HISB172,pyridine,c1ccncc1,3.733,21.3,0.489,False,True,False,2015-01-28,1.55,https://www.rcsb.org/structure/3WQG
+3X01,AMP,ADENOSINE MONOPHOSPHATE,D,HISA161,imidazole (fused); pyrimidine (fused),c1ncc2[nH]cnc2n1,3.896,11.2,1.434,True,False,False,2015-10-14,2.15,https://www.rcsb.org/structure/3X01
+3X02,5GP,GUANOSINE-5'-MONOPHOSPHATE,D,HISA161,imidazole (fused); pyrimidine (fused),O=c1[nH]cnc2[nH]cnc12,3.615,9.9,0.972,True,False,False,2015-10-14,2.45,https://www.rcsb.org/structure/3X02
+3X0A,5GP,GUANOSINE-5'-MONOPHOSPHATE,D,HISA161,imidazole (fused); pyrimidine (fused),O=c1[nH]cnc2[nH]cnc12,3.443,8.5,0.566,True,False,False,2015-10-14,2.6,https://www.rcsb.org/structure/3X0A
+3X0A,5GP,GUANOSINE-5'-MONOPHOSPHATE,G,HISB161,imidazole (fused); pyrimidine (fused),O=c1[nH]cnc2[nH]cnc12,3.572,10.0,1.151,True,False,False,2015-10-14,2.6,https://www.rcsb.org/structure/3X0A
+4A3Q,PLP,PYRIDOXAL-5'-PHOSPHATE,C,HISA168,pyridine,c1ccncc1,4.215,27.0,1.6,True,False,False,2011-12-28,2.15,https://www.rcsb.org/structure/4A3Q
+4A3Q,PLP,PYRIDOXAL-5'-PHOSPHATE,K,HISB168,pyridine,c1ccncc1,4.328,20.5,1.967,True,False,False,2011-12-28,2.15,https://www.rcsb.org/structure/4A3Q
+4AUE,HDD,CIS-HEME D HYDROXYCHLORIN GAMMA-SPIROLACTONE,O,HISA82,pyrrole,c1cc[nH]c1,3.617,14.6,0.871,True,False,False,2013-02-27,2.7,https://www.rcsb.org/structure/4AUE
+4AUE,HDD,CIS-HEME D HYDROXYCHLORIN GAMMA-SPIROLACTONE,P,HISB82,pyrrole,c1cc[nH]c1,3.67,15.5,0.644,True,False,False,2013-02-27,2.7,https://www.rcsb.org/structure/4AUE
+4AUE,HDD,CIS-HEME D HYDROXYCHLORIN GAMMA-SPIROLACTONE,S,HISC82,pyrrole,c1cc[nH]c1,3.658,15.4,0.836,True,False,False,2013-02-27,2.7,https://www.rcsb.org/structure/4AUE
+4AUE,HDD,CIS-HEME D HYDROXYCHLORIN GAMMA-SPIROLACTONE,T,HISD82,pyrrole,c1cc[nH]c1,3.539,15.1,0.825,True,False,False,2013-02-27,2.7,https://www.rcsb.org/structure/4AUE
+4AUN,HDD,CIS-HEME D HYDROXYCHLORIN GAMMA-SPIROLACTONE,I,HISA82,pyrrole,c1cc[nH]c1,3.524,13.7,0.93,False,True,False,2013-02-27,1.92,https://www.rcsb.org/structure/4AUN
+4AUN,HDD,CIS-HEME D HYDROXYCHLORIN GAMMA-SPIROLACTONE,L,HISB82,pyrrole,c1cc[nH]c1,3.579,15.5,0.841,False,True,False,2013-02-27,1.92,https://www.rcsb.org/structure/4AUN
+4AUN,HDD,CIS-HEME D HYDROXYCHLORIN GAMMA-SPIROLACTONE,N,HISC82,pyrrole,c1cc[nH]c1,3.652,14.4,0.901,False,True,False,2013-02-27,1.92,https://www.rcsb.org/structure/4AUN
+4AUN,HDD,CIS-HEME D HYDROXYCHLORIN GAMMA-SPIROLACTONE,P,HISD82,pyrrole,c1cc[nH]c1,3.538,15.0,0.865,False,True,False,2013-02-27,1.92,https://www.rcsb.org/structure/4AUN
+4AUN,HDD,CIS-HEME D HYDROXYCHLORIN GAMMA-SPIROLACTONE,R,HISE82,pyrrole,c1cc[nH]c1,3.544,15.9,0.9,False,True,False,2013-02-27,1.92,https://www.rcsb.org/structure/4AUN
+4AUN,HDD,CIS-HEME D HYDROXYCHLORIN GAMMA-SPIROLACTONE,T,HISF82,pyrrole,c1cc[nH]c1,3.544,17.5,0.742,False,True,False,2013-02-27,1.92,https://www.rcsb.org/structure/4AUN
+4AUN,HDD,CIS-HEME D HYDROXYCHLORIN GAMMA-SPIROLACTONE,V,HISG82,pyrrole,c1cc[nH]c1,3.51,16.5,0.826,False,True,False,2013-02-27,1.92,https://www.rcsb.org/structure/4AUN
+4AUN,HDD,CIS-HEME D HYDROXYCHLORIN GAMMA-SPIROLACTONE,X,HISH82,pyrrole,c1cc[nH]c1,3.525,18.4,0.823,False,True,False,2013-02-27,1.92,https://www.rcsb.org/structure/4AUN
+4B9H,I3C,"5-amino-2,4,6-triiodobenzene-1,3-dicarboxylic acid",E,HISA161,benzene,c1ccccc1,3.812,8.4,1.791,True,False,False,2013-07-17,2.1,https://www.rcsb.org/structure/4B9H
+4CB6,29R,"2,9-N,N-DI(4-CARBOXYBUTYL)-7-N-METHYLGUANINE",C,HISA357,imidazole (fused); pyrimidine (fused),O=c1[nH]cnc2[nH]cnc12,3.395,2.1,0.417,False,True,False,2013-10-30,1.9,https://www.rcsb.org/structure/4CB6
+4CB6,29R,"2,9-N,N-DI(4-CARBOXYBUTYL)-7-N-METHYLGUANINE",K,HISB357,imidazole (fused); pyrimidine (fused),O=c1[nH]cnc2[nH]cnc12,3.391,3.9,0.471,False,True,False,2013-10-30,1.9,https://www.rcsb.org/structure/4CB6
+4DSG,FAD,FLAVIN-ADENINE DINUCLEOTIDE,C,HISA62,pyrazine (fused),O=c1[nH]c(=O)c2nc3ccccc3nc2[nH]1,3.4,12.9,0.753,True,False,False,2012-06-13,2.249,https://www.rcsb.org/structure/4DSG
+4DSG,FAD,FLAVIN-ADENINE DINUCLEOTIDE,F,HISB62,pyrazine (fused),O=c1[nH]c(=O)c2nc3ccccc3nc2[nH]1,3.422,10.0,0.87,True,False,False,2012-06-13,2.249,https://www.rcsb.org/structure/4DSG
+4E0I,FAD,FLAVIN-ADENINE DINUCLEOTIDE,D,HISA162,imidazole (fused),c1ncc2[nH]cnc2n1,3.568,3.9,1.126,False,True,False,2012-08-29,3.0,https://www.rcsb.org/structure/4E0I
+4E0I,FAD,FLAVIN-ADENINE DINUCLEOTIDE,E,HISB162,imidazole (fused),c1ncc2[nH]cnc2n1,3.536,11.7,1.16,False,True,False,2012-08-29,3.0,https://www.rcsb.org/structure/4E0I
+4E0I,FAD,FLAVIN-ADENINE DINUCLEOTIDE,F,HISC162,imidazole (fused),c1ncc2[nH]cnc2n1,3.683,6.4,1.297,False,True,False,2012-08-29,3.0,https://www.rcsb.org/structure/4E0I
+4EEI,AMP,ADENOSINE MONOPHOSPHATE,C,HISA67,imidazole (fused),c1ncc2[nH]cnc2n1,4.245,15.2,1.973,True,False,False,2012-04-18,1.921,https://www.rcsb.org/structure/4EEI
+4ENT,HDD,CIS-HEME D HYDROXYCHLORIN GAMMA-SPIROLACTONE,E,HISA128,pyrrole,c1cc[nH]c1,3.459,0.9,0.876,True,False,False,2012-05-02,1.7,https://www.rcsb.org/structure/4ENT
+4ENT,HEM,PROTOPORPHYRIN IX CONTAINING FE,F,HISA128,pyrrole,c1cc[nH]c1,3.572,3.0,0.743,True,False,False,2012-05-02,1.7,https://www.rcsb.org/structure/4ENT
+4ENT,HDD,CIS-HEME D HYDROXYCHLORIN GAMMA-SPIROLACTONE,G,HISB128,pyrrole,c1cc[nH]c1,3.38,2.7,0.808,True,False,False,2012-05-02,1.7,https://www.rcsb.org/structure/4ENT
+4ENT,HEM,PROTOPORPHYRIN IX CONTAINING FE,H,HISB128,pyrrole,c1cc[nH]c1,3.529,3.3,0.867,True,False,False,2012-05-02,1.7,https://www.rcsb.org/structure/4ENT
+4ENT,HDD,CIS-HEME D HYDROXYCHLORIN GAMMA-SPIROLACTONE,I,HISC128,pyrrole,c1cc[nH]c1,3.513,6.0,0.905,True,False,False,2012-05-02,1.7,https://www.rcsb.org/structure/4ENT
+4ENT,HEM,PROTOPORPHYRIN IX CONTAINING FE,J,HISC128,pyrrole,c1cc[nH]c1,3.56,5.1,0.799,True,False,False,2012-05-02,1.7,https://www.rcsb.org/structure/4ENT
+4ENT,HDD,CIS-HEME D HYDROXYCHLORIN GAMMA-SPIROLACTONE,K,HISD128,pyrrole,c1cc[nH]c1,3.421,2.4,0.793,True,False,False,2012-05-02,1.7,https://www.rcsb.org/structure/4ENT
+4ENT,HEM,PROTOPORPHYRIN IX CONTAINING FE,L,HISD128,pyrrole,c1cc[nH]c1,3.563,4.6,0.727,True,False,False,2012-05-02,1.7,https://www.rcsb.org/structure/4ENT
+4IKT,TFV,"N-[5-chloro-6-methyl-2-(pyridin-2-yl)pyrimidin-4-yl]-N'-[5-(trifluoromethyl)pyridin-2-yl]ethane-1,2-diamine",B,HISA310,pyrimidine,c1cncnc1,3.342,14.5,0.616,False,True,False,2013-12-11,1.6,https://www.rcsb.org/structure/4IKT
+4JVR,1MT,"(2'S,3R,4'S,5'R)-N-(2-aminoethyl)-6-chloro-4'-(3-chloro-2-fluorophenyl)-2'-(2,2-dimethylpropyl)-2-oxo-1,2-dihydrospiro[indole-3,3'-pyrrolidine]-5'-carboxamide",D,HISA96,benzene,c1ccccc1,3.917,9.6,1.9,False,True,False,2013-05-01,1.7,https://www.rcsb.org/structure/4JVR
+4JVR,1MT,"(2'S,3R,4'S,5'R)-N-(2-aminoethyl)-6-chloro-4'-(3-chloro-2-fluorophenyl)-2'-(2,2-dimethylpropyl)-2-oxo-1,2-dihydrospiro[indole-3,3'-pyrrolidine]-5'-carboxamide",E,HISC96,benzene,c1ccccc1,3.937,4.2,1.618,False,True,False,2013-05-01,1.7,https://www.rcsb.org/structure/4JVR
+4JVR,1MT,"(2'S,3R,4'S,5'R)-N-(2-aminoethyl)-6-chloro-4'-(3-chloro-2-fluorophenyl)-2'-(2,2-dimethylpropyl)-2-oxo-1,2-dihydrospiro[indole-3,3'-pyrrolidine]-5'-carboxamide",F,HISE96,benzene,c1ccccc1,3.883,12.5,1.381,False,True,False,2013-05-01,1.7,https://www.rcsb.org/structure/4JVR
+4LCP,6AP,"9H-PURINE-2,6-DIAMINE",D,HISA77,imidazole (fused),c1ncc2[nH]cnc2n1,3.585,11.1,1.185,True,False,False,2014-01-22,2.0,https://www.rcsb.org/structure/4LCP
+4LNL,2BO,N-({3-hydroxy-2-methyl-5-[(phosphonooxy)methyl]pyridin-4-yl}methyl)-L-threonine,D,HISA83,pyridine,c1ccncc1,3.426,4.5,0.859,False,True,False,2013-11-06,2.1,https://www.rcsb.org/structure/4LNL
+4LNL,2BK,N-({3-hydroxy-2-methyl-5-[(phosphonooxy)methyl]pyridin-4-yl}methyl)-L-allothreonine,E,HISA83,pyridine,c1ccncc1,3.426,4.5,0.859,False,True,False,2013-11-06,2.1,https://www.rcsb.org/structure/4LNL
+4LNL,PLG,N-GLYCINE-[3-HYDROXY-2-METHYL-5-PHOSPHONOOXYMETHYL-PYRIDIN-4-YL-METHANE],J,HISB83,pyridine,c1ccncc1,3.472,2.1,0.902,True,False,False,2013-11-06,2.1,https://www.rcsb.org/structure/4LNL
+4MUU,218,1-[(4-AMINO-2-METHYLPYRIMIDIN-5-YL)METHYL]-3-(2-HYDROXYETHYL)-2-METHYLPYRIDINIUM,C,HISA135,pyridine,c1ccncc1,3.85,13.1,1.55,True,False,False,2014-09-17,2.1,https://www.rcsb.org/structure/4MUU
+4MUU,218,1-[(4-AMINO-2-METHYLPYRIMIDIN-5-YL)METHYL]-3-(2-HYDROXYETHYL)-2-METHYLPYRIDINIUM,Y,HISB135,pyridine,c1ccncc1,3.94,11.5,1.543,True,False,False,2014-09-17,2.1,https://www.rcsb.org/structure/4MUU
+4OA7,2XS,"4-[(3aR,4R,7S,7aS)-1,3-dioxo-1,3,3a,4,7,7a-hexahydro-2H-4,7-methanoisoindol-2-yl]-N-(quinolin-8-yl)benzamide",F,HISA1201,benzene (fused); pyridine (fused),c1ccc2ncccc2c1,3.312,2.1,0.831,True,False,False,2015-01-07,2.301,https://www.rcsb.org/structure/4OA7
+4OA7,2XS,"4-[(3aR,4R,7S,7aS)-1,3-dioxo-1,3,3a,4,7,7a-hexahydro-2H-4,7-methanoisoindol-2-yl]-N-(quinolin-8-yl)benzamide",H,HISB1201,benzene (fused); pyridine (fused),c1ccc2ncccc2c1,3.244,2.9,0.484,True,False,False,2015-01-07,2.301,https://www.rcsb.org/structure/4OA7
+4OA7,2XS,"4-[(3aR,4R,7S,7aS)-1,3-dioxo-1,3,3a,4,7,7a-hexahydro-2H-4,7-methanoisoindol-2-yl]-N-(quinolin-8-yl)benzamide",J,HISC1201,benzene (fused); pyridine (fused),c1ccc2ncccc2c1,3.288,3.7,0.374,True,False,False,2015-01-07,2.301,https://www.rcsb.org/structure/4OA7
+4OA7,2XS,"4-[(3aR,4R,7S,7aS)-1,3-dioxo-1,3,3a,4,7,7a-hexahydro-2H-4,7-methanoisoindol-2-yl]-N-(quinolin-8-yl)benzamide",L,HISD1201,benzene (fused); pyridine (fused),c1ccc2ncccc2c1,3.211,2.6,0.382,True,False,False,2015-01-07,2.301,https://www.rcsb.org/structure/4OA7
+4OT8,PLP,PYRIDOXAL-5'-PHOSPHATE,E,HISA127,pyridine,c1ccncc1,3.427,14.2,0.205,True,False,False,2014-04-23,2.0,https://www.rcsb.org/structure/4OT8
+4OT8,PLP,PYRIDOXAL-5'-PHOSPHATE,H,HISB127,pyridine,c1ccncc1,3.463,15.0,0.203,True,False,False,2014-04-23,2.0,https://www.rcsb.org/structure/4OT8
+4OT8,PLP,PYRIDOXAL-5'-PHOSPHATE,K,HISC127,pyridine,c1ccncc1,3.494,18.3,0.098,True,False,False,2014-04-23,2.0,https://www.rcsb.org/structure/4OT8
+4OT8,PLP,PYRIDOXAL-5'-PHOSPHATE,L,HISD127,pyridine,c1ccncc1,3.437,16.3,0.161,True,False,False,2014-04-23,2.0,https://www.rcsb.org/structure/4OT8
+4OYT,1W9,(2R)-2-[(E)-[2-methyl-3-oxidanyl-5-(phosphonooxymethyl)pyridin-4-yl]methylideneamino]-3-oxidanyl-propanoic acid,D,HISA129,pyridine,c1ccncc1,3.617,12.5,0.968,True,False,False,2014-12-10,2.4,https://www.rcsb.org/structure/4OYT
+4OYT,1W9,(2R)-2-[(E)-[2-methyl-3-oxidanyl-5-(phosphonooxymethyl)pyridin-4-yl]methylideneamino]-3-oxidanyl-propanoic acid,H,HISB129,pyridine,c1ccncc1,3.722,19.7,1.272,True,False,False,2014-12-10,2.4,https://www.rcsb.org/structure/4OYT
+4OYT,1W9,(2R)-2-[(E)-[2-methyl-3-oxidanyl-5-(phosphonooxymethyl)pyridin-4-yl]methylideneamino]-3-oxidanyl-propanoic acid,K,HISC129,pyridine,c1ccncc1,3.595,18.3,1.081,True,False,False,2014-12-10,2.4,https://www.rcsb.org/structure/4OYT
+4PFN,PLP,PYRIDOXAL-5'-PHOSPHATE,D,HISA129,pyridine,c1ccncc1,3.534,20.5,0.871,True,False,False,2014-12-17,2.5,https://www.rcsb.org/structure/4PFN
+4PFN,PLP,PYRIDOXAL-5'-PHOSPHATE,F,HISB129,pyridine,c1ccncc1,3.598,23.0,1.041,True,False,False,2014-12-17,2.5,https://www.rcsb.org/structure/4PFN
+4PFN,PLP,PYRIDOXAL-5'-PHOSPHATE,I,HISC129,pyridine,c1ccncc1,3.528,19.7,0.58,True,False,False,2014-12-17,2.5,https://www.rcsb.org/structure/4PFN
+4PL3,31J,"7-hydroxy-6-methoxy-3-[2-(2-methoxyethoxy)ethyl]-4,8-dimethyl-2H-chromen-2-one",F,HISB910,other 6-ring heteroaromatic (fused),O=c1ccc2ccccc2o1,3.574,10.3,1.622,True,False,False,2014-09-03,2.9,https://www.rcsb.org/structure/4PL3
+4QHO,NKG,N-{[3-hydroxy-6-(naphthalen-1-yl)pyridin-2-yl]carbonyl}glycine,C,HISA231,benzene (fused),c1ccc2ccccc2c1,3.639,8.7,1.428,False,True,False,2015-06-03,2.37,https://www.rcsb.org/structure/4QHO
+4QO4,35S,"{(3R,5R,6S)-5-(3-chlorophenyl)-6-(4-chlorophenyl)-1-[(1S)-1-(6-cyclopropylpyridin-2-yl)propyl]-3-methyl-2-oxopiperidin-3-yl}acetic acid",B,HISA96,benzene,c1ccccc1,3.868,12.0,1.211,False,True,False,2014-07-16,1.7,https://www.rcsb.org/structure/4QO4
+4R2I,ANP,PHOSPHOAMINOPHOSPHONIC ACID-ADENYLATE ESTER,C,HISA206,imidazole (fused); pyrimidine (fused),c1ncc2[nH]cnc2n1,3.985,10.5,1.648,False,True,False,2016-01-13,2.05,https://www.rcsb.org/structure/4R2I
+4WET,WEF,"N-({4-methyl-2-[4-(trifluoromethyl)phenyl]-1,3-thiazol-5-yl}carbonyl)-L-tyrosine",C,HISA32,thiazole,c1cscn1,3.722,12.9,1.273,False,True,False,2015-01-21,1.63,https://www.rcsb.org/structure/4WET
+4WKI,3PW,"5-chloro-N-{[(4S)-4-(1-methyl-1H-imidazol-2-yl)-2,5-dioxoimidazolidin-4-yl]methyl}-1-benzofuran-2-carboxamide",G,HISA361,benzene (fused); furan (fused),c1ccc2occc2c1,3.846,18.0,0.379,False,True,False,2014-12-10,1.6,https://www.rcsb.org/structure/4WKI
+4WYP,AMP,ADENOSINE MONOPHOSPHATE,D,HISB119,imidazole (fused); pyrimidine (fused),c1ncc2[nH]cnc2n1,3.55,1.7,0.789,False,True,False,2015-11-18,1.502,https://www.rcsb.org/structure/4WYP
+4XBJ,IN5,{1-[(3-HYDROXY-METHYL-5-PHOSPHONOOXY-METHYL-PYRIDIN-4-YLMETHYL)-AMINO]-ETHYL}-PHOSPHONIC ACID,E,HISA159,pyridine,c1ccncc1,3.996,9.6,1.538,True,False,False,2015-12-23,2.25,https://www.rcsb.org/structure/4XBJ
+4XBJ,IN5,{1-[(3-HYDROXY-METHYL-5-PHOSPHONOOXY-METHYL-PYRIDIN-4-YLMETHYL)-AMINO]-ETHYL}-PHOSPHONIC ACID,I,HISB159,pyridine,c1ccncc1,4.016,19.2,1.475,True,False,False,2015-12-23,2.25,https://www.rcsb.org/structure/4XBJ
+4XBJ,IN5,{1-[(3-HYDROXY-METHYL-5-PHOSPHONOOXY-METHYL-PYRIDIN-4-YLMETHYL)-AMINO]-ETHYL}-PHOSPHONIC ACID,K,HISC159,pyridine,c1ccncc1,4.129,11.9,1.71,True,False,False,2015-12-23,2.25,https://www.rcsb.org/structure/4XBJ
+4Y28,CLA,CHLOROPHYLL A,QA,HISA246,pyrrole,c1cc[nH]c1,3.63,12.4,1.077,False,True,False,2015-08-19,2.8,https://www.rcsb.org/structure/4Y28
+4YHB,FAD,FLAVIN-ADENINE DINUCLEOTIDE,C,HISA108,imidazole (fused); pyrimidine (fused),c1ncc2[nH]cnc2n1,3.834,8.6,0.728,False,True,False,2015-07-15,1.8892,https://www.rcsb.org/structure/4YHB
+4YHB,FAD,FLAVIN-ADENINE DINUCLEOTIDE,H,HISB108,imidazole (fused); pyrimidine (fused),c1ncc2[nH]cnc2n1,3.711,8.4,0.884,False,True,False,2015-07-15,1.8892,https://www.rcsb.org/structure/4YHB
+5DKJ,5BY,"{2-[2-(2-{4-[(1E)-4-{[(2S)-1-{[(1R)-1-(dihydroxyboranyl)-3-methylbutyl]amino}-1-oxo-3-phenylpropan-2-yl]amino}-4-oxobut-1-en-1-yl]-1H-1,2,3-triazol-1-yl}ethoxy)ethoxy]ethoxy}acetic acid",JA,HISH114,triazole,c1c[nH]nn1,4.382,28.5,1.868,True,False,False,2015-10-28,2.8,https://www.rcsb.org/structure/5DKJ
+5EZV,C2Z,5-(5-hydroxyl-isoxazol-3-yl)-furan-2-phosphonic acid,M,HISF298,isoxazole,c1cnoc1,3.921,18.6,0.419,True,False,False,2016-03-09,2.99,https://www.rcsb.org/structure/5EZV
+5FT6,PLP,PYRIDOXAL-5'-PHOSPHATE,J,HISA119,pyridine,c1ccncc1,3.557,13.1,0.802,True,False,False,2016-11-23,2.049,https://www.rcsb.org/structure/5FT6
+5FT6,PLP,PYRIDOXAL-5'-PHOSPHATE,O,HISB119,pyridine,c1ccncc1,3.554,16.4,0.646,True,False,False,2016-11-23,2.049,https://www.rcsb.org/structure/5FT6
+5HSQ,BLA,BILIVERDINE IX ALPHA,B,HISA250,pyrrole,c1cc[nH]c1,3.955,18.6,1.841,False,True,False,2016-08-03,1.85,https://www.rcsb.org/structure/5HSQ
+5IKV,COH,PROTOPORPHYRIN IX CONTAINING CO,F,HISA386,pyrrole,c1cc[nH]c1,4.26,26.5,0.322,True,False,False,2016-05-25,2.508,https://www.rcsb.org/structure/5IKV
+5JM8,ATP,ADENOSINE-5'-TRIPHOSPHATE,I,HISA147,pyrimidine (fused),c1ncc2[nH]cnc2n1,3.882,28.0,1.573,False,True,False,2016-06-15,2.2,https://www.rcsb.org/structure/5JM8
+5JM8,ATP,ADENOSINE-5'-TRIPHOSPHATE,K,HISB147,pyrimidine (fused),c1ncc2[nH]cnc2n1,3.869,1.7,1.597,True,False,False,2016-06-15,2.2,https://www.rcsb.org/structure/5JM8
+5JM8,ATP,ADENOSINE-5'-TRIPHOSPHATE,O,HISD147,pyrimidine (fused),c1ncc2[nH]cnc2n1,4.304,26.7,1.729,True,False,False,2016-06-15,2.2,https://www.rcsb.org/structure/5JM8
+5JM8,ATP,ADENOSINE-5'-TRIPHOSPHATE,Q,HISE147,pyrimidine (fused),c1ncc2[nH]cnc2n1,4.237,29.2,1.95,True,False,False,2016-06-15,2.2,https://www.rcsb.org/structure/5JM8
+5JM8,ATP,ADENOSINE-5'-TRIPHOSPHATE,U,HISG147,pyrimidine (fused),c1ncc2[nH]cnc2n1,4.002,14.0,1.613,True,False,False,2016-06-15,2.2,https://www.rcsb.org/structure/5JM8
+5JM8,ATP,ADENOSINE-5'-TRIPHOSPHATE,W,HISH147,pyrimidine (fused),c1ncc2[nH]cnc2n1,3.979,12.9,1.469,True,False,False,2016-06-15,2.2,https://www.rcsb.org/structure/5JM8
+5K6A,NAP,NADP NICOTINAMIDE-ADENINE-DINUCLEOTIDE PHOSPHATE,E,HISA35,pyrimidine (fused),c1ncc2[nH]cnc2n1,4.387,25.4,1.913,True,False,False,2017-03-22,1.7,https://www.rcsb.org/structure/5K6A
+5K6A,NAP,NADP NICOTINAMIDE-ADENINE-DINUCLEOTIDE PHOSPHATE,H,HISB35,pyrimidine (fused),c1ncc2[nH]cnc2n1,4.331,21.9,1.91,True,False,False,2017-03-22,1.7,https://www.rcsb.org/structure/5K6A
+5K6A,NAP,NADP NICOTINAMIDE-ADENINE-DINUCLEOTIDE PHOSPHATE,M,HISD35,pyrimidine (fused),c1ncc2[nH]cnc2n1,4.48,24.5,1.916,True,False,False,2017-03-22,1.7,https://www.rcsb.org/structure/5K6A
+5O7E,9NB,~{N}-(4-ethanoylphenyl)-2-sulfanyl-ethanamide,D,HISA459,benzene,c1ccccc1,3.742,18.6,1.011,False,True,False,2018-01-31,1.87,https://www.rcsb.org/structure/5O7E
+5R5F,N08,~{N}-[2-(4-fluorophenyl)ethyl]furan-2-carboxamide,B,HISA156,benzene,c1ccccc1,3.808,20.7,0.593,True,False,False,2020-07-01,1.63,https://www.rcsb.org/structure/5R5F
+5R5Q,7MU,4-chloranyl-~{N}-methyl-pyridine-2-carboxamide,B,HISA156,pyridine,c1ccncc1,4.271,9.0,1.556,True,False,False,2020-07-01,1.71,https://www.rcsb.org/structure/5R5Q
+5RX5,WNM,(3S)-1-(phenylsulfonyl)pyrrolidin-3-amine,B,HISA466,benzene,c1ccccc1,3.764,10.8,1.802,True,False,False,2020-11-11,1.28,https://www.rcsb.org/structure/5RX5
+5RYN,NTV,(2S)-N-(3-chloro-2-methylphenyl)oxolane-2-carboxamide,B,HISA384,benzene,c1ccccc1,3.748,12.6,1.785,True,False,False,2020-11-11,1.88,https://www.rcsb.org/structure/5RYN
+5SCE,I8Y,"3-amino-4-hydroxy-9,10-dioxo-9,10-dihydroanthracene-2-sulfonic acid",GA,HISF90,benzene,c1ccccc1,3.921,20.7,0.782,True,False,False,2022-03-16,2.147,https://www.rcsb.org/structure/5SCE
+5SCE,I8Y,"3-amino-4-hydroxy-9,10-dioxo-9,10-dihydroanthracene-2-sulfonic acid",LA,HISG90,benzene,c1ccccc1,3.668,10.2,0.953,True,False,False,2022-03-16,2.147,https://www.rcsb.org/structure/5SCE
+5SCE,I8Y,"3-amino-4-hydroxy-9,10-dioxo-9,10-dihydroanthracene-2-sulfonic acid",O,HISB90,benzene,c1ccccc1,4.096,25.5,1.127,True,False,False,2022-03-16,2.147,https://www.rcsb.org/structure/5SCE
+5SCE,I8Y,"3-amino-4-hydroxy-9,10-dioxo-9,10-dihydroanthracene-2-sulfonic acid",T,HISC90,benzene,c1ccccc1,3.697,12.9,0.99,True,False,False,2022-03-16,2.147,https://www.rcsb.org/structure/5SCE
+5TH5,7C5,"5'-O-(2-amino-4-oxo-1,4-dihydropteridine-6-carbonyl)adenosine",F,HISA233,pyrimidine (fused),O=c1[nH]cnc2nccnc12,3.582,9.2,0.393,False,True,False,2017-01-18,2.407,https://www.rcsb.org/structure/5TH5
+5TH5,7C5,"5'-O-(2-amino-4-oxo-1,4-dihydropteridine-6-carbonyl)adenosine",I,HISB233,pyrimidine (fused),O=c1[nH]cnc2nccnc12,3.579,9.2,0.398,False,True,False,2017-01-18,2.407,https://www.rcsb.org/structure/5TH5
+5TH5,7C5,"5'-O-(2-amino-4-oxo-1,4-dihydropteridine-6-carbonyl)adenosine",L,HISC233,pyrimidine (fused),O=c1[nH]cnc2nccnc12,3.581,9.1,0.397,False,True,False,2017-01-18,2.407,https://www.rcsb.org/structure/5TH5
+5TH5,7C5,"5'-O-(2-amino-4-oxo-1,4-dihydropteridine-6-carbonyl)adenosine",O,HISD233,pyrimidine (fused),O=c1[nH]cnc2nccnc12,3.581,9.2,0.394,False,True,False,2017-01-18,2.407,https://www.rcsb.org/structure/5TH5
+5XMQ,PLG,N-GLYCINE-[3-HYDROXY-2-METHYL-5-PHOSPHONOOXYMETHYL-PYRIDIN-4-YL-METHANE],D,HISA129,pyridine,c1ccncc1,3.508,15.2,0.35,False,True,False,2017-11-29,2.2,https://www.rcsb.org/structure/5XMQ
+5XMQ,PLG,N-GLYCINE-[3-HYDROXY-2-METHYL-5-PHOSPHONOOXYMETHYL-PYRIDIN-4-YL-METHANE],G,HISB129,pyridine,c1ccncc1,3.526,17.6,0.499,False,True,False,2017-11-29,2.2,https://www.rcsb.org/structure/5XMQ
+5XMQ,PLG,N-GLYCINE-[3-HYDROXY-2-METHYL-5-PHOSPHONOOXYMETHYL-PYRIDIN-4-YL-METHANE],I,HISC129,pyridine,c1ccncc1,3.555,16.7,0.456,True,False,False,2017-11-29,2.2,https://www.rcsb.org/structure/5XMQ
+5XMS,PLG,N-GLYCINE-[3-HYDROXY-2-METHYL-5-PHOSPHONOOXYMETHYL-PYRIDIN-4-YL-METHANE],D,HISA129,pyridine,c1ccncc1,3.548,20.2,0.839,True,False,False,2017-11-29,2.45,https://www.rcsb.org/structure/5XMS
+5XMS,PLG,N-GLYCINE-[3-HYDROXY-2-METHYL-5-PHOSPHONOOXYMETHYL-PYRIDIN-4-YL-METHANE],G,HISB129,pyridine,c1ccncc1,3.494,16.3,0.609,True,False,False,2017-11-29,2.45,https://www.rcsb.org/structure/5XMS
+5XMS,PLG,N-GLYCINE-[3-HYDROXY-2-METHYL-5-PHOSPHONOOXYMETHYL-PYRIDIN-4-YL-METHANE],I,HISC129,pyridine,c1ccncc1,3.57,18.8,0.631,True,False,False,2017-11-29,2.45,https://www.rcsb.org/structure/5XMS
+5YO1,PUY,PUROMYCIN,C,HISA297,pyrimidine (fused),c1ncc2[nH]cnc2n1,5.206,29.7,1.993,True,False,False,2018-11-07,2.5,https://www.rcsb.org/structure/5YO1
+5ZZ1,HDD,CIS-HEME D HYDROXYCHLORIN GAMMA-SPIROLACTONE,E,HISA82,pyrrole,c1cc[nH]c1,3.524,6.1,0.984,True,False,False,2019-05-29,1.91,https://www.rcsb.org/structure/5ZZ1
+5ZZ1,HDD,CIS-HEME D HYDROXYCHLORIN GAMMA-SPIROLACTONE,J,HISB82,pyrrole,c1cc[nH]c1,3.537,5.4,0.966,True,False,False,2019-05-29,1.91,https://www.rcsb.org/structure/5ZZ1
+5ZZ1,HDD,CIS-HEME D HYDROXYCHLORIN GAMMA-SPIROLACTONE,O,HISC82,pyrrole,c1cc[nH]c1,3.547,7.2,1.072,True,False,False,2019-05-29,1.91,https://www.rcsb.org/structure/5ZZ1
+5ZZ1,HDD,CIS-HEME D HYDROXYCHLORIN GAMMA-SPIROLACTONE,S,HISD82,pyrrole,c1cc[nH]c1,3.532,8.3,0.979,True,False,False,2019-05-29,1.91,https://www.rcsb.org/structure/5ZZ1
+6E8I,PTR,O-PHOSPHOTYROSINE,B,HISA69,benzene,c1ccccc1,5.105,29.5,1.738,True,False,False,2018-11-14,1.68,https://www.rcsb.org/structure/6E8I
+6EEM,0PR,N-({3-hydroxy-2-methyl-5-[(phosphonooxy)methyl]pyridin-4-yl}methyl)-L-tyrosine,C,HISA205,pyridine,c1ccncc1,3.822,6.7,1.329,False,True,False,2018-09-19,2.61000662305,https://www.rcsb.org/structure/6EEM
+6ENM,LPW,2-[2-[4-(4-methoxyphenyl)phenyl]sulfonylphenyl]-~{N}-oxidanyl-ethanamide,C,HISA218,benzene,c1ccccc1,4.437,26.5,1.178,False,True,False,2018-05-16,1.59,https://www.rcsb.org/structure/6ENM
+6F74,FAD,FLAVIN-ADENINE DINUCLEOTIDE,T,HISD246,pyrimidine (fused),O=c1[nH]c(=O)c2nc3ccccc3nc2[nH]1,4.163,27.1,1.924,False,True,False,2018-01-10,2.2,https://www.rcsb.org/structure/6F74
+6GI1,DBS,"2-(2,3-DIHYDROXY-BENZOYLAMINO)-3-HYDROXY-PROPIONIC ACID",D,HISA258,benzene,c1ccccc1,3.586,11.1,0.581,False,True,False,2018-06-20,1.66,https://www.rcsb.org/structure/6GI1
+6GI1,EB4,"N,N',N''-[(3S,7S,11S)-2,6,10-trioxo-1,5,9-trioxacyclododecane-3,7,11-triyl]tris(2,3-dihydroxybenzamide)",M,HISB258,benzene,c1ccccc1,3.518,12.3,0.773,False,True,False,2018-06-20,1.66,https://www.rcsb.org/structure/6GI1
+6GJW,F2H,"4-[[3-[[3-[(4,8-disulfonatonaphthalen-1-yl)carbamoyl]phenyl]carbamoylamino]phenyl]carbonylamino]naphthalene-1,5-disulfonate",H,HISB67,benzene (fused),c1ccc2ccccc2c1,4.029,5.0,1.686,False,True,False,2019-05-29,1.9,https://www.rcsb.org/structure/6GJW
+6GJW,F2H,"4-[[3-[[3-[(4,8-disulfonatonaphthalen-1-yl)carbamoyl]phenyl]carbamoylamino]phenyl]carbonylamino]naphthalene-1,5-disulfonate",H,HISC67,benzene (fused),c1ccc2ccccc2c1,4.304,11.4,1.514,True,False,False,2019-05-29,1.9,https://www.rcsb.org/structure/6GJW
+6GJW,F2H,"4-[[3-[[3-[(4,8-disulfonatonaphthalen-1-yl)carbamoyl]phenyl]carbamoylamino]phenyl]carbonylamino]naphthalene-1,5-disulfonate",J,HISA67,benzene (fused),c1ccc2ccccc2c1,4.11,6.8,1.657,False,True,False,2019-05-29,1.9,https://www.rcsb.org/structure/6GJW
+6GJW,F2H,"4-[[3-[[3-[(4,8-disulfonatonaphthalen-1-yl)carbamoyl]phenyl]carbamoylamino]phenyl]carbonylamino]naphthalene-1,5-disulfonate",J,HISD67,benzene (fused),c1ccc2ccccc2c1,4.067,5.1,1.731,False,True,False,2019-05-29,1.9,https://www.rcsb.org/structure/6GJW
+6IAU,NAP,NADP NICOTINAMIDE-ADENINE-DINUCLEOTIDE PHOSPHATE,C,HISB37,imidazole (fused); pyrimidine (fused),c1ncc2[nH]cnc2n1,3.461,11.9,0.742,False,True,False,2019-03-27,1.97,https://www.rcsb.org/structure/6IAU
+6IJN,6MZ,N6-METHYLADENOSINE-5'-MONOPHOSPHATE,B,HISA15,imidazole (fused),c1ncc2[nH]cnc2n1,3.656,14.1,0.948,False,True,False,2019-02-06,1.66,https://www.rcsb.org/structure/6IJN
+6KD9,CV3,"(3~{Z})-4-methyl-3-[[4-(trifluoromethyl)phenyl]methylidene]-1~{H}-1,4-benzodiazepine-2,5-dione",D,HISB134,benzene,c1ccccc1,3.883,14.2,0.797,True,False,False,2020-03-18,2.44,https://www.rcsb.org/structure/6KD9
+6KD9,CV3,"(3~{Z})-4-methyl-3-[[4-(trifluoromethyl)phenyl]methylidene]-1~{H}-1,4-benzodiazepine-2,5-dione",G,HISF134,benzene,c1ccccc1,3.927,14.9,0.674,True,False,False,2020-03-18,2.44,https://www.rcsb.org/structure/6KD9
+6KXH,DY9,Fluostatin C,E,HISA300,benzene,c1ccccc1,3.55,5.6,0.411,True,False,False,2020-09-16,1.78039550258,https://www.rcsb.org/structure/6KXH
+6KXH,DY9,Fluostatin C,H,HISB300,benzene,c1ccccc1,3.52,3.7,0.189,True,False,False,2020-09-16,1.78039550258,https://www.rcsb.org/structure/6KXH
+6KXH,DY9,Fluostatin C,J,HISC300,benzene,c1ccccc1,3.614,3.3,0.985,False,True,False,2020-09-16,1.78039550258,https://www.rcsb.org/structure/6KXH
+6KXH,DY9,Fluostatin C,L,HISD300,benzene,c1ccccc1,3.744,6.5,0.478,False,True,False,2020-09-16,1.78039550258,https://www.rcsb.org/structure/6KXH
+6LQ2,FAD,FLAVIN-ADENINE DINUCLEOTIDE,C,HISB348,pyrimidine (fused),c1ncc2[nH]cnc2n1,3.832,7.8,1.276,True,False,False,2020-07-01,1.9,https://www.rcsb.org/structure/6LQ2
+6LQ2,FAD,FLAVIN-ADENINE DINUCLEOTIDE,F,HISA348,pyrimidine (fused),c1ncc2[nH]cnc2n1,3.801,12.1,1.238,True,False,False,2020-07-01,1.9,https://www.rcsb.org/structure/6LQ2
+6N0T,ATP,ADENOSINE-5'-TRIPHOSPHATE,C,HISA241,imidazole (fused); pyrimidine (fused),c1ncc2[nH]cnc2n1,3.736,1.5,0.99,True,False,False,2019-01-09,2.511,https://www.rcsb.org/structure/6N0T
+6N91,DCF,2'-DEOXYCOFORMYCIN,C,HISA14,imidazole,c1c[nH]cn1,3.645,9.6,1.706,False,True,False,2018-12-19,2.05,https://www.rcsb.org/structure/6N91
+6N91,DCF,2'-DEOXYCOFORMYCIN,J,HISB14,imidazole,c1c[nH]cn1,3.688,9.3,1.751,False,True,False,2018-12-19,2.05,https://www.rcsb.org/structure/6N91
+6PBP,NAP,NADP NICOTINAMIDE-ADENINE-DINUCLEOTIDE PHOSPHATE,C,HISA40,pyrimidine (fused),c1ncc2[nH]cnc2n1,3.663,9.4,1.387,False,True,False,2019-10-30,1.64,https://www.rcsb.org/structure/6PBP
+6PBP,NAP,NADP NICOTINAMIDE-ADENINE-DINUCLEOTIDE PHOSPHATE,K,HISB40,imidazole (fused); pyrimidine (fused),c1ncc2[nH]cnc2n1,3.486,7.0,1.038,False,True,False,2019-10-30,1.64,https://www.rcsb.org/structure/6PBP
+6PG2,O6Y,2-methyl-4-{4-[2-(morpholin-4-yl)-2-oxoethyl]phenoxy}benzonitrile,C,HISA32,benzene,c1ccccc1,4.354,23.6,0.395,False,True,False,2020-05-06,1.91,https://www.rcsb.org/structure/6PG2
+6PGK,CLA,CHLOROPHYLL A,DF,HISG240,pyrrole,c1cc[nH]c1,3.939,3.8,1.929,True,False,False,2019-11-27,2.9,https://www.rcsb.org/structure/6PGK
+6PGK,CLA,CHLOROPHYLL A,UK,HISY240,pyrrole,c1cc[nH]c1,3.961,13.4,1.44,False,True,False,2019-11-27,2.9,https://www.rcsb.org/structure/6PGK
+6PGK,CLA,CHLOROPHYLL A,ZA,HISA240,pyrrole,c1cc[nH]c1,3.651,12.7,0.866,False,True,False,2019-11-27,2.9,https://www.rcsb.org/structure/6PGK
+6PML,OR4,[6-(benzyloxy)-1-benzofuran-3-yl]acetic acid,D,HISA32,benzene (fused); furan (fused),c1ccc2occc2c1,3.716,1.0,0.734,True,False,False,2019-11-06,2.0,https://www.rcsb.org/structure/6PML
+6PWY,DTP,2'-DEOXYADENOSINE 5'-TRIPHOSPHATE,E,HISA143,imidazole (fused),c1ncc2[nH]cnc2n1,3.469,14.9,0.894,False,True,False,2020-07-29,1.81,https://www.rcsb.org/structure/6PWY
+6PWY,DTP,2'-DEOXYADENOSINE 5'-TRIPHOSPHATE,L,HISB143,imidazole (fused),c1ncc2[nH]cnc2n1,3.567,13.1,0.857,False,True,False,2020-07-29,1.81,https://www.rcsb.org/structure/6PWY
+6PWY,DTP,2'-DEOXYADENOSINE 5'-TRIPHOSPHATE,S,HISD143,imidazole (fused); pyrimidine (fused),c1ncc2[nH]cnc2n1,3.496,13.8,0.906,False,True,False,2020-07-29,1.81,https://www.rcsb.org/structure/6PWY
+6PWY,DTP,2'-DEOXYADENOSINE 5'-TRIPHOSPHATE,V,HISC143,imidazole (fused),c1ncc2[nH]cnc2n1,3.567,11.4,0.771,False,True,False,2020-07-29,1.81,https://www.rcsb.org/structure/6PWY
+6UZG,QM1,3-(carboxymethyl)pyridine-2-carboxylic acid,D,HISB88,pyridine,c1ccncc1,3.645,10.9,1.337,False,True,False,2020-01-29,1.94,https://www.rcsb.org/structure/6UZG
+6UZR,QM1,3-(carboxymethyl)pyridine-2-carboxylic acid,F,HISB88,pyridine,c1ccncc1,3.642,6.8,1.27,True,False,False,2020-01-29,1.87,https://www.rcsb.org/structure/6UZR
+6Z3E,GDP,GUANOSINE-5'-DIPHOSPHATE,C,HISA152,pyrimidine (fused),O=c1[nH]cnc2[nH]cnc12,3.558,18.6,0.268,False,True,False,2021-12-01,2.80038678769,https://www.rcsb.org/structure/6Z3E
+7AVU,S3Z,"~{N}-[(1~{R})-1-[3-azanyl-5-(trifluoromethyl)phenyl]ethyl]-6,7-dimethoxy-2-methyl-quinazolin-4-amine",D,HISA905,benzene (fused); pyrimidine (fused),c1ccc2ncncc2c1,3.705,5.1,1.48,True,False,False,2021-03-24,2.1,https://www.rcsb.org/structure/7AVU
+7AVU,S3Z,"~{N}-[(1~{R})-1-[3-azanyl-5-(trifluoromethyl)phenyl]ethyl]-6,7-dimethoxy-2-methyl-quinazolin-4-amine",E,HISB905,benzene (fused); pyrimidine (fused),c1ccc2ncncc2c1,3.609,9.0,1.277,True,False,False,2021-03-24,2.1,https://www.rcsb.org/structure/7AVU
+7B0T,GKT,3-iodanyl-4-methyl-~{N}-[2-(piperidin-1-ylmethyl)-3~{H}-benzimidazol-5-yl]benzamide,B,HISA56,benzene,c1ccccc1,3.948,16.5,1.218,True,False,False,2021-02-17,2.05,https://www.rcsb.org/structure/7B0T
+7CBB,AMP,ADENOSINE MONOPHOSPHATE,C,HISA424,imidazole (fused),c1ncc2[nH]cnc2n1,4.412,19.4,1.399,True,False,False,2020-09-23,2.6,https://www.rcsb.org/structure/7CBB
+7CU0,TRP,TRYPTOPHAN,D,HISB110,pyrrole (fused),c1ccc2[nH]ccc2c1,3.826,10.2,1.929,False,True,False,2020-11-25,1.95,https://www.rcsb.org/structure/7CU0
+7DGC,H5C,"9-[(2R,3R,4R)-5-(hydroxymethyl)-3-methoxy-4-oxidanyl-oxolan-2-yl]-3H-purine-2,6-dione",C,HISA80,imidazole (fused); pyrimidine (fused),O=c1[nH]c(=O)c2[nH]cnc2[nH]1,3.376,22.7,0.663,False,True,False,2022-02-02,2.1,https://www.rcsb.org/structure/7DGC
+7DGC,H5C,"9-[(2R,3R,4R)-5-(hydroxymethyl)-3-methoxy-4-oxidanyl-oxolan-2-yl]-3H-purine-2,6-dione",F,HISD80,imidazole (fused); pyrimidine (fused),O=c1[nH]c(=O)c2[nH]cnc2[nH]1,3.38,22.9,0.702,False,True,False,2022-02-02,2.1,https://www.rcsb.org/structure/7DGC
+7DPP,MYC,"3,5,7-TRIHYDROXY-2-(3,4,5-TRIHYDROXYPHENYL)-4H-CHROMEN-4-ONE",B,HISA41,benzene (fused); other 6-ring heteroaromatic (fused),O=c1ccoc2ccccc12,3.586,14.6,0.972,True,False,False,2021-05-12,2.1,https://www.rcsb.org/structure/7DPP
+7EIX,PLP,PYRIDOXAL-5'-PHOSPHATE,C,HISA194,pyridine,c1ccncc1,3.827,21.0,1.419,True,False,False,2022-04-06,1.9,https://www.rcsb.org/structure/7EIX
+7EIX,PLP,PYRIDOXAL-5'-PHOSPHATE,E,HISB194,pyridine,c1ccncc1,3.668,13.5,1.384,True,False,False,2022-04-06,1.9,https://www.rcsb.org/structure/7EIX
+7EO8,FNO,"2-[(1R)-4-methyl-1-oxidanyl-pent-3-enyl]-5,8-bis(oxidanyl)naphthalene-1,4-dione",C,HISA41,benzene,c1ccccc1,3.5,8.0,1.071,True,False,False,2021-10-20,2.28085164536,https://www.rcsb.org/structure/7EO8
+7F51,BA7,"[(2R,3R,4R,5R)-5-[[[[(2R,3S,4R,5R)-5-(6-aminopurin-9-yl)-3,4-bis(oxidanyl)oxolan-2-yl]methoxy-oxidanyl-phosphoryl]oxy-oxidanyl-phosphoryl]oxymethyl]-2,4-bis(oxidanyl)oxolan-3-yl] benzoate",C,HISA135,benzene,c1ccccc1,4.047,15.6,1.691,False,True,False,2022-03-16,1.98,https://www.rcsb.org/structure/7F51
+7FLK,VKX,"(5R,8aS)-8a-phenylhexahydropyrrolo[1,2-a]pyrimidin-6(2H)-one",C,HISA1888,benzene,c1ccccc1,4.359,23.3,0.68,True,False,False,2022-11-02,1.62,https://www.rcsb.org/structure/7FLK
+7FOO,DEW,"2-azanyl-1-(6,7-dihydro-4~{H}-thieno[3,2-c]pyridin-5-yl)ethanone",C,HISA1888,thiophene,c1ccsc1,4.162,7.0,1.712,False,True,False,2022-11-02,1.59,https://www.rcsb.org/structure/7FOO
+7FS6,Y3Z,"(10aM)-6-{2-[4-(3,4-dihydroxybenzene-1-sulfonyl)phenyl]ethyl}-2,3,8,9-tetrahydroxy-5lambda~6~-dibenzo[c,e][1,2]thiazine-5,5(6H)-dione",CA,HISD90,benzene,c1ccccc1,3.742,1.4,1.585,True,False,False,2023-04-12,2.241,https://www.rcsb.org/structure/7FS6
+7FS6,Y3Z,"(10aM)-6-{2-[4-(3,4-dihydroxybenzene-1-sulfonyl)phenyl]ethyl}-2,3,8,9-tetrahydroxy-5lambda~6~-dibenzo[c,e][1,2]thiazine-5,5(6H)-dione",YA,HISH90,benzene,c1ccccc1,3.71,7.0,1.193,False,True,False,2023-04-12,2.241,https://www.rcsb.org/structure/7FS6
+7G8B,LFO,"N,1-dimethyl-1H-indole-3-carboxamide",C,HISA105,pyrrole (fused),c1ccc2[nH]ccc2c1,3.94,6.0,1.375,True,False,False,2023-07-12,1.42,https://www.rcsb.org/structure/7G8B
+7GHE,Q5R,4-(4-phenylpiperazine-1-carbonyl)quinolin-2(1H)-one,B,HISA41,benzene,c1ccccc1,4.179,20.0,0.907,True,False,False,2023-11-08,2.168,https://www.rcsb.org/structure/7GHE
+7H4C,VW4,(2S)-2-phenylpropane-1-sulfonamide,B,HISA25,benzene,c1ccccc1,4.271,19.3,1.399,False,True,False,2024-04-24,1.37,https://www.rcsb.org/structure/7H4C
+7H6F,A1AOQ,3-[2-(dimethylamino)-2-oxoethyl]-1-[(5-fluoro-1-benzothiophen-3-yl)methyl]-1H-indole-2-carboxylic acid,C,HISA57,benzene (fused),c1ccc2[nH]ccc2c1,3.476,8.6,1.193,False,True,False,2025-03-05,1.25,https://www.rcsb.org/structure/7H6F
+7H6I,A1AO7,5-fluoro-3-[(methanesulfonamido)methyl]-1-[(naphthalen-1-yl)methyl]-1H-indole-2-carboxylic acid,C,HISA57,benzene (fused); pyrrole (fused),c1ccc2[nH]ccc2c1,3.55,18.1,0.517,False,True,False,2025-03-05,2.1,https://www.rcsb.org/structure/7H6I
+7HP4,A1BG4,(2M)-2-[6-(methylamino)pyridin-3-yl]-N-(1-methyl-1H-pyrazol-4-yl)benzamide,G,HISB51,pyrazole,c1cn[nH]c1,3.524,9.0,0.439,True,False,False,2025-02-26,1.48,https://www.rcsb.org/structure/7HP4
+7HPC,A1BGW,4-methyl-N-[(2-methyl-1H-imidazol-4-yl)methyl]-2-[(3S)-piperidin-3-yl]-1H-imidazole-5-carboxamide,D,HISB51,imidazole,c1c[nH]cn1,3.87,14.5,0.475,True,False,False,2025-02-26,2.1,https://www.rcsb.org/structure/7HPC
+7IA2,A1B8J,"N-(2,3-dihydro-1H-isoindol-5-yl)-7-fluoro-1H-indole-5-carboxamide",D,HISB51,benzene,c1ccccc1,3.583,4.1,1.075,True,False,False,2025-04-23,2.033,https://www.rcsb.org/structure/7IA2
+7KZY,XCM,3-methyl-N-[(1R)-1-(5-methyl-1H-pyrazol-3-yl)ethyl]-4-{1-[6-(trifluoromethyl)pyridin-3-yl]cyclopropyl}-1H-pyrrole-2-carboxamide,C,HISA185,pyrazole,c1cn[nH]c1,3.842,6.2,1.548,False,True,False,2021-05-19,1.75,https://www.rcsb.org/structure/7KZY
+7KZY,XCM,3-methyl-N-[(1R)-1-(5-methyl-1H-pyrazol-3-yl)ethyl]-4-{1-[6-(trifluoromethyl)pyridin-3-yl]cyclopropyl}-1H-pyrrole-2-carboxamide,F,HISB185,pyrazole,c1cn[nH]c1,3.76,6.6,1.234,False,True,False,2021-05-19,1.75,https://www.rcsb.org/structure/7KZY
+7O6X,V4Q,"N-[3-[5-(5-ethoxypyridin-2-yl)-4-(2-fluorophenyl)-1,2,4-triazol-3-yl]cyclobutyl]quinoxaline-5-carboxamide",E,HISBBB1048,pyrazine (fused),c1ccc2nccnc2c1,3.48,9.4,0.753,True,False,False,2022-01-12,2.2,https://www.rcsb.org/structure/7O6X
+7O6X,V4Q,"N-[3-[5-(5-ethoxypyridin-2-yl)-4-(2-fluorophenyl)-1,2,4-triazol-3-yl]cyclobutyl]quinoxaline-5-carboxamide",G,HISAAA1048,pyrazine (fused),c1ccc2nccnc2c1,3.484,11.0,0.495,True,False,False,2022-01-12,2.2,https://www.rcsb.org/structure/7O6X
+7QDQ,AU0,Caylin-1,H,HISA96,benzene,c1ccccc1,3.844,8.1,1.271,True,False,False,2022-10-05,1.26,https://www.rcsb.org/structure/7QDQ
+7RC1,4IO,5-chloropyridin-3-yl 1-(3-nitrobenzene-1-sulfonyl)-1H-indole-5-carboxylate,B,HISA41,benzene (fused),c1ccc2[nH]ccc2c1,3.525,9.7,0.656,True,False,False,2021-09-29,1.63,https://www.rcsb.org/structure/7RC1
+7TII,HEA,HEME-A,BA,HISA290,pyrrole,c1cc[nH]c1,4.407,10.4,1.813,True,False,False,2022-03-30,2.45,https://www.rcsb.org/structure/7TII
+7TII,HEA,HEME-A,HB,HISN290,pyrrole,c1cc[nH]c1,4.444,21.4,1.988,True,False,False,2022-03-30,2.45,https://www.rcsb.org/structure/7TII
+7Y4I,GDP,GUANOSINE-5'-DIPHOSPHATE,C,HISA728,imidazole (fused); pyrimidine (fused),O=c1[nH]cnc2[nH]cnc12,3.945,19.3,0.631,True,False,False,2022-12-07,2.85,https://www.rcsb.org/structure/7Y4I
+8B6M,OY6,~{N}-(2-methoxyphenyl)-4-[[2-(4-oxidanylidene-3~{H}-quinazolin-2-yl)ethyl-(thiophen-2-ylmethyl)carbamoyl]amino]benzamide,E,HISA1048,benzene,c1ccccc1,4.175,5.5,1.606,True,False,False,2023-10-11,1.6,https://www.rcsb.org/structure/8B6M
+8B6M,OY6,~{N}-(2-methoxyphenyl)-4-[[2-(4-oxidanylidene-3~{H}-quinazolin-2-yl)ethyl-(thiophen-2-ylmethyl)carbamoyl]amino]benzamide,K,HISC1048,benzene,c1ccccc1,4.194,29.0,0.31,False,True,False,2023-10-11,1.6,https://www.rcsb.org/structure/8B6M
+8BDF,R42,"[(1~{S},2~{S},3~{R},4~{S},7~{R},9~{S},10~{S},12~{R},15~{S})-4-acetyloxy-15-[(2~{R},3~{S})-3-[(4-methoxy-2-methylidene-4-oxidanylidene-butanoyl)amino]-2-oxidanyl-3-phenyl-propanoyl]oxy-10,14,16,16-tetramethyl-1,9,12-tris(oxidanyl)-11-oxidanylidene-6-oxatetracyclo[11.3.1.0^{3,10}.0^{4,7}]heptadec-13-en-2-yl] benzoate",M,HISB229,benzene,c1ccccc1,3.952,9.4,1.663,False,True,False,2023-03-22,1.95,https://www.rcsb.org/structure/8BDF
+8BDF,R42,"[(1~{S},2~{S},3~{R},4~{S},7~{R},9~{S},10~{S},12~{R},15~{S})-4-acetyloxy-15-[(2~{R},3~{S})-3-[(4-methoxy-2-methylidene-4-oxidanylidene-butanoyl)amino]-2-oxidanyl-3-phenyl-propanoyl]oxy-10,14,16,16-tetramethyl-1,9,12-tris(oxidanyl)-11-oxidanylidene-6-oxatetracyclo[11.3.1.0^{3,10}.0^{4,7}]heptadec-13-en-2-yl] benzoate",R,HISD229,benzene,c1ccccc1,3.956,9.4,1.551,False,True,False,2023-03-22,1.95,https://www.rcsb.org/structure/8BDF
+8BDG,R3T,"[(1~{S},2~{S},3~{R},4~{S},7~{R},9~{S},10~{S},12~{R},15~{S})-4-acetyloxy-15-[(2~{R},3~{S})-3-(2-bromanylethanoylamino)-2-oxidanyl-3-phenyl-propanoyl]oxy-10,14,16,16-tetramethyl-1,9,12-tris(oxidanyl)-11-oxidanylidene-6-oxatetracyclo[11.3.1.0^{3,10}.0^{4,7}]heptadec-13-en-2-yl] benzoate",R,HISD229,benzene,c1ccccc1,4.246,16.8,1.882,False,True,False,2023-03-22,2.35,https://www.rcsb.org/structure/8BDG
+8DX3,4JH,1-(3-bromophenyl)methanamine,C,HISA235,benzene,c1ccccc1,3.512,19.3,0.674,True,False,False,2023-05-31,2.06,https://www.rcsb.org/structure/8DX3
+8FHE,GW9,2-chloro-5-nitro-N-phenylbenzamide,C,HISB449,benzene,c1ccccc1,4.197,7.5,1.32,True,False,False,2024-03-20,1.8,https://www.rcsb.org/structure/8FHE
+8IHS,97U,"(2~{S})-2-[[(3~{R})-5-chloranyl-3-methyl-8-oxidanyl-1-oxidanylidene-3,4-dihydroisochromen-7-yl]carbonylamino]-3-phenyl-propanoic acid",FA,HISH85,benzene,c1ccccc1,4.093,9.2,1.999,True,False,False,2023-08-30,2.5,https://www.rcsb.org/structure/8IHS
+8IHS,97U,"(2~{S})-2-[[(3~{R})-5-chloranyl-3-methyl-8-oxidanyl-1-oxidanylidene-3,4-dihydroisochromen-7-yl]carbonylamino]-3-phenyl-propanoic acid",T,HISD85,benzene,c1ccccc1,4.025,10.0,1.999,True,False,False,2023-08-30,2.5,https://www.rcsb.org/structure/8IHS
+8IHS,97U,"(2~{S})-2-[[(3~{R})-5-chloranyl-3-methyl-8-oxidanyl-1-oxidanylidene-3,4-dihydroisochromen-7-yl]carbonylamino]-3-phenyl-propanoic acid",W,HISE85,benzene,c1ccccc1,4.085,9.2,2.0,True,False,False,2023-08-30,2.5,https://www.rcsb.org/structure/8IHS
+8IHS,97U,"(2~{S})-2-[[(3~{R})-5-chloranyl-3-methyl-8-oxidanyl-1-oxidanylidene-3,4-dihydroisochromen-7-yl]carbonylamino]-3-phenyl-propanoic acid",Z,HISF85,benzene,c1ccccc1,4.082,8.6,1.987,True,False,False,2023-08-30,2.5,https://www.rcsb.org/structure/8IHS
+8JZE,CLA,CHLOROPHYLL A,EG,HISb117,pyrrole,c1cc[nH]c1,4.007,23.0,0.674,True,False,False,2024-02-28,2.99,https://www.rcsb.org/structure/8JZE
+8JZE,CLA,CHLOROPHYLL A,WE,HISa199,pyrrole,c1cc[nH]c1,4.517,27.4,1.94,False,True,False,2024-02-28,2.99,https://www.rcsb.org/structure/8JZE
+8QXJ,DZ4,2'-deoxy-5'-O-[(R)-hydroxy{[(R)-hydroxy(phosphonooxy)phosphoryl]amino}phosphoryl]adenosine,BA,HISD215,imidazole (fused),c1ncc2[nH]cnc2n1,4.027,22.7,1.589,False,True,False,2024-05-15,2.65,https://www.rcsb.org/structure/8QXJ
+8QXJ,DZ4,2'-deoxy-5'-O-[(R)-hydroxy{[(R)-hydroxy(phosphonooxy)phosphoryl]amino}phosphoryl]adenosine,E,HISA215,imidazole (fused),c1ncc2[nH]cnc2n1,4.066,23.9,1.628,False,True,False,2024-05-15,2.65,https://www.rcsb.org/structure/8QXJ
+8QXJ,DZ4,2'-deoxy-5'-O-[(R)-hydroxy{[(R)-hydroxy(phosphonooxy)phosphoryl]amino}phosphoryl]adenosine,M,HISB215,imidazole (fused),c1ncc2[nH]cnc2n1,3.919,15.5,0.861,False,True,False,2024-05-15,2.65,https://www.rcsb.org/structure/8QXJ
+8QXJ,DZ4,2'-deoxy-5'-O-[(R)-hydroxy{[(R)-hydroxy(phosphonooxy)phosphoryl]amino}phosphoryl]adenosine,T,HISC215,imidazole (fused),c1ncc2[nH]cnc2n1,4.058,22.2,1.62,False,True,False,2024-05-15,2.65,https://www.rcsb.org/structure/8QXJ
+8RJR,EL5,"3-[(2Z)-2-({3-(2-carboxyethyl)-5-[(E)-(4-ethenyl-3-methyl-5-oxo-1,5-dihydro-2H-pyrrol-2-ylidene)methyl]-4-methyl-1H-pyrrol-2-yl}methylidene)-5-{(Z)-[(3E,4S)-3-ethylidene-4-methyl-5-oxopyrrolidin-2-ylidene]methyl}-4-methyl-2H-pyrrol-3-yl]propanoic acid",H,HISB248,pyrrole,c1cc[nH]c1,4.204,25.5,1.873,True,False,False,2025-05-14,2.3,https://www.rcsb.org/structure/8RJR
+8UAZ,WFU,"(2S)-2-{[(S)-{[(2R,3S,4R,5R)-5-(6-amino-9H-purin-9-yl)-3,4-dihydroxyoxolan-2-yl]methoxy}(hydroxy)phosphoryl]amino}pentanedioic acid (non-preferred name)",C,HISA119,imidazole (fused); pyrimidine (fused),c1ncc2[nH]cnc2n1,3.58,6.5,0.859,False,True,False,2024-10-16,1.76,https://www.rcsb.org/structure/8UAZ
+8UAZ,WFU,"(2S)-2-{[(S)-{[(2R,3S,4R,5R)-5-(6-amino-9H-purin-9-yl)-3,4-dihydroxyoxolan-2-yl]methoxy}(hydroxy)phosphoryl]amino}pentanedioic acid (non-preferred name)",E,HISB119,imidazole (fused),c1ncc2[nH]cnc2n1,3.789,6.6,1.294,True,False,False,2024-10-16,1.76,https://www.rcsb.org/structure/8UAZ
+8V6R,AR6,"[(2R,3S,4R,5R)-5-(6-AMINOPURIN-9-YL)-3,4-DIHYDROXY-OXOLAN-2-YL]METHYL[HYDROXY-[[(2R,3S,4R,5S)-3,4,5-TRIHYDROXYOXOLAN-2-YL]METHOXY]PHOSPHORYL] HYDROGEN PHOSPHATE",C,HISA259,imidazole (fused); pyrimidine (fused),c1ncc2[nH]cnc2n1,3.672,1.7,1.27,True,False,False,2024-06-12,2.14,https://www.rcsb.org/structure/8V6R
+8V6R,AR6,"[(2R,3S,4R,5R)-5-(6-AMINOPURIN-9-YL)-3,4-DIHYDROXY-OXOLAN-2-YL]METHYL[HYDROXY-[[(2R,3S,4R,5S)-3,4,5-TRIHYDROXYOXOLAN-2-YL]METHOXY]PHOSPHORYL] HYDROGEN PHOSPHATE",D,HISB259,imidazole (fused); pyrimidine (fused),c1ncc2[nH]cnc2n1,3.653,6.2,1.137,False,True,False,2024-06-12,2.14,https://www.rcsb.org/structure/8V6R
+8V8G,7YY,"6-[(6-chloranyl-2-methyl-indazol-5-yl)amino]-3-[(1-methyl-1,2,4-triazol-3-yl)methyl]-1-[[2,4,5-tris(fluoranyl)phenyl]methyl]-1,3,5-triazine-2,4-dione",C,HISA41,benzene,c1ccccc1,3.792,9.6,1.341,True,False,False,2024-05-29,1.9,https://www.rcsb.org/structure/8V8G
+8V8G,7YY,"6-[(6-chloranyl-2-methyl-indazol-5-yl)amino]-3-[(1-methyl-1,2,4-triazol-3-yl)methyl]-1-[[2,4,5-tris(fluoranyl)phenyl]methyl]-1,3,5-triazine-2,4-dione",D,HISB41,benzene,c1ccccc1,3.969,1.8,1.829,True,False,False,2024-05-29,1.9,https://www.rcsb.org/structure/8V8G
+8WEJ,HEM,PROTOPORPHYRIN IX CONTAINING FE,I,HISB119,pyrrole,c1cc[nH]c1,3.906,22.4,1.64,True,False,False,2024-01-24,2.79,https://www.rcsb.org/structure/8WEJ
+8XW6,ATP,ADENOSINE-5'-TRIPHOSPHATE,G,HISA59,imidazole (fused),c1ncc2[nH]cnc2n1,4.107,20.3,0.242,False,True,False,2024-07-31,1.99,https://www.rcsb.org/structure/8XW6
+8Y20,A1LXV,A-1210477,C,HISA224,benzene,c1ccccc1,3.604,4.0,1.644,True,False,False,2025-01-29,2.23,https://www.rcsb.org/structure/8Y20
+9CJQ,7YY,"6-[(6-chloranyl-2-methyl-indazol-5-yl)amino]-3-[(1-methyl-1,2,4-triazol-3-yl)methyl]-1-[[2,4,5-tris(fluoranyl)phenyl]methyl]-1,3,5-triazine-2,4-dione",E,HISA41,benzene,c1ccccc1,3.794,15.9,0.624,True,False,False,2025-07-09,2.24,https://www.rcsb.org/structure/9CJQ
+9CJQ,7YY,"6-[(6-chloranyl-2-methyl-indazol-5-yl)amino]-3-[(1-methyl-1,2,4-triazol-3-yl)methyl]-1-[[2,4,5-tris(fluoranyl)phenyl]methyl]-1,3,5-triazine-2,4-dione",G,HISB41,benzene,c1ccccc1,3.94,13.0,0.898,True,False,False,2025-07-09,2.24,https://www.rcsb.org/structure/9CJQ
+9CJQ,7YY,"6-[(6-chloranyl-2-methyl-indazol-5-yl)amino]-3-[(1-methyl-1,2,4-triazol-3-yl)methyl]-1-[[2,4,5-tris(fluoranyl)phenyl]methyl]-1,3,5-triazine-2,4-dione",H,HISC41,benzene,c1ccccc1,3.861,14.2,0.679,True,False,False,2025-07-09,2.24,https://www.rcsb.org/structure/9CJQ
+9CJQ,7YY,"6-[(6-chloranyl-2-methyl-indazol-5-yl)amino]-3-[(1-methyl-1,2,4-triazol-3-yl)methyl]-1-[[2,4,5-tris(fluoranyl)phenyl]methyl]-1,3,5-triazine-2,4-dione",J,HISD41,benzene,c1ccccc1,3.868,14.6,0.664,True,False,False,2025-07-09,2.24,https://www.rcsb.org/structure/9CJQ
+9DZP,EL5,"3-[(2Z)-2-({3-(2-carboxyethyl)-5-[(E)-(4-ethenyl-3-methyl-5-oxo-1,5-dihydro-2H-pyrrol-2-ylidene)methyl]-4-methyl-1H-pyrrol-2-yl}methylidene)-5-{(Z)-[(3E,4S)-3-ethylidene-4-methyl-5-oxopyrrolidin-2-ylidene]methyl}-4-methyl-2H-pyrrol-3-yl]propanoic acid",C,HISA245,pyrrole,c1cc[nH]c1,3.944,14.9,1.896,False,True,False,2025-10-08,1.93,https://www.rcsb.org/structure/9DZP
+9DZP,EL5,"3-[(2Z)-2-({3-(2-carboxyethyl)-5-[(E)-(4-ethenyl-3-methyl-5-oxo-1,5-dihydro-2H-pyrrol-2-ylidene)methyl]-4-methyl-1H-pyrrol-2-yl}methylidene)-5-{(Z)-[(3E,4S)-3-ethylidene-4-methyl-5-oxopyrrolidin-2-ylidene]methyl}-4-methyl-2H-pyrrol-3-yl]propanoic acid",E,HISB245,pyrrole,c1cc[nH]c1,4.081,14.9,1.934,False,True,False,2025-10-08,1.93,https://www.rcsb.org/structure/9DZP
+9IFP,3DM,"2,6-dimethoxyphenol",Q,HISA326,benzene,c1ccccc1,3.939,6.0,1.893,False,True,False,2025-08-06,1.9,https://www.rcsb.org/structure/9IFP
+9KH3,7YY,"6-[(6-chloranyl-2-methyl-indazol-5-yl)amino]-3-[(1-methyl-1,2,4-triazol-3-yl)methyl]-1-[[2,4,5-tris(fluoranyl)phenyl]methyl]-1,3,5-triazine-2,4-dione",C,HISA41,benzene,c1ccccc1,3.823,8.1,1.49,True,False,False,2026-03-04,1.49,https://www.rcsb.org/structure/9KH3
+9KH3,7YY,"6-[(6-chloranyl-2-methyl-indazol-5-yl)amino]-3-[(1-methyl-1,2,4-triazol-3-yl)methyl]-1-[[2,4,5-tris(fluoranyl)phenyl]methyl]-1,3,5-triazine-2,4-dione",D,HISB41,benzene,c1ccccc1,3.791,5.1,1.202,True,False,False,2026-03-04,1.49,https://www.rcsb.org/structure/9KH3
+9KSI,A1EGP,"(6E)-1-[[5-chloranyl-4-fluoranyl-2-(4-fluoranylphenoxy)phenyl]methyl]-6-(6-chloranyl-2-methyl-indazol-5-yl)imino-3-(5-methoxypyridin-3-yl)-1,3,5-triazinane-2,4-dione",B,HISA41,benzene,c1ccccc1,3.959,8.8,1.281,True,False,False,2025-04-02,2.3,https://www.rcsb.org/structure/9KSI
+9LLS,PLP,PYRIDOXAL-5'-PHOSPHATE,C,HISA216,pyridine,c1ccncc1,3.312,9.9,0.453,True,False,False,2025-12-24,2.69,https://www.rcsb.org/structure/9LLS
+9LLS,PLP,PYRIDOXAL-5'-PHOSPHATE,D,HISB216,pyridine,c1ccncc1,3.452,13.2,1.108,True,False,False,2025-12-24,2.69,https://www.rcsb.org/structure/9LLS
+9OGW,A1CA8,2-{[(thiophen-3-yl)methyl]amino}benzoic acid,B,HISA147,benzene,c1ccccc1,4.016,26.8,1.23,True,False,False,2025-10-22,1.8,https://www.rcsb.org/structure/9OGW
+9OZF,NDP,NADPH DIHYDRO-NICOTINAMIDE-ADENINE-DINUCLEOTIDE PHOSPHATE,B,HISA45,pyrimidine (fused),c1ncc2[nH]cnc2n1,3.818,9.6,1.565,True,False,False,2026-03-25,2.0,https://www.rcsb.org/structure/9OZF
+9S2W,IRU,1~{H}-pyrazol-5-ylmethanol,C,HISA340,pyrazole,c1cn[nH]c1,3.452,15.0,0.482,False,True,False,2026-08-12,1.7,https://www.rcsb.org/structure/9S2W
+9S2W,IRU,1~{H}-pyrazol-5-ylmethanol,I,HISB340,pyrazole,c1cn[nH]c1,3.472,14.0,0.463,False,True,False,2026-08-12,1.7,https://www.rcsb.org/structure/9S2W
+9UDB,FAD,FLAVIN-ADENINE DINUCLEOTIDE,C,HISA57,pyrazine (fused),O=c1[nH]c(=O)c2nc3ccccc3nc2[nH]1,3.553,12.6,0.91,False,True,False,2025-04-16,2.0,https://www.rcsb.org/structure/9UDB
+9UDB,FAD,FLAVIN-ADENINE DINUCLEOTIDE,F,HISB57,pyrazine (fused),O=c1[nH]c(=O)c2nc3ccccc3nc2[nH]1,3.645,9.9,0.927,False,True,False,2025-04-16,2.0,https://www.rcsb.org/structure/9UDB
+9WD5,CLA,CHLOROPHYLL A,JG,HISg241,pyrrole,c1cc[nH]c1,3.854,24.5,1.112,False,True,False,2026-04-15,2.98,https://www.rcsb.org/structure/9WD5
+9WD5,CLA,CHLOROPHYLL A,KL,HISA241,pyrrole,c1cc[nH]c1,3.802,18.0,0.756,True,False,False,2026-04-15,2.98,https://www.rcsb.org/structure/9WD5
+9WD5,CLA,CHLOROPHYLL A,LB,HISG241,pyrrole,c1cc[nH]c1,3.38,2.7,0.49,False,True,False,2026-04-15,2.98,https://www.rcsb.org/structure/9WD5
+9WD5,CLA,CHLOROPHYLL A,MN,HISB95,pyrrole,c1cc[nH]c1,4.625,24.7,1.851,True,False,False,2026-04-15,2.98,https://www.rcsb.org/structure/9WD5
+9WD5,CLA,CHLOROPHYLL A,VL,HISA369,pyrrole,c1cc[nH]c1,5.411,22.4,1.708,True,False,False,2026-04-15,2.98,https://www.rcsb.org/structure/9WD5
+9YGV,CLA,CHLOROPHYLL A,KF,HISB95,pyrrole,c1cc[nH]c1,4.372,23.3,1.538,True,False,False,2026-06-17,2.47,https://www.rcsb.org/structure/9YGV

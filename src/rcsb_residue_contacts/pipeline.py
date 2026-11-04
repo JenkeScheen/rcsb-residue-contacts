@@ -1,239 +1,343 @@
-"""End-to-end pipeline: scan PDBBind for pharmacophores contacting a residue type."""
+"""End-to-end pipeline: find ligands stacking on a residue type across the PDB via RCSB APIs.
+
+1. Search API -> candidate entries (aromatic ligand of interest next to the residue type).
+2. Data API   -> per-instance metadata and neighbour lists (batched GraphQL).
+3. ModelServer -> ligand instance SDF + all atoms of the residue type, per entry.
+4. Local geometry -> ring-ring stacking classification, polar/metal flags, pharmacophore contacts.
+5. Tables, plots and example pocket structures under ``out_dir``.
+"""
 
 from __future__ import annotations
 
+import json
 import logging
-from collections import Counter
-from dataclasses import dataclass
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from dataclasses import asdict, dataclass, field
+from datetime import datetime, timezone
 from pathlib import Path
 
 import pandas as pd
-from rdkit import Chem
 from tqdm import tqdm
 
-from . import contacts, interactions, molecules, pharmacophores, plots
-from .classify import DRUG_LIKE, SOLVENT
-from .examples import ExampleCollector
-from .pdbbind import Entry, select_entries
+from . import __version__, discovery, molecules, pharmacophores, plots, stacking, structures
+from .examples import write_examples
+from .rcsb import RcsbClient, RcsbError
+from .stacking import EDGE_TO_FACE, FACE_TO_FACE, StackCriteria
 
 log = logging.getLogger(__name__)
+
+LIGAND_COLUMNS = [
+    "entry_id", "asym_id", "auth_asym_id", "auth_seq_id", "comp_id", "name", "is_loi",
+    "release_date", "resolution", "method", "heavy_atoms_ccd", "heavy_atoms_modelled",
+    "aromatic_rings", "residues_in_contact", "polar_contact_residues", "metal_contact_residues",
+    "face_to_face", "edge_to_face", "status", "smiles",
+]
+STACK_COLUMNS = [
+    "entry_id", "asym_id", "comp_id", "is_loi", "residue_name", "residue_chain", "residue_seqid",
+    "residue_ring", "ring_pattern", "ring_type", "fused", "ring_system_smiles", "ring_size",
+    "distance", "angle", "offset", "vertical", "stack_type", "polar_contact",
+    "metal_coordination", "residue_polar_min_distance", "release_date", "resolution",
+]
+CONTACT_COLUMNS = [
+    "entry_id", "asym_id", "comp_id", "residue_name", "residue_chain", "residue_seqid",
+    "pharmacophore", "n_contact_atoms", "min_distance",
+]
+HIT_COLUMNS = [
+    "entry_id", "comp_id", "name", "asym_id", "residue", "ring_patterns", "ring_system_smiles",
+    "distance", "angle", "offset", "pure_stacking", "polar_contact", "metal_coordination",
+    "release_date", "resolution", "url",
+]
 
 
 @dataclass
 class Config:
-    data_dir: Path
-    residue: str = "TRP"
-    subset: str = "refined"
-    cutoff: float = 4.0
-    atom_scope: str = "sidechain"
-    max_structures: int | None = 300
-    out_dir: Path = Path("results")
-    examples_per_group: int = 3
-    max_groups: int = 50
+    residue: str = "HIS"
+    max_entries: int | None = 300
     seed: int = 0
-    classify_interactions: bool = True
+    entry_ids: list[str] | None = None
+    released_after: str | None = None
+    released_before: str | None = None
+    max_resolution: float | None = 3.0
+    loi_only: bool = True
+    min_aromatic_bonds: int = 5
+    exclude_comps: frozenset[str] = frozenset()
+    criteria: StackCriteria = field(default_factory=StackCriteria)
+    contact_cutoff: float = 4.0
+    atom_scope: str = "sidechain"
+    polar_cutoff: float = 3.5
+    metal_cutoff: float = 2.8
+    out_dir: Path = Path("results")
+    cache_dir: Path | None = Path(".rcsb_cache")
+    workers: int = 8
+    examples_per_group: int = 3
+    max_groups: int = 30
+    pocket_radius: float = 6.0
 
 
-def _mol_atom_tuples(mol: Chem.Mol) -> list[tuple[str, str, float, float, float]]:
-    conf = mol.GetConformer()
-    out = []
-    for atom in mol.GetAtoms():
-        idx = atom.GetIdx()
-        name = atom.GetProp("atomName") if atom.HasProp("atomName") else f"{atom.GetSymbol()}{idx}"
-        pos = conf.GetAtomPosition(idx)
-        out.append((name, atom.GetSymbol(), pos.x, pos.y, pos.z))
-    return out
+@dataclass
+class EntryResult:
+    ligands: list[dict] = field(default_factory=list)
+    stacks: list[dict] = field(default_factory=list)
+    contacts: list[dict] = field(default_factory=list)
 
 
-def _record_molecule(
+def analyse_instance(
+    inst: discovery.LigandInstance,
+    mol,
+    residues: list[structures.ResidueInstance],
     cfg: Config,
-    mol: Chem.Mol,
-    mol_coords,
-    mol_class: str,
-    molecule_id: str,
-    ccd: str,
-    residues: list[contacts.ResidueInstance],
-    entry_id: str,
-    rows: list[dict],
-    collector: ExampleCollector,
-    connectivity: bool,
-    pocket_atoms: list | None = None,
-) -> None:
-    """Detect contacts to every residue instance and record pharmacophore hits + examples.
-
-    ``connectivity`` selects the labeller: SMARTS (proper bond graph, e.g. SDF ligand) vs the
-    connectivity-only graph rules used for hydrogen-less PDB het groups.
-    """
-    label_map = None if connectivity else pharmacophores.atom_label_map(mol)
-    mol_tuples = None
+) -> tuple[dict, list[dict], list[dict]]:
+    """Stacking + contacts between one ligand instance and every residue instance."""
+    rings = stacking.ligand_rings(mol)
+    coords = molecules.coords_of(mol)
+    hetero = molecules.element_coords(mol, {"N", "O"})
+    metals = molecules.element_coords(mol, molecules.METALS)
+    label_map = pharmacophores.atom_label_map(mol)
+    stacks: list[dict] = []
+    contacts: list[dict] = []
+    in_contact = polar_residues = metal_residues = 0
     for res in residues:
-        idxs, min_dist = contacts.contacting_atoms(res.coords, mol_coords, cfg.cutoff)
-        if not idxs:
+        if structures.min_distance(res.coords, coords) > max(cfg.criteria.window, cfg.contact_cutoff):
             continue
-        if connectivity:
-            labels = pharmacophores.assign_connectivity(mol, idxs)
-        else:
-            labels = pharmacophores.assign_with_map(mol, label_map, idxs)
-        for label in labels:
-            rows.append(
-                {
-                    "entry_id": entry_id,
-                    "ligand_class": mol_class,
-                    "molecule_id": molecule_id,
-                    "ccd": ccd,
-                    "residue_chain": res.chain,
-                    "residue_seqid": res.seqid,
-                    "pharmacophore": label,
-                    "n_contact_atoms": len(idxs),
-                    "min_distance": round(min_dist, 3),
-                }
-            )
-            group_key = f"{mol_class}/{label}"
-            if collector.needs(group_key):
-                if mol_tuples is None:
-                    mol_tuples = _mol_atom_tuples(mol)
-                pdb_text = _render(res, ccd, mol_tuples, pocket_atoms)
-                collector.offer(group_key, entry_id, molecule_id, pdb_text)
-
-
-def _render(res, ccd, mol_tuples, pocket_atoms=None):
-    from .examples import render_example_pdb
-
-    return render_example_pdb(res, ccd, mol_tuples, pocket_atoms)
-
-
-def _record_interactions(
-    cfg: Config, entry: Entry, fp, int_rows: list[dict]
-) -> None:
-    """Type the drug-like ligand<->residue interactions with ProLIF and append rows.
-
-    Restricted to the curated ligand: ProLIF needs a correct bond graph and hydrogens, which the
-    geometry-perceived solvent het groups lack.
-
-    Uses PDBBind's ``_pocket.pdb`` (binding-site residues only) rather than the full protein: any
-    residue close enough to interact is in the pocket, so results are identical, but building the
-    ProLIF molecule from a whole protein costs seconds/entry vs milliseconds for the pocket. Falls
-    back to the full protein only if the pocket file is missing.
-    """
-    protein_source = entry.pocket_pdb if entry.pocket_pdb.exists() else entry.protein_pdb
-    prot = interactions.protein_plf(protein_source)
-    if prot is None:
-        return
-    ligand = interactions.ligand_plf(entry.ligand_sdf, entry.ligand_mol2)
-    if ligand is None:
-        return
-    for row in interactions.residue_interactions(fp, ligand, prot, cfg.residue):
-        int_rows.append(
-            {
-                "entry_id": entry.pdb_id,
-                "ligand_class": DRUG_LIKE,
-                "molecule_id": entry.pdb_id,
-                **row,
-            }
-        )
-
-
-def _process_entry(
-    cfg: Config,
-    entry: Entry,
-    rows: list[dict],
-    collector: ExampleCollector,
-    fp=None,
-    int_rows: list[dict] | None = None,
-) -> None:
-    structure = contacts.read_protein(entry.protein_pdb)
-    if structure is None:
-        return
-    residues = contacts.residue_instances(structure, cfg.residue, cfg.atom_scope)
-    if not residues:
-        return
-
-    # Full binding pocket for example structures (empty if the file is missing -> per-residue fallback).
-    pocket_atoms = (
-        contacts.read_pocket_atoms(entry.pocket_pdb) if entry.pocket_pdb.exists() else []
-    )
-
-    # Drug-like: the curated PDBBind ligand.
-    ligand = molecules.load_ligand(entry.ligand_sdf, entry.ligand_mol2)
-    if ligand is not None:
-        _record_molecule(
-            cfg, ligand, molecules.coords_of(ligand), DRUG_LIKE,
-            molecule_id=entry.pdb_id, ccd="LIG", residues=residues,
-            entry_id=entry.pdb_id, rows=rows, collector=collector,
-            connectivity=False, pocket_atoms=pocket_atoms,
-        )
-        if fp is not None and int_rows is not None:
-            _record_interactions(cfg, entry, fp, int_rows)
-
-    # Solvent: non-water het groups from the protein PDB.
-    for het in contacts.solvent_het_groups(structure):
-        mol = molecules.build_mol_from_atoms(het.atoms)
-        if mol is None or mol.GetNumConformers() == 0:
+        idxs, mind = structures.contacting_atoms(res.coords, coords, cfg.contact_cutoff)
+        if idxs:
+            in_contact += 1
+            for label in sorted(pharmacophores.assign_with_map(mol, label_map, idxs)):
+                contacts.append(
+                    {
+                        "entry_id": inst.entry_id, "asym_id": inst.asym_id,
+                        "comp_id": inst.comp_id, "residue_name": res.name,
+                        "residue_chain": res.chain, "residue_seqid": res.seqid,
+                        "pharmacophore": label, "n_contact_atoms": len(idxs),
+                        "min_distance": round(mind, 3),
+                    }
+                )
+        polar_d = structures.min_distance(res.polar_coords, hetero)
+        metal_d = structures.min_distance(res.polar_coords, metals)
+        polar_residues += polar_d <= cfg.polar_cutoff
+        metal_residues += metal_d <= cfg.metal_cutoff
+        if not rings or not res.rings:
             continue
-        molecule_id = f"{het.ccd}_{het.chain}{het.seqid}"
-        _record_molecule(
-            cfg, mol, molecules.coords_of(mol), SOLVENT,
-            molecule_id=molecule_id, ccd=het.ccd, residues=residues,
-            entry_id=entry.pdb_id, rows=rows, collector=collector,
-            connectivity=True, pocket_atoms=pocket_atoms,
-        )
+        for res_ring, ring_coords in res.rings.items():
+            c_res, n_res = stacking.plane(ring_coords)
+            for ring in rings:
+                geom = stacking.stack_geometry(c_res, n_res, ring.centroid, ring.normal)
+                if geom.distance > cfg.criteria.window:
+                    continue
+                stacks.append(
+                    {
+                        "entry_id": inst.entry_id, "asym_id": inst.asym_id,
+                        "comp_id": inst.comp_id, "is_loi": inst.is_loi,
+                        "residue_name": res.name, "residue_chain": res.chain,
+                        "residue_seqid": res.seqid, "residue_ring": res_ring,
+                        "ring_pattern": ring.label + (" (fused)" if ring.fused else ""),
+                        "ring_type": ring.label, "fused": ring.fused,
+                        "ring_system_smiles": ring.system_smiles or "",
+                        "ring_size": len(ring.atoms),
+                        "distance": round(geom.distance, 3), "angle": round(geom.angle, 1),
+                        "offset": round(geom.offset, 3), "vertical": round(geom.vertical, 3),
+                        "stack_type": stacking.classify(geom, cfg.criteria),
+                        "polar_contact": polar_d <= cfg.polar_cutoff,
+                        "metal_coordination": metal_d <= cfg.metal_cutoff,
+                        "residue_polar_min_distance": (
+                            round(polar_d, 3) if polar_d != float("inf") else None
+                        ),
+                        "release_date": inst.release_date, "resolution": inst.resolution,
+                    }
+                )
+    kinds = [s["stack_type"] for s in stacks]
+    ligand_row = {
+        "heavy_atoms_modelled": mol.GetNumAtoms(),
+        "aromatic_rings": len(rings),
+        "residues_in_contact": in_contact,
+        "polar_contact_residues": polar_residues,
+        "metal_contact_residues": metal_residues,
+        "face_to_face": kinds.count(FACE_TO_FACE),
+        "edge_to_face": kinds.count(EDGE_TO_FACE),
+        "status": "ok",
+        "smiles": molecules.to_smiles(mol),
+    }
+    return ligand_row, stacks, contacts
 
 
-def run(cfg: Config) -> pd.DataFrame:
-    """Run the full scan and write results, plots and example PDBs. Returns the results table."""
-    entries = select_entries(cfg.data_dir, cfg.subset, cfg.max_structures, cfg.seed)
-    if not entries:
-        raise RuntimeError(
-            f"No PDBBind entries found under {cfg.data_dir} for subset {cfg.subset!r}."
-        )
-
-    cfg.out_dir.mkdir(parents=True, exist_ok=True)
-    collector = ExampleCollector(
-        out_dir=cfg.out_dir / "examples",
-        per_group=cfg.examples_per_group,
-        max_groups=cfg.max_groups,
+def analyse_entry(client: RcsbClient, cfg: Config, record: dict) -> EntryResult:
+    """Fetch coordinates for one entry's candidate ligands and analyse them."""
+    result = EntryResult()
+    instances = discovery.ligand_instances(
+        record, cfg.residue, cfg.min_aromatic_bonds, cfg.loi_only, cfg.exclude_comps
     )
-
-    fp = None
-    int_rows: list[dict] = []
-    if cfg.classify_interactions:
-        if interactions.HAS_PROLIF:
-            fp = interactions.make_fingerprint()
-        else:
-            tqdm.write(
-                "[warn] ProLIF not installed; skipping interaction-type classification. "
-                "Install with `pip install prolif` (or `pip install '.[interactions]'`)."
-            )
-
-    rows: list[dict] = []
-    for entry in tqdm(entries, desc=f"Scanning {cfg.residue} contacts", unit="entry"):
+    if not instances:
+        return result
+    entry_id = instances[0].entry_id
+    residues: list[structures.ResidueInstance] = []
+    residue_status = "ok"
+    try:
+        structure = structures.read_cif_text(client.residue_atoms_cif(entry_id, cfg.residue))
+        residues = structures.residue_instances(structure, cfg.residue, cfg.atom_scope)
+    except RcsbError as exc:
+        log.debug("%s residue download failed: %s", entry_id, exc)
+        residue_status = "residue-download-failed"
+    for inst in instances:
+        row = {
+            "entry_id": inst.entry_id, "asym_id": inst.asym_id,
+            "auth_asym_id": inst.auth_asym_id, "auth_seq_id": inst.auth_seq_id,
+            "comp_id": inst.comp_id, "name": inst.name, "is_loi": inst.is_loi,
+            "release_date": inst.release_date, "resolution": inst.resolution,
+            "method": inst.method, "heavy_atoms_ccd": inst.heavy_atoms,
+        }
+        if residue_status != "ok":
+            result.ligands.append({**row, "status": residue_status})
+            continue
         try:
-            _process_entry(cfg, entry, rows, collector, fp=fp, int_rows=int_rows)
-        except Exception as exc:  # pragma: no cover - resilience
-            tqdm.write(f"[warn] {entry.pdb_id}: {exc}")
+            mol = molecules.mol_from_sdf(client.ligand_sdf(entry_id, inst.asym_id))
+        except RcsbError as exc:
+            log.debug("%s/%s ligand download failed: %s", entry_id, inst.asym_id, exc)
+            result.ligands.append({**row, "status": "ligand-download-failed"})
+            continue
+        if mol is None:
+            result.ligands.append({**row, "status": "unparseable"})
+            continue
+        lig_row, stacks, contacts = analyse_instance(inst, mol, residues, cfg)
+        result.ligands.append({**row, **lig_row})
+        result.stacks.extend(stacks)
+        result.contacts.extend(contacts)
+    return result
 
-    df = pd.DataFrame(rows)
-    results_csv = cfg.out_dir / "results.csv"
-    df.to_csv(results_csv, index=False)
 
-    int_df = pd.DataFrame(
-        int_rows,
-        columns=["entry_id", "ligand_class", "molecule_id", "residue_chain",
-                 "residue_seqid", "interaction"],
+def face_to_face_hits(stacks: pd.DataFrame, ligands: pd.DataFrame) -> pd.DataFrame:
+    """One row per (entry, ligand instance, residue) with a face-to-face stack (closest ring pair)."""
+    f2f = stacks[stacks["stack_type"] == FACE_TO_FACE]
+    if f2f.empty:
+        return pd.DataFrame(columns=HIT_COLUMNS)
+    keys = ["entry_id", "asym_id", "residue_name", "residue_chain", "residue_seqid"]
+    patterns = f2f.groupby(keys)["ring_pattern"].agg(lambda s: "; ".join(sorted(set(s))))
+    best = f2f.sort_values("distance").drop_duplicates(keys).set_index(keys)
+    best["ring_patterns"] = patterns
+    best = best.reset_index()
+    names = ligands.drop_duplicates(["entry_id", "asym_id"]).set_index(["entry_id", "asym_id"])["name"]
+    best["name"] = [names.get((e, a), "") for e, a in zip(best["entry_id"], best["asym_id"])]
+    best["residue"] = best["residue_name"] + best["residue_chain"] + best["residue_seqid"].astype(str)
+    best["pure_stacking"] = ~(best["polar_contact"] | best["metal_coordination"])
+    best["url"] = "https://www.rcsb.org/structure/" + best["entry_id"]
+    return best.sort_values(["entry_id", "asym_id", "residue"])[HIT_COLUMNS]
+
+
+def select_entries(client: RcsbClient, cfg: Config) -> tuple[list[str], dict]:
+    """Entries to scan plus search statistics (for ``run_info.json``)."""
+    if cfg.entry_ids:
+        entries = sorted({e.upper() for e in cfg.entry_ids})
+        return entries, {"mode": "explicit", "entries_scanned": len(entries)}
+    query = discovery.build_search_query(
+        cfg.residue, cfg.min_aromatic_bonds, cfg.loi_only, cfg.max_resolution,
+        cfg.released_after, cfg.released_before,
     )
-    int_df.to_csv(cfg.out_dir / "interactions.csv", index=False)
+    matching, n_entities = discovery.search_entries(client, query)
+    entries = discovery.sample_entries(matching, cfg.max_entries, cfg.seed)
+    info = {
+        "mode": "search",
+        "search_query": query,
+        "matching_entries": len(matching),
+        "matching_ligand_entities": n_entities,
+        "entries_scanned": len(entries),
+    }
+    return entries, info
 
-    # Group counts for examples (per class/pharmacophore) and plots.
-    group_counts: Counter = Counter()
-    if not df.empty:
-        for cls, label in zip(df["ligand_class"], df["pharmacophore"]):
-            group_counts[f"{cls}/{label}"] += 1
-    collector.finalize(dict(group_counts))
 
-    plots.make_all(df, cfg.out_dir / "plots", residue=cfg.residue, interactions_df=int_df)
+def _frame(rows: list[dict], columns: list[str]) -> pd.DataFrame:
+    return pd.DataFrame(rows, columns=columns)
 
+
+def run(cfg: Config, client: RcsbClient | None = None) -> dict[str, pd.DataFrame]:
+    """Run the full scan and write tables, plots and examples. Returns the tables."""
+    cfg.residue = cfg.residue.upper()
+    if cfg.residue not in structures.SUPPORTED_RESIDUES:
+        raise RuntimeError(
+            f"Residue {cfg.residue!r} has no aromatic ring; choose from "
+            f"{', '.join(structures.SUPPORTED_RESIDUES)}."
+        )
+    client = client or RcsbClient(cache_dir=cfg.cache_dir)
+    entries, info = select_entries(client, cfg)
+    if not entries:
+        raise RuntimeError("No PDB entries matched the search criteria.")
+    if info["mode"] == "search":
+        tqdm.write(
+            f"{info['matching_entries']:,} entries ({info['matching_ligand_entities']:,} ligand "
+            f"entities) match; scanning {len(entries):,}."
+        )
+
+    batches = [entries[i : i + 50] for i in range(0, len(entries), 50)]
+    records: dict[str, dict] = {}
+    with ThreadPoolExecutor(max_workers=max(1, min(cfg.workers, 4))) as pool:
+        for part in tqdm(
+            pool.map(lambda b: discovery.fetch_entry_metadata(client, b), batches),
+            total=len(batches), desc="Entry metadata", unit="batch",
+        ):
+            records.update(part)
+
+    ligands: list[dict] = []
+    stacks: list[dict] = []
+    contacts: list[dict] = []
+    failed = 0
+    with ThreadPoolExecutor(max_workers=max(1, cfg.workers)) as pool:
+        futures = {
+            pool.submit(analyse_entry, client, cfg, records[e]): e for e in entries if e in records
+        }
+        for fut in tqdm(
+            as_completed(futures), total=len(futures),
+            desc=f"Ligand/{cfg.residue} stacking", unit="entry",
+        ):
+            try:
+                res = fut.result()
+            except Exception as exc:  # resilience: one bad entry must not stop the scan
+                failed += 1
+                tqdm.write(f"[warn] {futures[fut]}: {exc}")
+                continue
+            ligands.extend(res.ligands)
+            stacks.extend(res.stacks)
+            contacts.extend(res.contacts)
+
+    ligands_df = _frame(ligands, LIGAND_COLUMNS).sort_values(["entry_id", "asym_id"])
+    stacks_df = _frame(stacks, STACK_COLUMNS).sort_values(
+        ["entry_id", "asym_id", "residue_chain", "residue_seqid", "distance"]
+    )
+    contacts_df = _frame(contacts, CONTACT_COLUMNS).sort_values(
+        ["entry_id", "asym_id", "residue_chain", "residue_seqid", "pharmacophore"]
+    )
+    hits_df = face_to_face_hits(stacks_df, ligands_df)
+
+    out = cfg.out_dir
+    out.mkdir(parents=True, exist_ok=True)
+    ligands_df.to_csv(out / "ligands.csv", index=False)
+    stacks_df.to_csv(out / "stacking.csv", index=False)
+    contacts_df.to_csv(out / "contacts.csv", index=False)
+    hits_df.to_csv(out / "face_to_face_hits.csv", index=False)
+
+    write_examples(
+        client, stacks_df, out / "examples", per_group=cfg.examples_per_group,
+        max_groups=cfg.max_groups, radius=cfg.pocket_radius,
+    )
+    plots.make_all(ligands_df, stacks_df, contacts_df, out / "plots", cfg.residue, cfg.criteria)
+
+    info.update(
+        {
+            "tool_version": __version__,
+            "run_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "entries_without_metadata": len(entries) - len(records),
+            "entries_failed": failed,
+            "ligand_instances": len(ligands_df),
+            "ligand_instances_ok": int((ligands_df["status"] == "ok").sum()),
+            "face_to_face_hits": len(hits_df),
+            "face_to_face_entries": int(hits_df["entry_id"].nunique()),
+            "config": {
+                k: (str(v) if isinstance(v, Path) else sorted(v) if isinstance(v, frozenset) else v)
+                for k, v in asdict(cfg).items()
+            },
+        }
+    )
+    (out / "run_info.json").write_text(json.dumps(info, indent=2, default=str))
     tqdm.write(
-        f"Done: {len(entries)} entries, {len(df)} contact records, "
-        f"{len(int_df)} interactions -> {cfg.out_dir}"
+        f"Done: {len(ligands_df):,} ligand instances in {len(records):,} entries; "
+        f"{len(hits_df):,} face-to-face {cfg.residue} stacks in "
+        f"{info['face_to_face_entries']:,} entries -> {out}"
     )
-    return df
+    return {"ligands": ligands_df, "stacks": stacks_df, "contacts": contacts_df, "hits": hits_df}
