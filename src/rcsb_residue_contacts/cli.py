@@ -68,9 +68,11 @@ def build_parser() -> argparse.ArgumentParser:
     sel.add_argument("--count-only", action="store_true",
                      help="Only report how many entries/ligands match the search, then exit.")
 
-    geo = p.add_argument_group("stacking geometry (PLIP defaults)")
+    geo = p.add_argument_group("stacking geometry (PLIP defaults + clash floor)")
     geo.add_argument("--stack-max-distance", type=float, default=5.5,
                      help="Max ring centroid distance (Å).")
+    geo.add_argument("--stack-min-distance", type=float, default=3.0,
+                     help="Min ring centroid distance (Å); closer rings overlap (clash).")
     geo.add_argument("--stack-max-angle", type=float, default=30.0,
                      help="Max inter-plane angle for face-to-face (deg).")
     geo.add_argument("--stack-min-t-angle", type=float, default=60.0,
@@ -89,9 +91,9 @@ def build_parser() -> argparse.ArgumentParser:
     out.add_argument("--no-cache", action="store_true", help="Disable the download cache.")
     out.add_argument("--workers", type=int, default=8, help="Concurrent RCSB requests.")
     out.add_argument("--examples-per-group", type=int, default=3,
-                     help="Example pocket structures per ring pattern.")
+                     help="Example pocket structures per ring system.")
     out.add_argument("--max-groups", type=int, default=30,
-                     help="Write examples for the N most frequent ring patterns.")
+                     help="Example folders (and ring-systems grid cells) for the N most frequent ring systems.")
     p.add_argument("-v", "--verbose", action="store_true", help="Verbose logging.")
     p.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
     return p
@@ -111,6 +113,7 @@ def config_from_args(args: argparse.Namespace) -> Config:
         exclude_comps=frozenset(c.strip().upper() for c in args.exclude_comps.split(",") if c.strip()),
         criteria=StackCriteria(
             max_distance=args.stack_max_distance,
+            min_distance=args.stack_min_distance,
             max_parallel_angle=args.stack_max_angle,
             min_perpendicular_angle=args.stack_min_t_angle,
             max_offset=args.stack_max_offset,

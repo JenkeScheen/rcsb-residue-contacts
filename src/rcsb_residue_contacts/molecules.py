@@ -20,15 +20,18 @@ log = logging.getLogger(__name__)
 METALS = {
     "LI", "NA", "K", "RB", "CS", "MG", "CA", "SR", "BA", "MN", "FE", "CO", "NI",
     "CU", "ZN", "CD", "HG", "MO", "W", "V", "CR", "PT", "PD", "AU", "AG", "AL",
-    "GA", "PB", "SN", "TL", "BE", "SB", "RU", "RH", "IR", "OS", "RE",
+    "GA", "PB", "SN", "TL", "BE", "SB", "RU", "RH", "IR", "OS", "RE", "IN", "BI",
+    "TI", "ZR", "HF", "NB", "TA", "TC", "SC", "Y", "LA", "CE", "PR", "ND", "SM", "EU",
+    "GD", "TB", "DY", "HO", "ER", "YB", "LU", "U",
 }
 HALIDES = {"F", "CL", "BR", "I"}
 
 
-# (element, explicit valence) -> formal charge, for hypervalent atoms whose charge is missing or
-# wrong in the SDF (seen in ModelServer output: zwitterion NH3, tetrahedral boronate written as
-# B+ or B0, metal-bound O). Only applied after RDKit has rejected the molecule.
-_EXPECTED_CHARGE = {("N", 4): 1, ("B", 4): -1, ("O", 3): 1, ("S", 3): 1}
+# (element, explicit valence) -> formal charge, for atoms whose charge is missing or wrong in
+# the SDF. Seen in ModelServer output: zwitterion NH3 without a charge, tetrahedral boronate
+# written as B+ or B0, and carboxylate/phosphate O written as O- *with* its H (heme propionates,
+# cobalamin). Only applied after RDKit has rejected the molecule.
+_EXPECTED_CHARGE = {("N", 4): 1, ("B", 4): -1, ("O", 2): 0, ("O", 3): 1, ("S", 3): 1}
 
 
 def _explicit_valence(atom: Chem.Atom) -> int:
@@ -38,11 +41,35 @@ def _explicit_valence(atom: Chem.Atom) -> int:
         return atom.GetExplicitValence()
 
 
-def _repair_charges(text: str) -> Chem.Mol | None:
-    """Re-parse without sanitisation, fix the formal charges of hypervalent atoms, sanitise."""
+def _is_metal(atom: Chem.Atom) -> bool:
+    return atom.GetSymbol().upper() in METALS
+
+
+def _dative_metal_bonds(mol: Chem.Mol) -> Chem.Mol:
+    """Rewrite every metal--non-metal bond as a dative bond from the non-metal to the metal.
+
+    The CCD draws coordination bonds as ordinary covalent bonds, which over-fills the valence of
+    the donor (Cl- on Ru, S- on Mo, eta-6 arene carbons, ...). Dative bonds do not count towards
+    the donor's valence, so the organic part of the complex sanitises as written.
+    """
+    rw = Chem.RWMol(mol)
+    for bond in list(mol.GetBonds()):
+        a, b = bond.GetBeginAtom(), bond.GetEndAtom()
+        if _is_metal(a) == _is_metal(b):
+            continue
+        donor, metal = (b, a) if _is_metal(a) else (a, b)
+        rw.RemoveBond(a.GetIdx(), b.GetIdx())
+        rw.AddBond(donor.GetIdx(), metal.GetIdx(), Chem.BondType.DATIVE)
+    return rw.GetMol()
+
+
+def _repair(text: str) -> Chem.Mol | None:
+    """Re-parse without sanitisation, make metal bonds dative, fix formal charges, sanitise."""
     mol = Chem.MolFromMolBlock(text, removeHs=False, sanitize=False)
     if mol is None:
         return None
+    if any(_is_metal(a) for a in mol.GetAtoms()):
+        mol = _dative_metal_bonds(mol)
     mol.UpdatePropertyCache(strict=False)
     for atom in mol.GetAtoms():
         charge = _EXPECTED_CHARGE.get((atom.GetSymbol(), _explicit_valence(atom)))
@@ -58,14 +85,15 @@ def _repair_charges(text: str) -> Chem.Mol | None:
 def mol_from_sdf(text: str) -> Chem.Mol | None:
     """Parse one SDF record into a sanitised, heavy-atom-only RDKit molecule with a conformer.
 
-    If RDKit rejects the record because a hypervalent atom lacks its formal charge, the charge is
-    repaired (see ``_EXPECTED_CHARGE``). Returns ``None`` if the record is empty or unusable.
+    If RDKit rejects the record, it is repaired once: bonds to metals become dative bonds and
+    formal charges that contradict an atom's valence are fixed (see ``_EXPECTED_CHARGE``).
+    Returns ``None`` if the record is empty or still unusable (e.g. carborane boron clusters).
     """
     if not text or not text.strip():
         return None
     mol = Chem.MolFromMolBlock(text, removeHs=False, sanitize=True)
     if mol is None:
-        mol = _repair_charges(text)
+        mol = _repair(text)
     if mol is None or mol.GetNumAtoms() == 0 or mol.GetNumConformers() == 0:
         return None
     # Contacts are heavy-atom to heavy-atom; RemoveAllHs also drops H that RemoveHs keeps.

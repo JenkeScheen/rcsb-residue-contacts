@@ -73,6 +73,14 @@ def test_too_far_is_not_stacked_and_criteria_are_tunable():
     assert classify(g, StackCriteria(max_distance=6.5)) == FACE_TO_FACE
 
 
+def test_overlapping_rings_are_a_clash_not_a_stack():
+    # Ligand and residue modelled in different alternate conformations can share space.
+    g = geom(hexagon(), hexagon(center=(0.5, 0, 1.2)))
+    assert g.distance < 3.0 and g.angle < 1
+    assert classify(g) == NO_STACK
+    assert classify(g, StackCriteria(min_distance=0.0)) == FACE_TO_FACE
+
+
 @pytest.mark.parametrize(
     "smiles,label",
     [

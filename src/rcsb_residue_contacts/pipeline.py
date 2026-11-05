@@ -316,7 +316,8 @@ def run(cfg: Config, client: RcsbClient | None = None) -> dict[str, pd.DataFrame
         client, stacks_df, out / "examples", per_group=cfg.examples_per_group,
         max_groups=cfg.max_groups, radius=cfg.pocket_radius,
     )
-    plots.make_all(ligands_df, stacks_df, contacts_df, out / "plots", cfg.residue, cfg.criteria)
+    plots.make_all(ligands_df, stacks_df, contacts_df, out / "plots", cfg.residue, cfg.criteria,
+                   ring_systems=cfg.max_groups)
 
     info.update(
         {

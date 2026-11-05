@@ -8,6 +8,10 @@ Geometric criteria follow PLIP (Salentin et al., Nucleic Acids Res. 2015) defaul
 * inter-plane angle <= 30 deg -> **face-to-face** (parallel / sandwich / parallel-displaced);
   angle >= 60 deg -> **edge-to-face** (T-shaped). Intermediate tilts are not counted as stacks.
 
+One addition to PLIP: ring centroids closer than 3.0 A are a steric clash, not a stack (the ring
+atoms would overlap). Across the PDB these are almost always a ligand and a residue that were
+modelled in *different* alternate conformations and so never coexist.
+
 Ring pairs that fail the criteria are still reported (up to ``StackCriteria.window``) with
 ``stack_type == "none"`` so the geometry distribution can be inspected.
 """
@@ -31,6 +35,7 @@ NO_STACK = "none"
 @dataclass(frozen=True)
 class StackCriteria:
     max_distance: float = 5.5
+    min_distance: float = 3.0  # closer ring centroids = overlapping atoms (clash), not a stack
     max_parallel_angle: float = 30.0
     min_perpendicular_angle: float = 60.0
     max_offset: float = 2.0
@@ -85,7 +90,9 @@ def stack_geometry(
 
 def classify(geom: StackGeometry, criteria: StackCriteria = StackCriteria()) -> str:
     """``face-to-face``, ``edge-to-face`` or ``none`` for one ring pair."""
-    if geom.distance > criteria.max_distance or geom.offset > criteria.max_offset:
+    if not criteria.min_distance <= geom.distance <= criteria.max_distance:
+        return NO_STACK
+    if geom.offset > criteria.max_offset:
         return NO_STACK
     if geom.angle <= criteria.max_parallel_angle:
         return FACE_TO_FACE

@@ -161,7 +161,7 @@ def ring_patterns_plot(stacks: pd.DataFrame, residue: str, path: Path, top: int 
 
 
 def ring_systems_plot(
-    stacks: pd.DataFrame, residue: str, path: Path, top: int = 20, ids_per_system: int = 3
+    stacks: pd.DataFrame, residue: str, path: Path, top: int = 30, ids_per_system: int = 3
 ) -> None:
     """Structure grid of the ring systems most often found stacking face-to-face.
 
@@ -234,12 +234,13 @@ def geometry_plot(
     ]
     with plt.rc_context(_STYLE):
         fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(11, 4.6))
-        ax1.add_patch(Rectangle((0, 0), criteria.max_distance, criteria.max_parallel_angle,
+        lo, width = criteria.min_distance, criteria.max_distance - criteria.min_distance
+        ax1.add_patch(Rectangle((lo, 0), width, criteria.max_parallel_angle,
                                 color=BLUE, alpha=0.07, linewidth=0))
-        ax1.add_patch(Rectangle((0, criteria.min_perpendicular_angle), criteria.max_distance,
+        ax1.add_patch(Rectangle((lo, criteria.min_perpendicular_angle), width,
                                 90 - criteria.min_perpendicular_angle,
                                 color=ORANGE, alpha=0.07, linewidth=0))
-        ax2.add_patch(Rectangle((0, 0), criteria.max_distance, criteria.max_offset,
+        ax2.add_patch(Rectangle((lo, 0), width, criteria.max_offset,
                                 color=MUTED, alpha=0.08, linewidth=0))
         handles = []
         for kind, color, label, alpha, size in styles:
@@ -249,7 +250,8 @@ def geometry_plot(
             ax2.scatter(sub["distance"], sub["offset"], **kw)
             handles.append(Patch(color=color, label=f"{label} ({len(sub):,})"))
         for ax in (ax1, ax2):
-            ax.axvline(criteria.max_distance, color=MUTED, linewidth=0.8, linestyle="--")
+            for x in (criteria.min_distance, criteria.max_distance):
+                ax.axvline(x, color=MUTED, linewidth=0.8, linestyle="--")
             ax.set_xlim(left=min(3.0, float(stacks["distance"].min()) - 0.2),
                         right=criteria.window + 0.1)
             ax.set_xlabel("ring centroid distance (Å)")
@@ -264,8 +266,9 @@ def geometry_plot(
         ax2.axhline(criteria.max_offset, color=MUTED, linewidth=0.8, linestyle="--")
         ax2.set_ylim(bottom=0)
         ax2.set_ylabel("lateral offset (Å)")
-        ax2.set_title(f"Offset ≤ {criteria.max_offset:g} Å and distance ≤ "
-                      f"{criteria.max_distance:g} Å required for either stack", fontsize=10)
+        ax2.set_title(f"Either stack needs offset ≤ {criteria.max_offset:g} Å and "
+                      f"{criteria.min_distance:g}–{criteria.max_distance:g} Å distance",
+                      fontsize=10)
         fig.suptitle(title, x=0.01, ha="left", fontsize=12, color=INK)
         fig.legend(handles=handles, loc="upper right", ncol=3, bbox_to_anchor=(0.99, 0.99))
         _save(fig, path)
@@ -373,11 +376,16 @@ def make_all(
     out_dir: Path,
     residue: str = "HIS",
     criteria: StackCriteria = StackCriteria(),
+    ring_systems: int = 30,
 ) -> Path:
-    """Render every plot into ``out_dir`` and return it."""
+    """Render every plot into ``out_dir`` and return it.
+
+    ``ring_systems`` should equal the number of example groups written, so that grid cell ``#N``
+    and folder ``examples/NN_*`` always describe the same ring system.
+    """
     out_dir.mkdir(parents=True, exist_ok=True)
     ring_patterns_plot(stacks, residue, out_dir / "face_to_face_ring_patterns.png")
-    ring_systems_plot(stacks, residue, out_dir / "face_to_face_ring_systems.png")
+    ring_systems_plot(stacks, residue, out_dir / "face_to_face_ring_systems.png", top=ring_systems)
     geometry_plot(stacks, residue, criteria, out_dir / "stacking_geometry.png")
     modes_plot(ligands, stacks, residue, out_dir / "interaction_modes.png")
     by_year_plot(stacks, residue, out_dir / "face_to_face_by_year.png")

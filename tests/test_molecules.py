@@ -52,3 +52,25 @@ def test_element_coords_and_smiles():
     assert hetero.shape[1] == 3 and len(hetero) > 0
     assert molecules.element_coords(mol, molecules.METALS).shape == (0, 3)
     assert Chem.MolFromSmiles(molecules.to_smiles(mol)) is not None
+
+
+def test_metal_complexes_are_repaired_with_dative_bonds():
+    # 1T3P chain F (RU7): Ru(p-cymene)Cl2. The CCD bonds Cl- and the six arene carbons to Ru as
+    # ordinary bonds, so RDKit rejects the SDF as written (Cl- with valence 1, C with valence 5).
+    text = fixture_text("1T3P_F.sdf")
+    assert Chem.MolFromMolBlock(text, removeHs=False) is None
+    mol = molecules.mol_from_sdf(text)
+    assert mol is not None
+    assert any(b.GetBondType() == Chem.BondType.DATIVE for b in mol.GetBonds())
+    assert [r.label for r in ligand_rings(mol)] == ["benzene"]
+    assert molecules.element_coords(mol, molecules.METALS).shape == (1, 3)
+
+
+def test_charged_oxygen_with_hydrogen_is_neutralised():
+    # 1C75 chain B (HEC): a heme propionate O is written as O- *and* carries an H.
+    text = fixture_text("1C75_B.sdf")
+    assert Chem.MolFromMolBlock(text, removeHs=False) is None
+    mol = molecules.mol_from_sdf(text)
+    assert mol is not None
+    assert "CCC(=O)O" in molecules.to_smiles(mol)
+    assert {r.system_smiles for r in ligand_rings(mol)} == {"c1cc[nH]c1"}
